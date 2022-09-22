@@ -11,7 +11,6 @@ url:                   https://thisiswoo.github.io
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
 baseurl:               ''
 
-
 # General settings
 # ---------------------------------------------------------------------------------------
 
@@ -19,8 +18,10 @@ baseurl:               ''
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  ko-KR, en-US
 
+timezone:              Asia/Seoul
+
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 thisiswoo's blog
+title:                 Geon Woo Lee
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -32,7 +33,7 @@ tagline:               >
   Record with the mind of a Record Repository. 
 
 # A list of keywords for your blog
-keywords:              []
+keywords:              ["Development", "Java", "JavaScript"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -42,39 +43,39 @@ logo:                  /assets/img/young_gw.jpg
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                Geonwoo Lee
+  name:                GeonWoo Lee
   email:               thisiswoo0594@gmail.com
   picture:             /assets/img/young_gw.png
   social:
     github:            thisiswoo
     email:             thisiswoo0594@gmail.com
-  # # Used by `jekyll-seo-tag`:
-  # twitter:             <username>
+    instagram:         samgyeopsalislove
 
 # Add links to the sidebar.
-menu:
-  - title:             About
-    url:               /about/
-  - title:             DevLog
-    url:               /devlog/
-  - title:             Blog
-    url:               /blog/
+# menu:
+#  - title:             About
+#    url:               /about/
+#  - title:             DevLog
+#    url:               /devlog/
+#  - title:             Blog
+#    url:               /blog/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
   - title:             LICENSE
     url:               /LICENSE/
-  - title:             NOTICE
-    url:               /NOTICE/
-  - title:             CHANGELOG
-    url:               /CHANGELOG/
+#  - title:             NOTICE
+#    url:               /NOTICE/
+#  - title:             CHANGELOG
+#    url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2021. All rights reserved.
+copyright:             © 2022. Geon Woo Lee. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
+# permalink:             /:categories/:year-:month-:day-:title/
+permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -120,23 +121,25 @@ font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  - scope:
-      path:            hyde/
-    values:
-      accent_color:    rgb(38,139,210)
-      theme_color:     rgb(32,32,32)
-      accent_image:
-        background:    rgb(32,32,32)
-        overlay:       false
+  # - scope:
+  #    path:            hyde/
+  # values:
+  #    accent_color:    rgb(38,139,210)
+  #    theme_color:     rgb(32,32,32)
+  #    accent_image:
+  #      background:    rgb(32,32,32)
+  #      overlay:       false
 
   # Don't include documents in assets in the sitemap
   - scope:
-      path:            assets/
+      path:            assets/**
     values:
       sitemap:         false
 
+
+  # Don't include documents in sitemap (feel free to delete)
   - scope:
-      path:            licenses/
+      path:            licenses/**
     values:
       layout:          plain
       sitemap:         false
