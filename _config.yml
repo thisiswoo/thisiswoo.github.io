@@ -11,17 +11,18 @@ url:                   https://thisiswoo.github.io
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
 baseurl:               ''
 
+
 # General settings
 # ---------------------------------------------------------------------------------------
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  ko-KR, en-US
-
-timezone:              Asia/Seoul
+lang:                  en, kr
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Geon Woo Lee
+
+# timezone:              Asia/Seoul
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -33,7 +34,7 @@ tagline:               >
   Record with the mind of a Record Repository. 
 
 # A list of keywords for your blog
-keywords:              ["Development", "Java", "JavaScript"]
+keywords:              []
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -52,13 +53,11 @@ author:
     instagram:         samgyeopsalislove
 
 # Add links to the sidebar.
-# menu:
-#  - title:             About
-#    url:               /about/
-#  - title:             DevLog
-#    url:               /devlog/
-#  - title:             Blog
-#    url:               /blog/
+menu:
+  - title:             Dev Log
+    url:               /devlog/
+  - title:             Daily Log
+    url:               /dailylog/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -71,11 +70,11 @@ legal:
 #    url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2022. Geon Woo Lee. All rights reserved.
+copyright:             © 2022 All rights reserved.
 
 # Format of the permalinks
-# permalink:             /:categories/:year-:month-:day-:title/
-permalink:             none
+permalink:             /:categories/:year-:month-:day-:title/
+# permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -85,7 +84,7 @@ paginate_path:         /:num/
 # Theme
 # ---------------------------------------------------------------------------------------
 
-# theme: jekyll-theme-hydejack
+theme: jekyll-theme-hydejack
 remote_theme: hydecorp/hydejack@v9
 
 
@@ -96,12 +95,12 @@ remote_theme: hydecorp/hydejack@v9
 accent_image:
   background:          center / cover url(/assets/img/animation.gif)
   overlay:             false
-accent_color:          rgb(79,177,186)
+accent_color:          rgb(32,32,35)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-theme_color:           rgb(25,55,71)
+theme_color:           rgb(32,32,35)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
@@ -121,14 +120,14 @@ font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  # - scope:
-  #    path:            hyde/
-  # values:
-  #    accent_color:    rgb(38,139,210)
-  #    theme_color:     rgb(32,32,32)
-  #    accent_image:
-  #      background:    rgb(32,32,32)
-  #      overlay:       false
+  - scope:
+      path:            hyde/
+    values:
+      accent_color:    rgb(38,139,210)
+      theme_color:     rgb(32,32,32)
+      accent_image:
+        background:    rgb(32,32,32)
+        overlay:       false
 
   # Don't include documents in assets in the sitemap
   - scope:
@@ -144,7 +143,13 @@ defaults:
       layout:          plain
       sitemap:         false
 
-  # # You can use the following to enable comments on all posts.
+  # Don't include site verification file(for google) in the sitemap
+  - scope:
+      path:            google1a72733ef66052b8.html
+    values:
+      sitemap:         true
+
+  # You can use the following to enable comments on all posts.
   # - scope:
   #     type:            posts
   #   values:
