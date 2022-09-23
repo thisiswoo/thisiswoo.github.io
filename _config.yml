@@ -54,9 +54,9 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Dev Log
+  - title:             Dev.Log
     url:               /devlog/
-  - title:             Daily Log
+  - title:             Daily.Log
     url:               /dailylog/
 
 # Add links to the footer.
@@ -281,7 +281,7 @@ hydejack:
   # Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
     # Set to `true` to always use the dark theme.
-    always:            true
+    always:            false
 
     # Set to `true` to use the dark theme based on visitors' preference (OS setting).
     dynamic:           true
