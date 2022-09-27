@@ -1,6 +1,5 @@
-# Hydejack Starter Kit
-
-A quicker, cleaner way to get started blogging with [Hydejack](https://hydejack.com/).
+# 블로그 작업 중... 
+사관의 마음으로 기록하자
 
 ## Quick Start
 ### Running locally
