@@ -1,25 +1,40 @@
-<div class="sidebar-sticky">
-  <div class="sidebar-about">
-    {% if site.logo %}
-      <a class="no-hover" href="{{ '/' | relative_url }}" tabindex="-1">
-        <img src="{% include_cached smart-url url=site.logo %}" class="avatar" alt="{{ site.short_title | default:site.title }}" width="120" height="120" loading="lazy" />
-      </a>
+<span class="sr-only">{{ site.data.strings.navigation | default:"Navigation" }}{{ site.data.strings.colon | default:":"
+  }}</span>
+<ul>
+  {% assign nodes = site.html_pages | concat: site.documents | where: "sidebar", true | sort: "order" %}
+  {% assign tag_nodes = nodes | where: "type", "tag" %}
+  {% for node in nodes %}
+  {% unless node.redirect_to %}
+  {% if node.type != "tag" %}
+  {% assign subnodes = tag_nodes | where_exp: "item", "item.category == node.slug" %}
+  {% assign count = count | plus: 1 %}
+  <li>
+    {% if subnodes != empty %}
+    <input type="checkbox" id="folder-checkbox-{{ count }}" />
     {% endif %}
-    <a class="sidebar-title" href="{{ '/' | relative_url }}"><h2 class="h1">{{ site.short_title | default:site.title }}</h2></a>
-    {% assign text = site.tagline | default:site.description %}
-    {% if text %}
-      <p class="{% if text.size > 100 %}fine{% endif %}">
-        {{ text | markdownify | replace:'<p>','' | replace:'</p>','' }}
-      </p>
-    {% endif %}
-  </div>
-
-  <nav class="sidebar-nav heading" role="navigation">
-    {% include body/nav.html %}
-  </nav>
-
-  {% assign author = site.data.authors.first[1] | default:site.author %}
-  <div class="sidebar-social">
-    {% include components/social.html author=author %}
-  </div>
-</div>
+    <div class="list-wrapper">
+      <a {% if forloop.first %}id="_navigation" {% endif %} href="{{ node.url | relative_url }}"
+        class="sidebar-nav-item" {% if node.rel %}rel="{{ node.rel }}" {% endif %}>{{ node.title }}</a>
+      {% if subnodes != empty %}
+      <button class="spread-btn" onclick="javascript:spread({{ count }})">
+        <label id="spread-icon-{{ count }}" class="material-icons">arrow_right</label>
+      </button>
+      {% endif %}
+    </div>
+    {% for subnode in subnodes %}
+    {% if forloop.first %}<ul class="list-body">{% endif %}
+      <li>
+        <a class="sidebar-nav-subitem" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
+      </li>
+      {% if forloop.last %}
+    </ul>{% endif %}
+    {% endfor %}
+  </li>
+  {% endif %}
+  {% else %}
+  <li>
+    <a href="{{ node.redirect_to }}" class="sidebar-nav-item external">{{ node.title }}</a>
+  </li>
+  {% endunless %}
+  {% endfor %}
+</ul>
