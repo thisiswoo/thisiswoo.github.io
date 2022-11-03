@@ -3,13 +3,13 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-url:                   https://thisiswoo.github.io
+# url:                   https://username.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
 # with a leading `/` but no trailing `/`. Use the empty string '' otherwise.
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-baseurl:               ''
+# baseurl:               '/hydejack-starter-kit'
 
 
 # General settings
@@ -17,21 +17,19 @@ baseurl:               ''
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en, kr
+lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Geon Woo Lee
-
-# timezone:              Asia/Seoul
+title:                 Hydejack
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Record with the mind of a Record Repository. 
+  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
+  with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               >
-  Record with the mind of a Record Repository. 
+tagline:               Change `tagline` in `_config.yml`
 
 # A list of keywords for your blog
 keywords:              []
@@ -39,68 +37,66 @@ keywords:              []
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/young_gw.jpg
+logo:                  /assets/img/logo.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                GeonWoo Lee
-  email:               thisiswoo0594@gmail.com
-  picture:             /assets/img/young_gw.png
-  social:
-    github:            thisiswoo
-    email:             thisiswoo0594@gmail.com
-    instagram:         samgyeopsalislove
+  name:                <firstname> <lastname>
+  email:               <mail@domain.tld>
+  # # Used by `jekyll-seo-tag`:
+  # twitter:             <username>
 
 # Add links to the sidebar.
 menu:
-  - title:             Dev.Log
-    url:               /devlog/
-  - title:             Daily.Log
-    url:               /dailylog/
+  - title:             Blog
+    url:               /blog/
+  - title:             Projects
+    url:               /projects/
+  - title:             Résumé*
+    url:               /resume/
+  - title:             Documentation
+    url:               /docs/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
   - title:             LICENSE
     url:               /LICENSE/
-#  - title:             NOTICE
-#    url:               /NOTICE/
-#  - title:             CHANGELOG
-#    url:               /CHANGELOG/
+  - title:             NOTICE
+    url:               /NOTICE/
+  - title:             CHANGELOG
+    url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2022 All rights reserved.
+copyright:             © 2021. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
-# permalink:             none
+permalink:             /blog/:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /:num/
+paginate_path:         /blog/:num/
 
 
 # Theme
 # ---------------------------------------------------------------------------------------
 
 # theme: jekyll-theme-hydejack
-remote_theme: hydecorp/hydejack@v9
+# remote_theme: hydecorp/hydejack@v9
 
 
 # Customizaton
 # ----------------------------------------------------------------------------------------
  
 # Sidebar image and theme color of the site.
-accent_image:
-  background:          center / cover url(/assets/img/animation.gif)
-  overlay:             false
-accent_color:          rgb(32,32,35)
+accent_image:          /assets/img/sidebar-bg.jpg
+accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-theme_color:           rgb(32,32,35)
+theme_color:           rgb(25,55,71)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
@@ -131,25 +127,18 @@ defaults:
 
   # Don't include documents in assets in the sitemap
   - scope:
-      path:            assets/**
+      path:            assets/
     values:
       sitemap:         false
 
-
-  # Don't include documents in sitemap (feel free to delete)
+  # Don't include licenses in sitemap (feel free to delete)
   - scope:
-      path:            licenses/**
+      path:            licenses/
     values:
       layout:          plain
       sitemap:         false
 
-  # Don't include site verification file(for google) in the sitemap
-  - scope:
-      path:            google1a72733ef66052b8.html
-    values:
-      sitemap:         true
-
-  # You can use the following to enable comments on all posts.
+  # # You can use the following to enable comments on all posts.
   # - scope:
   #     type:            posts
   #   values:
@@ -305,7 +294,7 @@ hydejack:
 
 collections:
   featured_categories:
-    permalink:         /:name/
+    permalink:         /blog/:name/
     output:            true
 
   featured_tags:
@@ -321,6 +310,8 @@ collections:
 # ----------------------------------------------------------------------------------------
 
 exclude:
+  - ./#jekyll-theme-hydejack/node_modules
+  - ./#jekyll-theme-hydejack/.git
   - .jekyll-cache
   - .sass-cache
   - '*.toml'
@@ -405,6 +396,7 @@ compress_html:
 
 sass:
   style:               compressed
+
 
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------
