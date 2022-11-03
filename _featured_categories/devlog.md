@@ -1,10 +1,10 @@
 ---
 layout: list
 type: category
-title: Dev. Log
+title: Devlog
 slug: devlog
 sidebar: true
 order: 2
 description: >
-  Anything about development
+  Anything about Development
 ---
