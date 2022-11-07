@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Thank You!
+title: 블로그 작업 중 입니다.!
 sitemap: false
 ---
 

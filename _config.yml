@@ -20,7 +20,7 @@
 lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 This is Woo
+title:                 GeonWoo Lee
 
 timezone:              Asia/Seoul
 
@@ -34,7 +34,7 @@ tagline:               >
   I will record with the mind of a history official.
 
 # A list of keywords for your blog
-keywords:              ["Development", "Java", "React", "Jekyll"]
+keywords:              []
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -55,37 +55,35 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Blog
-    url:               /blog/
-  - title:             Projects
-    url:               /projects/
-  - title:             Résumé*
-    url:               /resume/
-  - title:             Documentation
-    url:               /docs/
+  - title:             Personal
+    url:               /personal/
+  - title:             Study Log
+    url:               /studylog/
+  # - title:             Résumé*
+  #   url:               /resume/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
-  - title:             LICENSE
-    url:               /LICENSE/
-  - title:             NOTICE
-    url:               /NOTICE/
-  - title:             CHANGELOG
-    url:               /CHANGELOG/
+  # - title:             LICENSE
+  #   url:               /LICENSE/
+  # - title:             NOTICE
+  #   url:               /NOTICE/
+  # - title:             CHANGELOG
+  #   url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2022. All rights reserved.
 
 # Format of the permalinks
-# permalink:             /blog/:categories/:year-:month-:day-:title/
-permalink:             none
+permalink:             /blog/:categories/:year-:month-:day-:title/
+# permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /page-:num/
-excerpt_separator:     <!--more-->
-# paginate_path:         /blog/:num/
+# paginate_path:         /page-:num/
+# excerpt_separator:     <!--more-->
+paginate_path:         /blog/:num/
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -128,14 +126,14 @@ font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  # - scope:
-  #     path:            hyde/
-  #   values:
-  #     accent_color:    rgb(38,139,210)
-  #     theme_color:     rgb(32,32,32)
-  #     accent_image:
-  #       background:    rgb(32,32,32)
-  #       overlay:       false
+  - scope:
+      path:            hyde/
+    values:
+      accent_color:    rgb(38,139,210)
+      theme_color:     rgb(32,32,32)
+      accent_image:
+        background:    rgb(32,32,32)
+        overlay:       false
 
   # Don't include documents in assets in the sitemap
   - scope:
