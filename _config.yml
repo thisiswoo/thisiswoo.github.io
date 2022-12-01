@@ -54,20 +54,22 @@ author:
   # twitter:             <username>
 
 # Add links to the sidebar.
-menu:
-  - title:             Personal
-    url:               /personal/
-  - title:             Study Log
-    url:               /studylog/
-  - title:             Résumé*
-    url:               /resume/
+# menu:
+#   - title:             Personal
+#     url:               /personal/
+#   - title:             Study Log
+#     url:               /studylog/
+#   - title:             Résumé*
+#     url:               /resume/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
-# legal:
-  # - title:             LICENSE
-  #   url:               /LICENSE/
-  # - title:             NOTICE
+legal:
+  - title:             LICENSE
+    url:               /LICENSE/
+  - title:             COOKIES POLICY
+    url:               /cookies-policy/
+  #   - title:           NOTICE
   #   url:               /NOTICE/
   # - title:             CHANGELOG
   #   url:               /CHANGELOG/
