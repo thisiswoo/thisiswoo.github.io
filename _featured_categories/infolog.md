@@ -4,7 +4,7 @@ type: category
 title: Info Log
 slug: infoLog
 sidebar: true
-order: 4
+order: 3
 description: >
   Information needed in everyday life
 ---

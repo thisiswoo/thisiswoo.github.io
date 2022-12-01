@@ -4,7 +4,7 @@ type: category
 title: Daily Log
 slug: dailyLog
 sidebar: true
-order: 3
+order: 2
 description: >
   My daily life record
 ---
