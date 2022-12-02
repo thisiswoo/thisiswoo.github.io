@@ -9,7 +9,7 @@
 # When your site is in a subdirectory, set to `/<name of directory>`,
 # with a leading `/` but no trailing `/`. Use the empty string '' otherwise.
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# baseurl:               '/hydejack-starter-kit'
+# baseurl:               ''
 
 
 # General settings
@@ -22,7 +22,7 @@ lang:                  ko-KR, en-US
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Thisis Woo
 
-# timezone:              Asia/Seoul
+timezone:              Asia/Seoul
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -34,7 +34,7 @@ tagline:               >
   I will record with the mind of a history official.
 
 # A list of keywords for your blog
-keywords:              []
+keywords:              ["Developnebt", "Java", "Javascript"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -78,13 +78,13 @@ legal:
 copyright:             © 2022 GeonWoo Lee. All rights reserved.
 
 # Format of the permalinks
-permalink:             /blog/:categories/:year-:month-:day-:title/
-# permalink:             none
+# permalink:             /blog/:categories/:year-:month-:day-:title/
+permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
 paginate_path:         /page-:num/
-# excerpt_separator:     <!--more-->
+excerpt_separator:     <!--more-->
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -130,14 +130,14 @@ font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
 defaults:
   # You can use this to provide a default accent color and background for
   # all pages under a given path:
-  - scope:
-      path:            hyde/
-    values:
-      accent_color:    rgb(30,30,33)
-      theme_color:     rgb(30,30,33)
-      accent_image:
-        background:    rgb(32,32,32)
-        overlay:       false
+  # - scope:
+  #     path:            hyde/
+  #   values:
+  #     accent_color:    rgb(30,30,33)
+  #     theme_color:     rgb(30,30,33)
+  #     accent_image:
+  #       background:    rgb(32,32,32)
+  #       overlay:       false
 
   # Don't include documents in assets in the sitemap
   - scope:
@@ -165,12 +165,12 @@ defaults:
   #     sitemap:         false
 
   # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
-  #     # https://applause-button.com/
-  #     applause_button:       true
+  - scope:
+      type:            posts
+    values:
+      comments:        true
+      # https://applause-button.com/
+      applause_button:       true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
