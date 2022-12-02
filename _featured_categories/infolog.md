@@ -1,7 +1,7 @@
 ---
 layout: list
 type: category
-title: Info log
+title: Info Log
 slug: infoLog
 sidebar: true
 order: 3

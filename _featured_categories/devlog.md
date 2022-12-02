@@ -1,7 +1,7 @@
 ---
 layout: list
 type: category
-title: Dev log
+title: Dev Log
 slug: devlog
 sidebar: true
 order: 1
