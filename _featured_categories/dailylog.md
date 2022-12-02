@@ -1,7 +1,7 @@
 ---
 layout: list
 type: category
-title: Daily Log
+title: Daily log
 slug: dailyLog
 sidebar: true
 order: 2
