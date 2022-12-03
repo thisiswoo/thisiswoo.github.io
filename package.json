@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "applause-button": "^3.4.0",
     "re-template-tag": "^2.0.1"
   }
 }
