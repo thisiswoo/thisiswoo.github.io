@@ -76,7 +76,7 @@
   input[type=checkbox] ~ ul{
     height: 0;
     transform: scaleY(0);
-    transition: transform .2s ease-out;
+    transition: transform .3s ease-out;
   }
   
   input[type=checkbox]:checked ~ ul{
@@ -84,7 +84,7 @@
     list-style: none;
     transform-origin: top;
     transform: scaleY(1);
-    transition: transform .2s ease-out;
+    transition: transform .3s ease-out;
   }
   
   
