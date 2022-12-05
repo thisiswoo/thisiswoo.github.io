@@ -100,13 +100,13 @@ excerpt_separator:     <!--more-->
 accent_image:
   background:          center / cover url(/assets/img/animation.gif)
   overlay:             false
-# accent_color:          rgb(30,30,33)
-accent_color:          rgb(255,128,128)
+# accent_color:          rgb(255,128,128)
+# accent_color:          rgb(255,99,195)
+accent_color:          rgb(79,209,196)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
 # Defaults to `accent_color`.
-# theme_color:           rgb(30,30,33)
 theme_color:           rgb(30,30,33)
 
 # The string encoding which fonts to fetch from Google Fonts.
