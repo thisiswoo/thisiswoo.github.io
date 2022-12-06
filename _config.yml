@@ -170,7 +170,7 @@ defaults:
   - scope:
       type:            posts
     values:
-      # comments:        true
+      comments:        true
       # https://applause-button.com/
       applause_button:       true
 
