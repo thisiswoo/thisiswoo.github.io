@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Travel
-slug: travel
+title: Daily
+slug: daily
 category: dailyLog
 sidebar: true
-order: 2
+order: 1
 description: >
-   My travel diary
+   My daily diary
 ---
