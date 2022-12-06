@@ -2,12 +2,12 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "Richard Hendricks"
-  label: "Programmer"
-  picture: "https://via.placeholder.com/240x240"
-  email: ""
-  phone: "(912) 555-4321"
-  website: "https://piedpiper.com"
+  name: "GeonWoo Lee"
+  label: "Web Developer"
+  picture: /assets/img/thisiswoo.png
+  email: "thisiswoo0594@gmail.com"
+  phone: "010-8486-0594"
+  website: "https://thisiswoo.vercel.app/"
   summary: >
     Richard hails from Tulsa.
     He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
@@ -25,8 +25,8 @@ basics:
     countryCode: "US"
     region: "California"
   profiles:
-    - network: "Twitter"
-      username: "RHendricksCEO"
+    - network: "Instagram"
+      username: "samgyeopsalislove"
       url: ""
     - network: "LinkedIn"
       username: "Richard Hendricks"
