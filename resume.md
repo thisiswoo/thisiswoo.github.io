@@ -9,13 +9,13 @@ sidebar: true
 order: 4
 left_column:
   - work
+  - volunteer
   - education
+  - awards
   - projects
   - publications
   - references
 right_column:
-  - awards
-  - volunteer
   - languages
   - skills
   - interests
