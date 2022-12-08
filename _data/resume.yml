@@ -6,45 +6,61 @@ basics:
   label: "Web Developer"
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
-  phone: "010-8486-0594"
+  phone: "(+82) 10-8486-0594"
   website: "https://thisiswoo.vercel.app/"
   summary: >
-    Richard hails from Tulsa.
-    He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
-    Before starting Pied Piper, he worked for Hooli as a part time software developer.
-    While his work focuses on applied information theory,
-    mostly optimizing lossless compression schema of both the length-limited and adaptive variants,
-    his non-work interests range widely,
-    everything from quantum computing to chaos theory.
-    He could tell you about it, but THAT would NOT be a “length-limited” conversation!
-    Open `_data/resume.yml` to edit this text.
+    Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
+    I like to read books in science, math, and history.<br>
+    I'd like to describe myself as a steady learner.<br>
+    I am confident that I can satisfy expectations of coworkers.
   location:
-    address: "2712 Broadway St"
-    postalCode: "CA 94115"
-    city: "San Francisco"
-    countryCode: "US"
-    region: "California"
+    # address: "2712 Broadway St"
+    # postalCode: "CA 94115"
+    # city: "San Francisco"
+    # countryCode: "KR"
+    region: "Republic of Korea"
   profiles:
     - network: "Instagram"
       username: "samgyeopsalislove"
-      url: ""
-    - network: "LinkedIn"
-      username: "Richard Hendricks"
-      url: ""
+      url: "https://www.instagram.com/samgyeopsalislove/"
 work:
-  - company: "Pied Piper"
-    position: "CEO/President"
-    website: "https://piedpiper.com"
-    startDate: "2013-12-01"
+  - company: "Xiness"
+    position: "Developer"
+    website: "https://www.xiness.com/"
+    startDate: "2021-12-01"
     endDate: ""
     summary: >
-      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
-      consistently fielded high Weisman Scores™ that are not merely competitive,
-      but approach the theoretical limit of lossless compression.
+      XINESS is a company that provides smart healthcare technologies in various fields to create a world where the preciousness of life becomes a daily life.<br>
+      We strive to create a society where anyone can lead a healthy life anytime, anywhere.
     highlights:
-      - "Built an algorithm for artist to detect if their music was violating copy right infringement laws"
-      - "Successfully won Techcrunch Disrupt"
-      - "Optimized an algorithm that holds the current world record for Weisman Scores"
+      - "<a href='https://official.k-gate.net/'>K-GATE</a> is an AI-based facial recognition access control system that provides a safe and secure daily life."
+  - company: "HANA Electric"
+    position: "Interior Electrical Construction Team"
+    website: ""
+    startDate: "2018-04-02"
+    endDate: "2020-10-30"
+    summary: >
+      Hana Electric is conducting interior electrical construction for not only brand stores nationwide, but also individual stores and company offices.
+    highlights:
+      - "Craftsman Electricity (전기기능사) at 2019-06-21"
+  - company: "MIRI"
+    position: "Interior Electrical Construction Team"
+    website: "https://www.mirilife.co.kr/"
+    startDate: "2016-05-02"
+    endDate: "2018-03-30"
+    summary: >
+      Miri is developing household goods with customer convenience as a top priority.
+    highlights:
+      - "Participated in online marketing and offline exhibitions to introduce and sell products."
+  - company: "CI Telecome"
+    position: "Interior Electrical Construction Team"
+    website: ""
+    startDate: "2018-04-02"
+    endDate: "2020-10-30"
+    summary: >
+      Hana Electric is conducting interior electrical construction for not only brand stores nationwide, but also individual stores and company offices.
+    highlights:
+      - "Craftsman Electricity (전기기능사) at 2019-06-21"
 volunteer:
   - organization: "CoderDojo"
     position: "Teacher"
@@ -64,6 +80,18 @@ education:
     courses:
       - "DB1101 - Basic SQL"
       - "CS2011 - Java Introduction"
+  - certificate: "Craftsman Electricity (전기기능사)"
+    date: "2019-06-21"
+projects:
+  - title: "Bw-Tree Performance Boosting"
+    startDate: "2018-08-01"
+    endDate: "2019-10-31"
+    summary: "Evaluating cache / multi thread Performance of <a href='https://github.com/wangziqi2013/BwTree'>Open Bw-Tree</a> to find bottleneck and improvement performance."
+    url: "https://lazyren.github.io/tag-bwtree/"
+    highlights:
+      - "Implementing update function based on the <a href='https://hyeontaek.com/papers/openbwtree-sigmod2018.pdf'>page</a>."
+      - "Make update function atomic & reduce call of traverse function."
+      - "Design TaS implemented"
 awards:
   - title: "Digital Compression Pioneer Award"
     date: "2014-11-01"
