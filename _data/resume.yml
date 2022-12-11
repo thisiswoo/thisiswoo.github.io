@@ -12,7 +12,7 @@ basics:
     Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
     I like to read books in science, math, and history.<br>
     I'd like to describe myself as a steady learner.<br>
-    I am confident that I can satisfy expectations of coworkers.
+    I am confident that I can satisfy the expectations of my coworkers.
   location:
     # address: "2712 Broadway St"
     # postalCode: "CA 94115"
@@ -60,7 +60,7 @@ work:
     summary: >
       Establishing and operating the best mobile communication infrastructure as the highest goal of the head office, focusing on building and maintaining wired and wireless equipment to provide the highest quality mobile communication service.
     highlights:
-      - "Inventory management team manages wired and wireless communication equipment"
+      - "Inventory management team manages wired and wireless communication equipment."
 # volunteer:
 #   - organization: "CoderDojo"
 #     position: "Teacher"
@@ -72,7 +72,7 @@ work:
 #       - "Awarded 'Teacher of the Month'"
 education:
   - institution: "Global IT Human Resources Development Institute."
-    area: "Java and Python web development course using big data "
+    area: "a Java and Python web development course using big data "
     studyType: "Completed"
     startDate: "2021-04-21"
     endDate: "2021-10-01"
@@ -127,7 +127,7 @@ skills:
   - name: "Deployment"
     level: "Junior"
     keywords:
-      - "Apach"
+      - "Apache"
       - "Tomcat"
       - "Docker"
       - "Vercel"
@@ -151,7 +151,7 @@ interests:
   - name: "Activity"
     keywords:
       - "Home Training"
-      - "walk"
+      - "Walk"
   - name: "Watching"
     keywords:
       - "LCK(LoL)"
