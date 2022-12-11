@@ -1,9 +1,18 @@
 ---
 layout: page
-title: 블로그 작업 중 입니다.!
+title: I will record with the mind of a history official.
 sitemap: false
 ---
 
+## Hello, World!
+
+Hi, I'm **GeonWoo Lee**, *a.k.a.* **thisiswoo**.<br>
+I'm currently working at **[Xiness]**.<br>
+I started a blog to document what I saw, felt and learned.<br>
+In addition to what I learned, I will also record my hobbies and daily life on my blog.<br>
+Pleaseh check my [resume] if you wish to know more about me.
+
+<!-- 
 Thank you for buying the PRO version of Hydejack! 🎉
 
 More than one year ago I was looking for a blogging platform but couldn't find it:
@@ -39,9 +48,13 @@ containing example content:
 ├── forms-by-example.md
 ├── LICENSE.md
 └── NOTICE.md
-~~~
+~~~ -->
 
-[documentation]: docs/README.md
+<!-- Links -->
+[Xiness]: https://www.xiness.com/
+[resume]: /resume/
+
+<!-- [documentation]: docs/README.md
 [install]: docs/install.md
 [upgrade]: docs/upgrade.md
-[config]: docs/config.md
+[config]: docs/config.md -->
