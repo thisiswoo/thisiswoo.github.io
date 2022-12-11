@@ -3,10 +3,9 @@ layout: resume
 title: Resume
 permalink: /resume/
 description: >
-  Hi, I'm GeonWoo Lee, WEB Developer at Xiness.
 hide_description: true
 sidebar: true
-order: 4
+order: 5
 left_column:
   - work
   - volunteer
