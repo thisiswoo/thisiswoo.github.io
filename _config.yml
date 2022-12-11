@@ -27,11 +27,11 @@ timezone:              Asia/Seoul
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  The Important thing is to keep your heart.
+  I will record with the mind of a history official.
 
 # A shorter description for the sidebar.
 tagline:               >
-  I will record with the mind of a history official.
+  The Important thing is to keep your heart.
 
 # A list of keywords for your blog
 keywords:              ["Developments", "Java", "Javascript"]
