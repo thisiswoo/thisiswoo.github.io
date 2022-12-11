@@ -23,6 +23,12 @@ basics:
     - network: "Instagram"
       username: "samgyeopsalislove"
       url: "https://www.instagram.com/samgyeopsalislove/"
+    - network: "Github"
+      username: "thisiswoo"
+      url: "https://github.com/thisiswoo"
+    - network: "Github"
+      username: "blog"
+      url: "https://thisiswoo.github.io/"
 work:
   - company: "Xiness"
     position: "Developer"
