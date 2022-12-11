@@ -1,8 +1,8 @@
 ---
 layout: list
 type: category
-title: Book Log
-slug: bookLog
+title: Books Log
+slug: books
 sidebar: true
 order: 3
 description: >
