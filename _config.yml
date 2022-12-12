@@ -399,6 +399,7 @@ plugins:
 
 # Where you proof that you own this site (used by jekyll-seo-tag)
 google_site_verification: nhpmBN3qk4-ALwLqYMT8elvT7SUEJnGhE2E1yKUX1O4
+
 # -- or --
 # webmaster_verifications:
 #   google:              <verification-id>
