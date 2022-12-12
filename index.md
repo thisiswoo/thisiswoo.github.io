@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: welcome
 title: I will record with the mind of a history official.
-sitemap: false
+cover: true
+sitemap: true
 ---
 
 ## Hello, World!
