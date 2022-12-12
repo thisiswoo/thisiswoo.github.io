@@ -1,7 +1,7 @@
 ---
 layout: tag-list
 type: tag
-title: Client(Front-end)
+title: Client
 slug: client
 category: development
 sidebar: true

@@ -225,7 +225,7 @@ giscus:
   reaction-enabled:    "1"
   data-emit-metadata:  "0"
   theme:               "dark"
-  data-lang:           "ko"
+  data-lang:           "en"
   crossorigin:         "anonymous"
 
 lightbox:              true
@@ -247,7 +247,7 @@ hydejack:
   project_addons:      [about, newsletter, other, comments]
 
   # Set to `true` if you don't want to show an icon indicating external links
-  no_mark_external:    false
+  no_mark_external:    true
 
   # Set to `true` if third party plugins fail to work with dynamically loaded pages
   no_push_state:       false
@@ -271,7 +271,7 @@ hydejack:
 
   # Set to `true` if you don't intend on changing the accent color on a per-page basis. 
   # This will increase site build speed!
-  no_page_style:       false
+  no_page_style:       true
 
   # Code blocks and tables "break" the layout by spanning the full available width.
   # Set this to true if you want them to be the same width as other content.
@@ -286,7 +286,7 @@ hydejack:
   no_third_column:     false
 
   # Set to `true` if you don't like oversized headlines on large screens.
-  no_large_headings:   false
+  no_large_headings:   true
 
   # Set to `true` if you do not want to expose your resume and projects
   # in machine-readable formats.
@@ -300,7 +300,7 @@ hydejack:
   no_breadcrumbs:      false
 
   # Set to `true` when building with the `--lsi` option
-  use_lsi:             true
+  use_lsi:             false
 
   # When using Google Analytics, set to `true` to display a cookie notice banner.
   # When enabled, no user-related data will be stored until the user gives consent.
@@ -321,7 +321,7 @@ hydejack:
   # Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
     # Set to `true` to always use the dark theme.
-    always:            false
+    always:            true
 
     # Set to `true` to use the dark theme based on visitors' preference (OS setting).
     dynamic:           true
