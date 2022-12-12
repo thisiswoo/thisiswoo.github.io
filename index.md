@@ -12,6 +12,14 @@ I started a blog to document what I saw, felt and learned.<br>
 In addition to what I learned, I will also record my hobbies and daily life on my blog.<br>
 Pleaseh check my [resume] if you wish to know more about me.
 
+## Work Hard to be Lazy
+
+_My motto to live by._
+{:.lead}
+
+> “Working hard to be lazy basically means investing the extra effort (working hard) at first so that it will pay off in the long run (be lazy).”
+
+
 <!-- 
 Thank you for buying the PRO version of Hydejack! 🎉
 

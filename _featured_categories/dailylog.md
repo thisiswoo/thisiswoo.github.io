@@ -2,7 +2,7 @@
 layout: list
 type: category
 title: Daily Log
-slug: dailyLog
+slug: daily
 sidebar: true
 order: 2
 description: >

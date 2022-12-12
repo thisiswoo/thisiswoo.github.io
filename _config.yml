@@ -82,9 +82,9 @@ copyright:             © 2022 GeonWoo Lee. All rights reserved.
 permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
-paginate:              10
-paginate_path:         /page-:num/
-excerpt_separator:     <!--more-->
+# paginate:              10
+# paginate_path:         /page-:num/
+# excerpt_separator:     <!--more-->
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -241,10 +241,12 @@ lightbox:              true
 
 hydejack:
   # Configure the order of complementary content on blog posts
-  post_addons:         [about, newsletter, related, random, comments]
+  # post_addons:         [about, newsletter, related, random, comments]
+  post_addons:         [about, comments]
 
   # Configure the order of complementary content on project pages
-  project_addons:      [about, newsletter, other, comments]
+  # project_addons:      [about, newsletter, other, comments]
+  project_addons:      [about, other, comments]
 
   # Set to `true` if you don't want to show an icon indicating external links
   no_mark_external:    true
@@ -396,7 +398,7 @@ plugins:
 # ---------------------------------------------------------------------------------------
 
 # Where you proof that you own this site (used by jekyll-seo-tag)
-# google_site_verification: <verification-id>
+google_site_verification: nhpmBN3qk4-ALwLqYMT8elvT7SUEJnGhE2E1yKUX1O4
 # -- or --
 # webmaster_verifications:
 #   google:              <verification-id>
@@ -478,3 +480,11 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
+
+# jekyll-feed settings
+feed:
+  categories:
+    - development
+    - daily
+    - books
+    - info

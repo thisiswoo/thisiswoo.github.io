@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: Daily
 slug: daily
-category: dailyLog
+category: daily
 sidebar: true
 order: 1
 description: >
