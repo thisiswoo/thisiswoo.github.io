@@ -1,7 +1,7 @@
 ---
-layout: tag-list
+layout: list
 type: tag
-title: Server
+title: Server(Back-end)
 slug: server
 category: development
 sidebar: true

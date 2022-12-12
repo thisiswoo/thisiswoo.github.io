@@ -1,5 +1,5 @@
 ---
-layout: tag-list
+layout: list
 type: tag
 title: Data
 slug: data
