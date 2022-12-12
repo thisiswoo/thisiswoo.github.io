@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: Client(Front-end)
 slug: client
-category: developments
+category: development
 sidebar: true
 order: 1
 description: >

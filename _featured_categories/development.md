@@ -1,8 +1,8 @@
 ---
 layout: list
 type: category
-title: Developments
-slug: developments
+title: Development
+slug: development
 sidebar: true
 order: 1
 description: >

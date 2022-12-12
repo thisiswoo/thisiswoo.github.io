@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: Server(Back-end)
 slug: server
-category: developments
+category: development
 sidebar: true
 order: 2
 description: >

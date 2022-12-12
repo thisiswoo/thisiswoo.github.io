@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: Data
 slug: data
-category: developments
+category: development
 sidebar: true
 order: 3
 description: >

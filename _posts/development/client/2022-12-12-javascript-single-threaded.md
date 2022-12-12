@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Javascript의 single threaded의 병렬처리"
+title: "Javascript의 single threaded의 병렬처리 방법"
 subtitle: "Javascript single threaded"
-category: developments
-tags: client
-image:
-  path: /assets/img/thisiswoo.png
+category: development
+tags: javascript sigle-threaded event-loop call-stack runtime
+# image:
+#   path: /assets/img/thisiswoo.png
 ---
 
 > 병뚜껑 치기 후에는 업 앤 다운이 국룰입니다.
