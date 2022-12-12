@@ -18,7 +18,7 @@ Pleaseh check my [resume] if you wish to know more about me.
 _My motto to live by._
 {:.lead}
 
-> The important thing is an unbreakable heart basically means investing the extra effort (working hard) at first so that it will pay off in the long run (be lazy).”
+> “I believe that if you do anything based on persistence, it will definitely come true. The important thing is an unbreakable heart.”
 
 ---
 
