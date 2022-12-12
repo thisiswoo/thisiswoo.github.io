@@ -3,7 +3,7 @@ layout: post
 title: "Javascript의 single threaded의 병렬처리 방법"
 subtitle: "Javascript single threaded"
 category: development
-tags: client javascript sigle-threaded event-loop call-stack runtime
+tags: client
 # image:
 #   path: /assets/img/thisiswoo.png
 ---
