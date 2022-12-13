@@ -1,20 +1,26 @@
 ---
 layout: post
-title: "Javascript의 single threaded의 병렬처리 방법"
+title: "Javascript는 싱글 스레드(Single Threaded)인데 어떻게 병렬처리(다중처리)가 가능할까?"
 subtitle: "Javascript single threaded"
 category: development
 tags: client
-# image:
-#   path: /assets/img/thisiswoo.png
+image:
+  path: /assets/img/development/20221213_js-single-threaded/js_runtime.jpg
 ---
 
-> 병뚜껑 치기 후에는 업 앤 다운이 국룰입니다.
+> Javascript는 싱글 스레드(Single Threaded)인데 어떻게 병렬처리(다중처리)가 가능할까?
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-## 이진 탐색이란
+## Thread 란?
+
+> “Thread in computer science is the execution of running multiple tasks or programs at the same time. <u>Each unit capable of executing code is called</u> a **thread**.”
+
+“컴퓨터 과학에서 Thread는 여러 작업이나 프로그램을 동시에 실행하는 것이다. <u>코드를 실행할 수 있는 각 단위</u>를 **Thread** 라고 한다.” - [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Thread)
+
+![js-engine](/assets/img/development/20221213_js-single-threaded/js_engine.jpg){:.centered width="70%"}
 
 이진 탐색은 **정렬된** 배열 내에서 데이터를 *(log<sub>2</sub>N)*의 시간 내에 찾을 수 있는 검색 알고리즘입니다.<br>
 데이터가 **정렬**되어 있어야 한다는 기저 조건이 붙지만, 시간 복잡도가 *O(log<sub>2</sub>N)* 밖에 안되기 때문에 매우 유용하게 사용됩니다.<br>

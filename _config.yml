@@ -159,6 +159,7 @@ defaults:
       path:            google1a72733ef66052b8.html
     values:
       sitemap:         false
+      # sitemap:         true
 
   # Don't include site verification file(for naver) in the sitemap
   # - scope:
