@@ -31,7 +31,7 @@ image:
 
 ## Heap 이란?
 
-“JavaScript는 객체가 생성될 때 자동으로 메모리를 할당하고 더 이상 사용되지 않을 때 메모리에서 제거한다(garbage collection). 이 자동성은 잠재적인 혼란의 원인된다. **개발자에게 메모리 관리에 대해 걱정할 필요가 없다는 잘못된 인상을 줄 수 있다.**” - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#memory_life_cycle)
+“JavaScript는 객체가 생성될 때 자동으로 메모리를 할당하고 더 이상 사용되지 않을 때 메모리에서 제거한다([garbage collection](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)). 이 자동성은 잠재적인 혼란의 원인된다. **(주의)개발자에게 메모리 관리에 대해 걱정할 필요가 없다는 잘못된 인상을 줄 수 있다.**” - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#memory_life_cycle)
 
 **Memory life cycle**
 1. 필요한 메모리 할당
