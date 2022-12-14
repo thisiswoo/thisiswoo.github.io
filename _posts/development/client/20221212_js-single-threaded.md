@@ -5,7 +5,7 @@ subtitle: "Javascript single threaded"
 category: development
 tags: client
 image:
-  path: /assets/img/development/20221213_js-single-threaded/js_runtime.jpg
+  path: /assets/img/development/20221212_js-single-threaded/js_runtime.jpg
 ---
 
 > Javascript는 싱글 스레드(Single Threaded)인데 어떻게 병렬처리(다중처리)가 가능할까?
@@ -21,7 +21,7 @@ image:
 
 > “**Thread**는 브라우저가 사용자 이벤트를 처리하고 디스플레이를 렌더링 및 그려주고, 일반적인 웹 페이지 또는 앱을 구성하는 코드의 대부분을 실행하는 데 사용한다.” - [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Thread)
 
-![js-engine](/assets/img/development/20221213_js-single-threaded/js_engine.jpg){:.centered width="70%"}
+![js-engine](/assets/img/development/20221212_js-single-threaded/js_engine.jpg){:.centered width="70%"}
 
 > **Memory Heap**: 객체와 변수를 할당하는 데 사용되는 비구조화 메모리의 한 부분.<br/>
 **Call Stack**: 메모리(변수 저장소)할당 코드가 호출되면서 스택으로 쌓이는 곳.
@@ -52,7 +52,7 @@ image:
 
 ## WEB APIs 란?
 
-![js-webapis](/assets/img/development/20221213_js-single-threaded/js_webapis.jpg){:.centered width="70%"}
+![js-webapis](/assets/img/development/20221212_js-single-threaded/js_webapis.jpg){:.centered width="70%"}
 
 > “웹 API는 자바스크립트 엔진의 일부는 아니지만 브라우저가 제공하는 런타임 환경의 일부이다. 현대의 브라우저에는 매우 다양한 것을 가능하게 하는 수많은 API가 있다.”
 
@@ -65,7 +65,7 @@ image:
 
 ## Tasks(Callback) Queue 란?
 
-![js-queue](/assets/img/development/20221213_js-single-threaded/js_queue.jpg){:.centered width="70%"}
+![js-queue](/assets/img/development/20221212_js-single-threaded/js_queue.jpg){:.centered width="70%"}
 
 > “**Tasks(Callback) Queue**는 웹 API에서 전송된 콜백 함수를 추가된 순서대로 저장한다. 이 대기열은 선입선출로 실행되는 데이터 구조이다. 큐는 배열 푸시 방식을 사용하여 큐의 끝에 새로운 콜백 함수를 추가하고 배열 이동 방식을 사용하여 큐의 첫 번째 항목을 제거한다.”
 
@@ -87,12 +87,12 @@ image:
 
 ## 이해를 돕기위한 그림(Call Stack, WEB APIs)
 
-![js-callstack](/assets/img/development/20221213_js-single-threaded/js_callstack.gif){:.centered width="70%"}
+![js-callstack](/assets/img/development/20221212_js-single-threaded/js_callstack.gif){:.centered width="70%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
 **<center>Call Stack</center>**
 
 <br><br>
 
-![js_WEB_APIs](/assets/img/development/20221213_js-single-threaded/js_WEB_APIs.gif){:.centered width="70%"}
+![js_WEB_APIs](/assets/img/development/20221212_js-single-threaded/js_WEB_APIs.gif){:.centered width="70%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
 **<center>WEB APIs</center>**
