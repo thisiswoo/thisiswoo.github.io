@@ -5,5 +5,5 @@ subtitle: "Vue.js Lifecycle"
 category: development
 tags: client
 image:
-  path: /assets/img/development/20221214_vue2-lifecycle/vue2_lifecycle_diagram.png
+  path: /assets/img/development/2022-12-14/vue2_lifecycle_diagram.png
 ---
