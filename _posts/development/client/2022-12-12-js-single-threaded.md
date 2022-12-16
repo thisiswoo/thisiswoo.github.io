@@ -23,8 +23,8 @@ image:
 
 ![js-engine](/assets/img/development/2022-12-12/js_engine.jpg){:.centered width="70%"}
 
-> **Memory Heap**: 객체와 변수를 할당하는 데 사용되는 비구조화 메모리의 한 부분.<br/>
-**Call Stack**: 메모리(변수 저장소)할당 코드가 호출되면서 스택으로 쌓이는 곳.
+> **Memory Heap(변수,객체 저장소)**: 객체와 변수를 할당하는 데 사용되는 비구조화 메모리의 한 부분.<br/>
+**Call Stack(코드 실행)**: 메모리 할당 코드가 호출되면서 스택으로 쌓이는 곳. 코드가 실행 되면 Stack에서 제거된다.
 
 즉, 위의 그림처럼 **Javascript Engine(Single Threaded)**에는 **`Memory Heap`**과 **`Call Stack`**으로 각 1개씩 구성되어 있다.
 
