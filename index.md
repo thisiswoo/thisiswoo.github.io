@@ -11,7 +11,7 @@ Hi, I'm **GeonWoo Lee**, *a.k.a.* **thisiswoo**.<br>
 I'm currently working at **[Xiness]**.<br>
 I started a blog to document what I saw, felt and learned.<br>
 In addition to what I learned, I will also record my hobbies and daily life on my blog.<br>
-Pleaseh check my [resume] if you wish to know more about me.
+Please check my [resume] if you wish to know more about me.
 
 ## The important thing is an unbreakable heart.
 
