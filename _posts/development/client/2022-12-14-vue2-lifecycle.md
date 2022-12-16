@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: post
 title: "Vue.js 2 라이프사이클 이해하기"
 subtitle: "Vue.js Lifecycle"
@@ -18,4 +18,4 @@ image:
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-## Vue Instance 란?
+## Vue Instance 란? -->
