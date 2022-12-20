@@ -82,9 +82,9 @@ copyright:             © 2022 GeonWoo Lee. All rights reserved.
 permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
-# paginate:              10
-# paginate_path:         /page-:num/
-# excerpt_separator:     <!--more-->
+paginate:              10
+paginate_path:         /page-:num/
+excerpt_separator:     <!--more-->
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -101,8 +101,6 @@ accent_image:
   background:          center / cover url(/assets/img/animation.gif)
   overlay:             false
 accent_color:          rgb(255,128,128)
-# accent_color:          rgb(255,99,195)
-# accent_color:          rgb(79,209,196)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
@@ -111,20 +109,18 @@ theme_color:           rgb(30,30,33)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
-# google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
-google_fonts:          Noto+Sans+KR|JetBrains+Mono|Nanum+Gothic+Coding
-# google_fonts:          Dongle:400|Noto+Sans:400,400i,700,700i
+# google_fonts:          Stylish:600,600i,400,400i|Noto+Sans:400,400i,700,700i
+google_fonts:          Gugi:600,600i,400,400i|Noto+Sans:400,400i,700,700i
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-# font:                  Noto Sans, Helvetica, Arial, sans-serif
-font:                  Noto Sans KR, Helvetica, Arial, sans-serif
-# font:                  Dongle, Helvetica, Arial, sans-serif
+# font:                  Stylish, Noto Sans, Helvetica, Arial, sans-serif
+font:                  Gugi, Noto Sans, Helvetica, Arial, sans-serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
-# font_heading:          Dongle, Helvetica, Arial, sans-serif
+# font_heading:          Stylish, Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          Gugi, Roboto Slab, Helvetica, Arial, sans-serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
 font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
