@@ -3,7 +3,7 @@ layout: post
 title: "[JS] Javascript는 싱글 스레드(Single Threaded)인데 어떻게 병렬처리(다중처리)가 가능할까?"
 subtitle: "Javascript single threaded"
 category: development
-tags: client
+tags: client javascript Threaded
 image:
   path: /assets/img/development/2022-12-12/js_runtime.jpg
 ---
