@@ -1,8 +1,6 @@
 ---
 layout: welcome
 title: I will record with the mind of a history official.
-# cover: true
-# sitemap: true
 sitemap: false
 ---
 
