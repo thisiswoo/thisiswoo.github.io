@@ -5,7 +5,7 @@ subtitle: "what is Vue.js"
 category: development
 tags: client vue
 image:
-  path: /assets/img/development/2022-12-21/what-is-vue-js.jpg
+  path: /assets/img/development/client/2022-12-21/what-is-vue-js.jpg
 ---
 > Vue.js 란?
 
@@ -31,19 +31,19 @@ image:
 
 ## MVVM 패턴이란?
 
-![MVVM](/assets/img/development/2022-12-21/mvvm.png){:.centered width="100%"}
+![MVVM](/assets/img/development/client/2022-12-21/mvvm.png){:.centered width="100%"}
 <div style="text-align: center">[그림출처](https://012.vuejs.org/guide/#View)</div>
 
 **<center>Vuejs MVVM</center>**
 
-> “Backend 로직과 Client 의 마크업 & 데이터 표현단을 분리하기 위한 구조로 전통적인 MVC 패턴의 방식에서 기인하였다. 간단하게 생각해서 화면 앞단의 회면 동작 관련 로직과 뒷단의 DB 데이터 처리 및 서버 로직을 분리하고, 뒷단에서 넘어온 데이터를 Model 에 담아 View 로 넘어주는 중간 지점이라고 보면 되겠다.” - [MVVM 패턴](https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/), [WIKI](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EB%B7%B0%EB%AA%A8%EB%8D%B8)
+> “Backend 로직과 Client 의 마크업 & 데이터 표현단을 분리하기 위한 구조로 전통적인 MVC 패턴의 방식에서 기인하였다. 간단하게 생각해서 화면 앞단의 회면 동작 관련 로직과 뒷단의 DB 데이터 처리 및 서버 로직을 분리하고, 뒷단에서 넘어온 데이터를 Model 에 담아 View 로 넘어주는 중간 지점이라고 보면 되겠다.” - [MVVM 패턴](https://joshua1988.github.io/web-development/client/vuejs/vuejs-tutorial-for-beginner/), [WIKI](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EB%B7%B0%EB%AA%A8%EB%8D%B8)
 
 <!-- Continue with [MVVM 패턴이란?](adding-foldable-submenu-to-the-sidebar){:.heading.flip-title}
 {:.read-more} -->
 
 ## 가상 DOM(Virtual DOM) 이란?
 
-![Virtual DOM](/assets/img/development/2022-12-21/elm-runtime-virtual-dom.jpg){:.centered width="100%"}
+![Virtual DOM](/assets/img/development/client/2022-12-21/elm-runtime-virtual-dom.jpg){:.centered width="100%"}
 <div style="text-align: center">[그림출처](https://elmprogramming.com/virtual-dom.html)</div>
 
 **<center>Virtual DOM</center>**
@@ -55,7 +55,7 @@ image:
 
 ## 컴포넌트(Component)
 
-![Component](/assets/img/development/2022-12-21/components.png){:.centered width="100%"}
+![Component](/assets/img/development/client/2022-12-21/components.png){:.centered width="100%"}
 <div style="text-align: center">[그림출처](https://vuejs.org/guide/essentials/component-basics.html)</div>
 
 **<center>Component</center>**
@@ -65,11 +65,11 @@ image:
 Vue는 **재사용이 가능한 컴포넌트**로 웹 페이지를 구성할 수 있다.<br/>
 확장자가 `.vue`인 단일 파일에 HTML, Javascript, CSS 코드로 구성하여 사용한다.
 
-![Component](/assets/img/development/2022-12-21/vue-component-structure.png){:.centered width="100%"}
+![Component](/assets/img/development/client/2022-12-21/vue-component-structure.png){:.centered width="100%"}
 
 ## Vue Lifecycle
 
-![vue-lifecycle](/assets/img/development/2022-12-21/how-to-use-lifecycle-hooks-in-vue3-1.png){:.centered width="100%"}
+![vue-lifecycle](/assets/img/development/client/2022-12-21/how-to-use-lifecycle-hooks-in-vue3-1.png){:.centered width="100%"}
 <div style="text-align: center">[그림출처](https://learnvue.co/tutorials/vue-lifecycle-hooks-guide)</div>
 
 **<center>Vue Lifecycle</center>**

@@ -5,11 +5,11 @@ subtitle: "Vue.js Lifecycle"
 category: development
 tags: client vue lifecycle
 image:
-  path: /assets/img/development/2022-12-22/lifecycle-hooks-in-vue3.png
+  path: /assets/img/development/client/2022-12-22/lifecycle-hooks-in-vue3.png
 ---
 > Vue.js 라이프사이클 이해하기
 
-![vue-lifecycle](/assets/img/development/2022-12-22/vue3_lifecycle_diagram.png){:.centered width="70%"}
+![vue-lifecycle](/assets/img/development/client/2022-12-22/vue3_lifecycle_diagram.png){:.centered width="70%"}
 <div style="text-align: center">[그림출처](https://vuejs.org/guide/essentials/lifecycle.html)</div>
 
 **<center>vue lifecycle hooks</center>**
@@ -70,7 +70,7 @@ image:
 
 ## Vue Lifecycle Hooks
 
-![vue-lifecycle](/assets/img/development/2022-12-22/vue3_lifecycle_diagram.png){:.centered width="70%"}
+![vue-lifecycle](/assets/img/development/client/2022-12-22/vue3_lifecycle_diagram.png){:.centered width="70%"}
 <div style="text-align: center">[그림출처](https://vuejs.org/guide/essentials/lifecycle.html)</div>
 
 **<center>vue lifecycle hooks</center>**
@@ -361,7 +361,7 @@ export default {
 
 * 이제 탭을 전환하면 각 동적 구성 요소의 상태가 캐시되고 저장된다.
 
-![vue-lifecycle](/assets/img/development/2022-12-22/activated-deactivated.gif){:.centered width="100%"}
+![vue-lifecycle](/assets/img/development/client/2022-12-22/activated-deactivated.gif){:.centered width="100%"}
 <div style="text-align: center">[그림출처](https://learnvue.co/tutorials/vue-lifecycle-hooks-guide#deactivated-and-ondeactivated)</div>
 
 **<center>Activated and Deactivated</center>**
