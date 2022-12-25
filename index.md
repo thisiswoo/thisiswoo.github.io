@@ -23,7 +23,7 @@ Please check my **[resume]** if you wish to know more about me.<br>
 _My motto to live by._
 {:.lead}
 
-> “I believe that if you do anything based on persistence, it will definitely come true. **The important thing is an unbreakable heart.**”
+> “Effort never betrays. **The important thing is an unbreakable heart.**”
 
 ---
 
