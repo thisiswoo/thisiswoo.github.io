@@ -1,11 +1,11 @@
 ---
 layout: list
 type: tag
-title: Data
-slug: data
+title: DataBase
+slug: database
 category: development
 sidebar: true
 order: 3
 description: >
-   get to know the data
+   get to know the database
 ---
