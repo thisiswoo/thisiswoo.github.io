@@ -9,8 +9,6 @@ image:
 ---
 > “SQL과 NoSQL의 차이를 알아보자.”
 
-# 정의
-
 * this unordered seed list will be replaced by the toc
 {:toc}
 
