@@ -123,6 +123,215 @@ db.movies.insert(
 - **Key-Value** DB는 단순한 객체에서 복잡한 집합체에 이르기까지 무엇이든 키와 값이 될 수 있으며 **파티셔닝이 가능**하고 다른 유형의 데이터베이스로는 불가능한 범위까지 **수평 확장을 가능**하게 한다.
 - **Key-Value** 기반 DB는 **Redis**, **Memcache** 등이 있다.
 
+<br>
+
+#### **DynamoDB의 JAVA API를 활용한 key-value 데이터 CRUD 예제**
+
+```java
+/**
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * This file is licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License. A copy of
+ * the License is located at
+ *
+ * http://aws.amazon.com/apache2.0/
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+*/
+
+package com.amazonaws.codesamples.document;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.document.DeleteItemOutcome;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.UpdateItemOutcome;
+import com.amazonaws.services.dynamodbv2.document.spec.DeleteItemSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
+import com.amazonaws.services.dynamodbv2.document.utils.NameMap;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
+import com.amazonaws.services.dynamodbv2.model.ReturnValue;
+
+public class DocumentAPIItemCRUDExample {
+
+    static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
+    static DynamoDB dynamoDB = new DynamoDB(client);
+
+    static String tableName = "ProductCatalog";
+
+    public static void main(String[] args) throws IOException {
+
+        createItems();
+
+        retrieveItem();
+
+        // Perform various updates.
+        updateMultipleAttributes();
+        updateAddNewAttribute();
+        updateExistingAttributeConditionally();
+
+        // Delete the item.
+        deleteItem();
+
+    }
+
+    private static void createItems() {
+
+        Table table = dynamoDB.getTable(tableName);
+        try {
+
+            Item item = new Item().withPrimaryKey("Id", 120).withString("Title", "Book 120 Title")
+                .withString("ISBN", "120-1111111111")
+                .withStringSet("Authors", new HashSet<String>(Arrays.asList("Author12", "Author22")))
+                .withNumber("Price", 20).withString("Dimensions", "8.5x11.0x.75").withNumber("PageCount", 500)
+                .withBoolean("InPublication", false).withString("ProductCategory", "Book");
+            table.putItem(item);
+
+            item = new Item().withPrimaryKey("Id", 121).withString("Title", "Book 121 Title")
+                .withString("ISBN", "121-1111111111")
+                .withStringSet("Authors", new HashSet<String>(Arrays.asList("Author21", "Author 22")))
+                .withNumber("Price", 20).withString("Dimensions", "8.5x11.0x.75").withNumber("PageCount", 500)
+                .withBoolean("InPublication", true).withString("ProductCategory", "Book");
+            table.putItem(item);
+
+        }
+        catch (Exception e) {
+            System.err.println("Create items failed.");
+            System.err.println(e.getMessage());
+
+        }
+    }
+
+    private static void retrieveItem() {
+        Table table = dynamoDB.getTable(tableName);
+
+        try {
+
+            Item item = table.getItem("Id", 120, "Id, ISBN, Title, Authors", null);
+
+            System.out.println("Printing item after retrieving it....");
+            System.out.println(item.toJSONPretty());
+
+        }
+        catch (Exception e) {
+            System.err.println("GetItem failed.");
+            System.err.println(e.getMessage());
+        }
+
+    }
+
+    private static void updateAddNewAttribute() {
+        Table table = dynamoDB.getTable(tableName);
+
+        try {
+
+            UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("Id", 121)
+                .withUpdateExpression("set #na = :val1").withNameMap(new NameMap().with("#na", "NewAttribute"))
+                .withValueMap(new ValueMap().withString(":val1", "Some value")).withReturnValues(ReturnValue.ALL_NEW);
+
+            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+
+            // Check the response.
+            System.out.println("Printing item after adding new attribute...");
+            System.out.println(outcome.getItem().toJSONPretty());
+
+        }
+        catch (Exception e) {
+            System.err.println("Failed to add new attribute in " + tableName);
+            System.err.println(e.getMessage());
+        }
+    }
+
+    private static void updateMultipleAttributes() {
+
+        Table table = dynamoDB.getTable(tableName);
+
+        try {
+
+            UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("Id", 120)
+                .withUpdateExpression("add #a :val1 set #na=:val2")
+                .withNameMap(new NameMap().with("#a", "Authors").with("#na", "NewAttribute"))
+                .withValueMap(
+                    new ValueMap().withStringSet(":val1", "Author YY", "Author ZZ").withString(":val2", "someValue"))
+                .withReturnValues(ReturnValue.ALL_NEW);
+
+            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+
+            // Check the response.
+            System.out.println("Printing item after multiple attribute update...");
+            System.out.println(outcome.getItem().toJSONPretty());
+
+        }
+        catch (Exception e) {
+            System.err.println("Failed to update multiple attributes in " + tableName);
+            System.err.println(e.getMessage());
+
+        }
+    }
+
+    private static void updateExistingAttributeConditionally() {
+
+        Table table = dynamoDB.getTable(tableName);
+
+        try {
+
+            // Specify the desired price (25.00) and also the condition (price =
+            // 20.00)
+
+            UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("Id", 120)
+                .withReturnValues(ReturnValue.ALL_NEW).withUpdateExpression("set #p = :val1")
+                .withConditionExpression("#p = :val2").withNameMap(new NameMap().with("#p", "Price"))
+                .withValueMap(new ValueMap().withNumber(":val1", 25).withNumber(":val2", 20));
+
+            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+
+            // Check the response.
+            System.out.println("Printing item after conditional update to new attribute...");
+            System.out.println(outcome.getItem().toJSONPretty());
+
+        }
+        catch (Exception e) {
+            System.err.println("Error updating item in " + tableName);
+            System.err.println(e.getMessage());
+        }
+    }
+
+    private static void deleteItem() {
+
+        Table table = dynamoDB.getTable(tableName);
+
+        try {
+
+            DeleteItemSpec deleteItemSpec = new DeleteItemSpec().withPrimaryKey("Id", 120)
+                .withConditionExpression("#ip = :val").withNameMap(new NameMap().with("#ip", "InPublication"))
+                .withValueMap(new ValueMap().withBoolean(":val", false)).withReturnValues(ReturnValue.ALL_OLD);
+
+            DeleteItemOutcome outcome = table.deleteItem(deleteItemSpec);
+
+            // Check the response.
+            System.out.println("Printing item that was deleted...");
+            System.out.println(outcome.getItem().toJSONPretty());
+
+        }
+        catch (Exception e) {
+            System.err.println("Error deleting item in " + tableName);
+            System.err.println(e.getMessage());
+        }
+    }
+}
+```
+
 ### Column-Oriented/Family Databases
 
 #### 1.Column-Oriented Databases
@@ -135,6 +344,7 @@ db.movies.insert(
 -  이처럼 Data를 분석하는 동작의 경우 Data Table에서 **모든 Column이 필요한 것이 아니라 일부 Column이 필요한 경우가 대부분**이다. 
 - 따라서 Column-oriented DB는 **OLAP(Online Analytical Processing) 처리에 유리**한 반면, **OTLP(Online transaction processing) 처리에 불리**하다.
 
+
 #### 2.Column-Family Databases
 ![Column Family DB](/assets/img/development/database/2022-12-29/column-family_db.png){:.centered width="70%"}
 **<center>Column-Family DB</center>**
@@ -144,6 +354,22 @@ db.movies.insert(
 - 일반적으로 Column-oriented DB와 Column Family DB가 혼용되어 사용되어 Column Family DB가 Column-oriented DB라고 간주하는 경우가 많은데 같은 DB라고 할 수는 없다. 
 - **Column Family DB인 HBASE**는 Column의 집합인 Column Family 단위로 **Disk Block에 저장**되기 때문에 **Column-oriented DB로 분류**된다. 
 - 하지만 또 하나의 Column Family DB인 **Cassandra**는 **Row 단위로 Disk Block에 저장**되기 때문에 **Column-oriented DB**라고 할 수 없다.
+
+##### Cassandra DB의 CRUD 예제
+
+```sql
+-- create a tuple
+CREATE TABLE subjects (
+  k int PRIMARY KEY,
+  v tuple<int, text, float>
+);
+
+-- insert values
+INSERT INTO subjects  (k, v) VALUES(0, (3, 'cs', 2.1));
+
+-- retrieve values
+SELECT * FROM subjects;
+```
 
 ### Graph Databases
 
@@ -158,8 +384,14 @@ db.movies.insert(
 - **Graph DB**는 데이터 간의 관계를 만들고 이러한 관계를 신속하게 쿼리해야 할 때 소셜 네트워킹, 추천 엔진, 이상 탐지 등의 사용 사례에 유용하다.
 - **Graph DB**는 **Neo4j**, **RedisGraph(Redis에 내장된 그래프 모듈)**, **OrientDB** 등이 있다.
 
-## 결론!
+#### Neo4j DB의 예제
 
+```java
+MATCH (tom:Person {name:"Tom Hanks"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors)
+RETURN tom, m, coActors
+```
+
+## 결론!
 
 ### SQL과 NoSQL 비교
 
@@ -185,8 +417,10 @@ db.movies.insert(
 - [https://hevodata.com](https://hevodata.com/learn/sql-vs-nosql/)
 - [https://viblo.asia](https://viblo.asia/p/cau-chuyen-muon-thuo-cua-sql-va-nosql-Do754OXelM6#_12-database-structure-3)
 - [AWS](https://aws.amazon.com/ko/nosql/)
+- [DynamoDB](https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/JavaDocumentAPICRUDExample.html)
 - [SCYLLA](https://www.scylladb.com/glossary/wide-column-database/)
 - [https://ssup2.github.io](https://ssup2.github.io/theory_analysis/NoSQL_Column-oriented_Column_Family_DB/)
+- [https://neo4j.com](https://neo4j.com/developer/cypher/guide-cypher-basics/#cypher-movie-create)
 - [https://db-engines.com/](https://db-engines.com/en/ranking_trend)
 
 
