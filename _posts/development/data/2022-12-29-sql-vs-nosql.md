@@ -69,8 +69,8 @@ VALUES (“EMP1”, 21, “1234567890”);
 ```json
 [
     {
-        "year" : 2012,
         "title" : "The Thieves",
+        "year" : 2012,
         "info" : {
             "directors" : [ "Choi Dong-hoon"],
             "release_date" : "2012-07-25T00:00:00Z",
@@ -82,8 +82,8 @@ VALUES (“EMP1”, 21, “1234567890”);
         }
     },
     {
-        "year": 2016,
         "title": "The Age of Shadows",
+        "year": 2016,
         "info": {
             "plot": "Enemy or Comrade",
             "rating": 43
@@ -100,11 +100,17 @@ VALUES (“EMP1”, 21, “1234567890”);
 
 ```javascript
 // mongo DB Query 사용예
-db.employees.insert({
-  "name": "John",
-	"Age": 21,
-	"cellphone": "1234567890"
-})
+db.movies.insert(
+    {
+        "title" : "The Thieves",
+        "year" : 2012,
+        "info" : {
+            "directors" : [ "Choi Dong-hoon"],
+            // ...
+        },
+    },
+    // ...
+)
 ```
 
 ### Key-Value-Based Databases
