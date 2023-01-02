@@ -1,5 +1,6 @@
 {% if page.noindex or page.no_index or page.sitemap == false %}
-  <meta name="robots" content="noindex">
+  <!-- <meta name="robots" content="noindex"> -->
+  <meta name="robots" content="index, follow">
 {% endif %}
 
 {% unless page.redirect %}
