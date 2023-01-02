@@ -1,10 +1,10 @@
 ---
 layout: welcome
-title: I will record with the mind of a history official.
+title: 이것저것 내마음대로.
 sitemap: false
 ---
 
-## Hello, World!
+## I will record with the mind of a history official.
 
 Hi, I'm **GeonWoo Lee**<br>
 I'm currently working at **[Xiness]**.<br>
