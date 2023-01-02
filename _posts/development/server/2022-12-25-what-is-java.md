@@ -7,10 +7,8 @@ tags: server java
 image:
   path: /assets/img/development/server/2022-12-25/oracle-java-logo.jpg
 ---
-> Java 란?
 
-# 정의
-
+<span style="font-size:30px;">\#**목차**</span>
 * this unordered seed list will be replaced by the toc
 {:toc}
 

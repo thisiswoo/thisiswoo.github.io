@@ -8,11 +8,7 @@ image:
   path: /assets/img/development/client/2022-12-12/js_runtime.jpg
 ---
 
-> Javascript는 싱글 스레드(Single Threaded)인데 어떻게 병렬처리(다중처리)가 가능할까?
-
-# 정의
-
-<!--more-->
+<span style="font-size:30px;">\#**목차**</span>
 
 * this unordered seed list will be replaced by the toc
 {:toc}

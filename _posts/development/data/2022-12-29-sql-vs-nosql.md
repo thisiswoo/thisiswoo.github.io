@@ -7,8 +7,8 @@ tags: database SQL NoSQL
 image:
   path: /assets/img/development/database/2022-12-29/sql_vs_nosql_title.png
 ---
-> “SQL과 NoSQL의 차이를 알아보자.”
 
+<span style="font-size:30px;">\#**목차**</span>
 * this unordered seed list will be replaced by the toc
 {:toc}
 

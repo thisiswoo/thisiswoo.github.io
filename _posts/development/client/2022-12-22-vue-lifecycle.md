@@ -7,14 +7,8 @@ tags: client vue lifecycle
 image:
   path: /assets/img/development/client/2022-12-22/lifecycle-hooks-in-vue3.png
 ---
-> Vue.js 라이프사이클 이해하기
 
-![vue-lifecycle](/assets/img/development/client/2022-12-22/vue3_lifecycle_diagram.png){:.centered width="70%"}
-<div style="text-align: center">[그림출처](https://vuejs.org/guide/essentials/lifecycle.html)</div>
-
-**<center>vue lifecycle hooks</center>**
-
-# 정의
+<span style="font-size:30px;">\#**목차**</span>
 
 * this unordered seed list will be replaced by the toc
 {:toc}
