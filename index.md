@@ -1,6 +1,6 @@
 ---
 layout: welcome
-title: 이것저것 내마음대로.
+title: 기록을 사관처럼.
 sitemap: false
 ---
 
