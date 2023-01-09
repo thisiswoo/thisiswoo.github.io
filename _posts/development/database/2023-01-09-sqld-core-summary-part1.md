@@ -194,5 +194,5 @@ image:
     - 약한 연결관계 표현, 점선 표기
     - 자식 주식별자구성을 독립적으로 구성
 
-Continue with [[SQL] SQLD 핵심 요약 - [1과목] Part2. 데이터 모델과 성능](vue-lifecycle){:.heading.flip-title}
+Continue with [[SQL] SQLD 핵심 요약 - [1과목] Part2. 데이터 모델과 성능](sqld-core-summary-part2){:.heading.flip-title}
 {:.read-more}
