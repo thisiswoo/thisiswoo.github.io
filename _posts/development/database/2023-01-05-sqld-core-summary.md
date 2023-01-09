@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[SQL] SQLD 핵심 요약"
-subtitle: "SQL D Core Summary"
+subtitle: "SQLD Core Summary"
 category: development
 tags: database SQL SQLD
 image:
@@ -269,3 +269,5 @@ image:
 3. **이력테이블** : 대량의 이력데이터를 처리할 때 불특정날 조회나 최근 값을 조회할 때 나타날 수 있는성능저하를 예방하기 위해 이력테이블에 가능성 칼럼(최근값 여부, 시작과 종료일자 등)을 추가함
 4. **PK에 의한 칼럼 추가** : 이미 PK안에 데이터가 존재하지만 선능향상을 위해 일반속성으로 포함하는 방법
 5. **응용시스템 오작동을 위한 칼럼 추가** : 업무적으로는 의미가 없지만 사용자의 실수로 원래 값으로 복귀하기 원하는 경우 이전 데이터를 임시적으로 중복하여 보관하는 기법
+
+
