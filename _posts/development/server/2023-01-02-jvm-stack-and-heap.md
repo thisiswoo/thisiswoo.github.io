@@ -53,17 +53,21 @@ image:
 - 이런식으로 C/C++같은 언어들은 **`Cross Compile`**을 이용하여 타겟 프로그래밍을 작업 하였다.
 
 ## JVM(Java Virtual Machine)으로 문제 해결
+
+![solving](/assets/img/development/server/2023-01-02/Java-virtual-machine-task-exchange-on-a-loosely-coupled-network.png){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://www.researchgate.net/figure/Java-virtual-machine-task-exchange-on-a-loosely-coupled-network_fig3_334064226)</div>
+
 - Java 소스 코드가 **`.jacac`**라는 Compile을 거치고 나면 **Java Bytecode**가 된다.
 - 이 Java Bytecode는 JVM이 설치된 플랫폼이라면 어떤 플랫폼이던 상관 없이 잘 동작하게 된다.
 - 물론, JVM이 플랫폼과 관련된 작업들을 대신 해주기 때문에 가능한 것이다.
 - 만약 배포하게 되는 곳의 OS가 **linux면 linux용 JVM**을 **windows면 windows의 JVM을** 설치하게 된다면 macOS에서 build 하여 compile한 소스 코드들을 다른 OS에서 실행할 수 있게 JVM이 작업을 해준다.
 
-![solving](/assets/img/development/server/2023-01-02/solving_jvm.png){:.centered width="90%"}
 
 ## WORA
 > “**Write Once, Run Anywhere(WORA)**” - Sun Mycrosystems
 
 ![wora](/assets/img/development/server/2023-01-02/write-once-run-anywhere-jvm.png){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://miro.medium.com/max/1400/1*8unTYz6pOhwryEb5b1S2Sg.png)</div>
 
 - 즉, 당신이 코딩한 Java 코드를 Compile해서 배포하면, 어떤 플랫폼이든 다시 Compile할 필요 없이 실행시킬 수 있다. 단, 실행하려면 해당 플랫폼에 맞는 JVM을 설치되어 있어야 한다.
 
@@ -79,6 +83,7 @@ image:
 ## Java의 야심
 
 ![java's ambition](/assets/img/development/server/2023-01-02/java_ambition.png){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://i.ytimg.com/vi/4Rk_zDimf2s/mqdefault.jpg)</div>
 
 - Web Server에 **.class**파일이 있다.
   - **.class**파일 이란 : **Java Bytecode**를 담은 파일이다.
@@ -92,9 +97,41 @@ image:
 
 ![compiler](/assets/img/development/server/2023-01-02/compiler.png){:.centered width="90%"}
 
-
-
+- **모든 Compiler는 위 그림과 같다.**
+- Source Code가 **Compiler의 여러 과정을 거쳐 Assembler**이 된다.
+- **Assembler**은 **Assembly Language**를 기계어 형태의 오브젝트 코드로 해석해 주는 컴퓨터 언어 번역 프로그램을 통해 **기계어로 변환** 된다.
+- **Compile**에도 Front-end, Back-end가 있다.
+- Web에서는 Backend는 크게 바뀌지 않고, **Frontend가 Client 종류에 따라 바뀌게 된다.**
+- Compile에서는 반대이다. 
+- Compile에서는 Frontend는 바뀌지 않는다.
+- 왜냐하면, Frontend가 하는게 개발자가 짠 Source Code를 분석해서 그 의미를 파악하는 것이다.
+- **Abstract Syntax Tree가 추상적으로 표현**하고, **Intermediate Code Generator로 번역**하기 때문에 **Frontend는 플랫폼과 아무 관련이 없다.**
+- 그런데 **Backend**는 계속 바뀔 수 밖에 없는게 **Intermediate Code Generator 영역의 중앙 계층 표현**을 Assembly Language로 바꿔야 한다.
+- 그런데 이 **Assembly Language**라는 것은 운영체제(OS)나 기기에 dependent(의존)하기 때문이다.
+- 그래서 **Compiler의 구조**에서 **Backend만 Windows용, Linux용, MacOS용, 등...**이 있는 것이고, 각 **OS는 Frontend만 공유**하는 것이다.
+- Compiler는 이러한 **Layer Architecture**로 되어있다.
+- C/C++ Compiler는 통째로 Compiler가 해준다.
+- 근데 Java에서 Frontend는 **javac**가 해주고, Backend는 **JVM**이 해준다. 결국 하는 일을 분리해 준 것이다.
+- 그래서 갖는 장점도 있다.
+- C언어는 한 번에 Compile 하고 나면 더 이상 개입할 수 없다.
+- 근데, 개발자들은 사전에 다 알 수가 없다. Runtime에서 어떤 일이 벌어질지...
+- Runtime에서만 발생하는 굉장히 소중한 정보들이 있고, 그 정보들을 이용해서 최적화를 하는것이 **JIT Compiler**이다. 
 
 # JVM 내부 구조
+
+![jvm](/assets/img/development/server/2023-01-02/jvm.jpeg){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://aljjabaegi.tistory.com/387)</div>
+
+## Runtime Data Areas
+
+![jvm](/assets/img/development/server/2023-01-02/java_jvm_runtime_data_area.png){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://www.devkuma.com/docs/jvm/memory-structure/)</div>
+
+- **JVM이 Java Bytecode를 실행하기 위해 사용하는 메모리 공간**을 **Runtime Data Area** 라고 한다. 즉, **JVM이 Java Bytecode를 실행하는 가상의 기계**이다.
+
+## Per JVM
+
+![jvm](/assets/img/development/server/2023-01-02/per_jvm.png){:.centered width="90%"}
+<div style="text-align: center">[그림출처](https://www.devkuma.com/docs/jvm/memory-structure/)</div>
 
 # Bytecode 실행 예제
