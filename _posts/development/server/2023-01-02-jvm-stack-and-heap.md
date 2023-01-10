@@ -98,24 +98,22 @@ image:
 ![compiler](/assets/img/development/server/2023-01-02/compiler.png){:.centered width="90%"}
 
 - **모든 Compiler는 위 그림과 같다.**
-- Source Code가 **Compiler의 여러 과정을 거쳐 Assembler**이 된다.
+- Source Code가 **Compiler의 여러 과정을 거쳐 Assembler**가 된다.
 - **Assembler**은 **Assembly Language**를 기계어 형태의 오브젝트 코드로 해석해 주는 컴퓨터 언어 번역 프로그램을 통해 **기계어로 변환** 된다.
 - **Compile**에도 Front-end, Back-end가 있다.
-- Web에서는 Backend는 크게 바뀌지 않고, **Frontend가 Client 종류에 따라 바뀌게 된다.**
-- Compile에서는 반대이다. 
-- Compile에서는 Frontend는 바뀌지 않는다.
+- Web에서는 Backend는 크게 바뀌지 않고, **Frontend가 Client종류(Web Browser)에 따라 바뀌게 된다.**
+- Compile에서는 반대이다. Compile에서는 Frontend는 바뀌지 않는다.
 - 왜냐하면, Frontend가 하는게 개발자가 짠 Source Code를 분석해서 그 의미를 파악하는 것이다.
-- **Abstract Syntax Tree가 추상적으로 표현**하고, **Intermediate Code Generator로 번역**하기 때문에 **Frontend는 플랫폼과 아무 관련이 없다.**
-- 그런데 **Backend**는 계속 바뀔 수 밖에 없는게 **Intermediate Code Generator 영역의 중앙 계층 표현**을 Assembly Language로 바꿔야 한다.
-- 그런데 이 **Assembly Language**라는 것은 운영체제(OS)나 기기에 dependent(의존)하기 때문이다.
-- 그래서 **Compiler의 구조**에서 **Backend만 Windows용, Linux용, MacOS용, 등...**이 있는 것이고, 각 **OS는 Frontend만 공유**하는 것이다.
+- **Abstract Syntax Tree(AST)가 추상적으로 표현**하고, **Intermediate Representation(IR)으로 번역**하기 때문에 **Frontend는 플랫폼과 아무 관련이 없다.**
+- 그런데 **Backend**는 계속 바뀔 수 밖에 없는게 **중앙 계층 표현(IR/IC)**을 Assembly Language로 바꿔야 한다.
+- 그런데 이 **Assembly Language**라는 것은 **운영체제(OS)나 기기에 dependent(의존)**하기 때문에 **Compiler의 구조**에서 **Backend만 Windows용, Linux용, MacOS용, 등...**이 있는 것이고, 각 **OS는 Frontend만 공유**하는 것이다.
 - Compiler는 이러한 **Layer Architecture**로 되어있다.
 - C/C++ Compiler는 통째로 Compiler가 해준다.
 - 근데 Java에서 Frontend는 **javac**가 해주고, Backend는 **JVM**이 해준다. 결국 하는 일을 분리해 준 것이다.
 - 그래서 갖는 장점도 있다.
 - C언어는 한 번에 Compile 하고 나면 더 이상 개입할 수 없다.
 - 근데, 개발자들은 사전에 다 알 수가 없다. Runtime에서 어떤 일이 벌어질지...
-- Runtime에서만 발생하는 굉장히 소중한 정보들이 있고, 그 정보들을 이용해서 최적화를 하는것이 **JIT Compiler**이다. 
+- Runtime에서만 발생하는 굉장히 소중한 정보들이 있고, 그 정보들을 이용해서 최적화를 하는 것이 **JIT Compiler**이다. 
 
 # JVM 내부 구조
 
@@ -148,4 +146,42 @@ image:
 ### Heap Area
 - 프로그램을 실행하면서 생성한 **모든 객체 Instance를 Heap에 저장**하는 곳.
 
+### PC(Program Counter) Register
+- PC란 Program Counter의 줄임말이다.
+
+![pc register](/assets/img/development/server/2023-01-02/PC.png){:.centered width="90%"}
+
+- 각 스레드는 어떤 메서드를 항상 실행하고 있다.
+- 그때, PC는 그 메서드 안에서 **Bytecode 몇 번째 코드를 실행하고 있는지를 나타내는 역할**을 한다.
+
+### Stack
+
+![stack](/assets/img/development/server/2023-01-02/stack.png){:.centered width="90%"}
+
+- 스택은 스레드 별로 1개만 존재하고, 스택 프레임은 메서드라 호출될 때마다 생성된다.
+- 예를들어 스레드1에 **<span style="color:red">빨간 네모칸</span>**이 **스택**이고, 아래로 성장하게 된다.
+  1. 그때, 맨 위에 있는 **stack frame**은 **main()메서드**이다.
+  2. 그리고 그 밑에 있는 **stack frame**은 main()메서드에서 **호출한 어떠한 메서드**이다
+  3. 그 밑에 있는 **stack frame**은 그 메서드에서 **호출한 또 다른 메서드**이다
+- 즉, **메서드 호출 tree**와 똑같다고 생각하면 된다.
+- 해당 메서드 실행이 끝나면 당연히 스택 프레임은 **`pop`**되어 **스텍에서 제거** 된다.
+
+### Stack Frame
+- 스택 프레임은 메서드가 호출될 때마다 새로 생겨 스택에 **`push`** 된다.
+- 스택 프레임 안에 들어가는 정보는 **Local variables array**, **Operand stack**, **Frame Data**를 갖는다.
+- Frame Data는 **Constant Pool, 이전 스택 프레임에 대한 정보, 현재 메서드가 속한 클래스/객체에 대한 참조 등의 정보**를 갖는다.
+- 즉, 쉽게 말해 **Bytecode를 실행하기 위해 모두 필요한 것**들이다.
+- 내 메서드가 어디에 속해있는지 등등...
+
+### Native Method Stack
+
+![Native Method Stack](/assets/img/development/server/2023-01-02/native.png){:.centered width="90%"}
+
+- JVM은 **성능 향상 목적**으로 **Java Bytecode가 아닌 다른 언어로 작성된 코드를 compile하여 사용하는 경우가 있다.** 그때 사용되는 메서드 이다.
+
 # Bytecode 실행 예제
+
+
+# Reference
+- [[10분 테코톡] 🎅무민의 JVM Stack & Heap](https://www.youtube.com/watch?v=UzaGOXKVhwU&list=LL&index=9&t=632s)
+- [[JAVA] ☕ JVM 내부 구조 & 메모리 영역 자세히 정리](https://inpa.tistory.com/entry/JAVA-%E2%98%95-JVM-%EB%82%B4%EB%B6%80-%EA%B5%AC%EC%A1%B0-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD-%EC%8B%AC%ED%99%94%ED%8E%B8#:~:text=%ED%9E%99%20%EC%98%81%EC%97%AD%EC%9D%80%20%EB%A9%94%EC%84%9C%EB%93%9C%20%EC%98%81%EC%97%AD%EC%99%80,%EC%9D%B4%20%EC%A0%80%EC%9E%A5%EB%90%98%EB%8A%94%20%EA%B3%B3%EC%9D%B4%EB%8B%A4.)
