@@ -1,6 +1,6 @@
 ---
 layout: welcome
-title: 기록을 사관처럼.
+title: 기록을 사관처럼
 sitemap: false
 ---
 
