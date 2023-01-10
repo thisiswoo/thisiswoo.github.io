@@ -131,7 +131,21 @@ image:
 
 ## Per JVM
 
-![jvm](/assets/img/development/server/2023-01-02/per_jvm.png){:.centered width="90%"}
+![per jvm](/assets/img/development/server/2023-01-02/per_jvm.png){:.centered width="90%"}
 <div style="text-align: center">[그림출처](https://www.devkuma.com/docs/jvm/memory-structure/)</div>
+
+- **Method영역**과 **Heap영역**은 **모든 Thread가 공유하는 데이터 영역**이다.
+- 반면, **Stack영역**과 **PC Register, Native Method Stack 영역**은 **각 Thread마다 생성되는 개별 영역**이다.
+
+## Method/Heap
+
+![method_heap](/assets/img/development/server/2023-01-02/method_heap_area .png){:.centered width="90%"}
+
+### Method Area
+- **Class Loader**가 class파일을 읽어왔을때 **클래스에 있는 정보들을 Parsing** 해서 **Method영역에 저장**하는 곳.
+- **변수, 메소드, 정적 변수, Bytecode**등을 **저장하는 곳.**
+
+### Heap Area
+- 프로그램을 실행하면서 생성한 **모든 객체 Instance를 Heap에 저장**하는 곳.
 
 # Bytecode 실행 예제
