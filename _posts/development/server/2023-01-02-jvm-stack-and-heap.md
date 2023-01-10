@@ -139,7 +139,7 @@ image:
 
 ## Method/Heap
 
-![method_heap](/assets/img/development/server/2023-01-02/method_heap_area .png){:.centered width="90%"}
+![method_heap](/assets/img/development/server/2023-01-02/method_heap_area.png){:.centered width="90%"}
 
 ### Method Area
 - **Class Loader**가 class파일을 읽어왔을때 **클래스에 있는 정보들을 Parsing** 해서 **Method영역에 저장**하는 곳.
