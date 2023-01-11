@@ -69,7 +69,7 @@ image:
 ![wora](/assets/img/development/server/2023-01-02/write-once-run-anywhere-jvm.png){:.centered width="90%"}
 <div style="text-align: center">[그림출처](https://miro.medium.com/max/1400/1*8unTYz6pOhwryEb5b1S2Sg.png)</div>
 
-- 즉, 당신이 코딩한 Java 코드를 Compile해서 배포하면, 어떤 플랫폼이든 다시 Compile할 필요 없이 실행시킬 수 있다. 단, 실행하려면 해당 플랫폼에 맞는 JVM을 설치되어 있어야 한다.
+- 즉, 당신이 코딩한 Java 코드를 Compile해서 배포하면, 어떤 플랫폼이든 다시 Compile할 필요 없이 실행시킬 수 있다. 단, **실행하려면 해당 플랫폼에 맞는 JVM을 설치되어 있어야 한다.**
 
 ## 굳이 JVM?
 - C/C++도 Cross Compile해서 배포하면 되는데, 굳이 JVM을 사용해야 하는가? 굳이 JVM을 도입한 이유가 뭘까?
@@ -127,7 +127,7 @@ image:
 
 - **JVM이 Java Bytecode를 실행하기 위해 사용하는 메모리 공간**을 **Runtime Data Area** 라고 한다. 즉, **JVM이 Java Bytecode를 실행하는 가상의 기계**이다.
 
-## Per JVM
+## 공유/개별 thread
 
 ![per jvm](/assets/img/development/server/2023-01-02/per_jvm.png){:.centered width="90%"}
 <div style="text-align: center">[그림출처](https://www.devkuma.com/docs/jvm/memory-structure/)</div>
@@ -158,7 +158,7 @@ image:
 
 ![stack](/assets/img/development/server/2023-01-02/stack.png){:.centered width="90%"}
 
-- 스택은 스레드 별로 1개만 존재하고, 스택 프레임은 메서드라 호출될 때마다 생성된다.
+- 스택은 스레드 별로 1개만 존재하고, 스택 프레임은 메서드가 호출될 때마다 생성된다.
 - 예를들어 스레드1에 **<span style="color:red">빨간 네모칸</span>**이 **스택**이고, 아래로 성장하게 된다.
   1. 그때, 맨 위에 있는 **stack frame**은 **main()메서드**이다.
   2. 그리고 그 밑에 있는 **stack frame**은 main()메서드에서 **호출한 어떠한 메서드**이다
@@ -178,9 +178,6 @@ image:
 ![Native Method Stack](/assets/img/development/server/2023-01-02/native.png){:.centered width="90%"}
 
 - JVM은 **성능 향상 목적**으로 **Java Bytecode가 아닌 다른 언어로 작성된 코드를 compile하여 사용하는 경우가 있다.** 그때 사용되는 메서드 이다.
-
-# Bytecode 실행 예제
-
 
 # Reference
 - [[10분 테코톡] 🎅무민의 JVM Stack & Heap](https://www.youtube.com/watch?v=UzaGOXKVhwU&list=LL&index=9&t=632s)
