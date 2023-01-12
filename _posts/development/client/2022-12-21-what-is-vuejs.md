@@ -5,7 +5,7 @@ subtitle: "what is Vue.js"
 category: development
 tags: client vue
 image:
-  path: /assets/img/development/client/2022-12-21/what-is-vue-js.jpg
+  path: /assets/img/development/client/2022-12-21/vuejs_bg.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>

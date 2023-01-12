@@ -5,7 +5,7 @@ subtitle: "what is Java"
 category: development
 tags: server java
 image:
-  path: /assets/img/development/server/2022-12-25/oracle-java-logo.jpg
+  path: /assets/img/development/server/2022-12-25/java_title.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
