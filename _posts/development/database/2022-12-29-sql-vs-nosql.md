@@ -5,7 +5,7 @@ subtitle: "Difference between SQL ans NoSQL"
 category: development
 tags: database SQL NoSQL
 image:
-  path: /assets/img/development/database/2022-12-29/sql_vs_nosql_title.png
+  path: /assets/img/development/database/2022-12-29/sql_vs_nosql_bg.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
