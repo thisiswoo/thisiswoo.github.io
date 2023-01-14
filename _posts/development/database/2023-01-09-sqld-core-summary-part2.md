@@ -96,6 +96,24 @@ image:
 - 로우 체이닝과 로우 마이그레이션이 발생하여 많은 블록에 데이터가 저장되면 DB 메모리에서 디크스 I/O가 발생할 때 많은 I/O가 발생하여 성능저하 발생
 - 트랜잭션을 분석하여 적절하게 1:1관계로 분리함으로써 성능향상이 가능하도록 해야 한다.
 
+### PK에 의해 테이블을 분할하는 방법(파티셔닝)
+1. **RANGE PARTITION** 
+  - 대상 테이블이 날짜 또는 숫자 값으로 분리가 가능하고 각 영역별로 트랜잭션이 분리되는 경우
+  - ex) PARTITION BY COL1 ORDER BY COL3 RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+2. **LIST PARTITION**
+  - 지점, 사업소 등 핵심적인 코드값으로 PK가 구성되어 있고 대량의 데이터가 있는 테이블의 경우
+3. **HASH PARTITION**
+  - 지정된 HASH 조건에 따라 해시 알고리즘이 적용되어 테이블이 분리
+
+### 테이블에 대한 수평/수직분할의 절차
+1. 데이터 모델링을 완성한다.
+2. DB 용량산정을 한다.
+3. 대량 데이터가 처리되는 테이블에 대해 트랜잭션 처리 패턴을 분석한다.
+4. 칼럼 단위로 집
+
+
+
+
 Back to [[SQL] SQLD 핵심 요약 - [1과목] Part1. 데이터 모델링의 이해](sqld-core-summary-part1){:.heading.flip-title}
 {:.read-more}
 
