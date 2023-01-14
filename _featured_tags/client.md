@@ -1,5 +1,5 @@
 ---
-layout: list
+layout: grid
 type: tag
 title: Client(Front-end)
 slug: client

@@ -1,5 +1,5 @@
 ---
-layout: list
+layout: grid
 type: tag
 title: DataBase
 slug: database

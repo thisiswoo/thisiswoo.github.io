@@ -1,5 +1,5 @@
 ---
-layout: list
+layout: grid
 type: tag
 title: Server(Back-end)
 slug: server
