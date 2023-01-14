@@ -11,9 +11,7 @@ sitemap: false
 배운 것 외에도 **꾸준히** 블로그에 **기술**과 **취미**, **일상**을 **기록**하려 합니다.<br>
 저에 대해 더 알고 싶다면 저의 **[이력서]**를 확인해주세요.
 
-## The important thing is an unbreakable heart.
-
-_My motto to live by._
+_**My motto to live by.**_
 {:.lead}
 
 > “**Effort never betrays. The important thing is an unbreakable heart.**”
