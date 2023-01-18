@@ -15,17 +15,25 @@ image:
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-# 인증(Authentication)이란?
+# 실 생활에서의 인증과 인가
+
+## 인증(Authentication)이란?
 
 ![authentication](/assets/img/development/server/2023-01-18/authentication.png){:.centered width="90%"}
 
-## 인증
-- (지문 또는 얼굴 등)입증 가능한 정보로 회사 또는 인증이 필요한 곳에 입증하는 과정
+- **(지문 또는 얼굴 등)입증 가능한 정보**로 회사 또는 **인증이 필요한 곳에 입증하는 과정**
 - **식별 가능한 정보로 서비스에 등록된 유저의 신원을 입증하는 과정**
 - 인증을 통해 인증 허가된 곳(예) 회사 503호)에 출입하여 일도 하고, 회의도 하고, 다용도실에서 커피도 마시고 할 수 있다.
 - **<span style="color:#ff8080">하지만</span>**, 인증이 허가된 곳만 가능하고, 인증이 허가 되지 않은 다른 층이나 다른 사무실에 들어가지 못하게 된다.
 - **<span style="color:#ff8080">이유는</span>**, 인증 허가된 곳(예) 회사 503호)외에 다른 곳은 나의 정보로 인증 등록이 되어있지 않기 때문이다.
 
-## 인가
-- **권한에 대한 허가**를 나타내는 **인가**이다.
+## 인가(Authorization)란?
+
+![authorization](/assets/img/development/server/2023-01-18/authorization.png){:.centered width="90%"}
+
+- **입증(인증)**된 신원의 **권한에 대한 허가**를 나타내는 것이 **인가**이다.
 - **<span style="color:#ff8080">즉</span>**, **인증된 사용자에 대한 자원 접근 권환 확인**
+
+# Web에서의 인증과 인가
+
+![web_authentication_authorization](/assets/img/development/server/2023-01-18/web_authentication_authorization.png){:.centered width="90%"}
