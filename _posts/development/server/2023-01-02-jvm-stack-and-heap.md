@@ -159,7 +159,7 @@ image:
 ![stack](/assets/img/development/server/2023-01-02/stack.png){:.centered width="90%"}
 
 - 스택은 스레드 별로 1개만 존재하고, 스택 프레임은 메서드가 호출될 때마다 생성된다.
-- 예를들어 스레드1에 **<span style="color:red">빨간 네모칸</span>**이 **스택**이고, 아래로 성장하게 된다.
+- 예를들어 스레드1에 **<span style="color:#ff8080">빨간 네모칸</span>**이 **스택**이고, 아래로 성장하게 된다.
   1. 그때, 맨 위에 있는 **stack frame**은 **main()메서드**이다.
   2. 그리고 그 밑에 있는 **stack frame**은 main()메서드에서 **호출한 어떠한 메서드**이다
   3. 그 밑에 있는 **stack frame**은 그 메서드에서 **호출한 또 다른 메서드**이다
