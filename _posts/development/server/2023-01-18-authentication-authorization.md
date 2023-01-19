@@ -30,10 +30,18 @@ image:
 ## 인가(Authorization)란?
 
 ![authorization](/assets/img/development/server/2023-01-18/authorization.png){:.centered width="90%"}
+> “예를 들어보자.”
 
+- 롯데타워 시그니엘에 사는 집을 방문 할 땐 롯데시그니엘 측에 인증(출입증)과 인가(시그니엘 입주민)가 된 사람들만 출입 할 수 있는 것이 **인가**이다.
+- 인증이(출입증) 되었더라도 인가(시그니엘 입주 기간)가 만료되었으면 출입이 불가능 하다. 
 - **입증(인증)**된 신원의 **권한에 대한 허가**를 나타내는 것이 **인가**이다.
 - **<span style="color:#ff8080">즉</span>**, **인증된 사용자에 대한 자원 접근 권환 확인**
 
 # Web에서의 인증과 인가
 
 ![web_authentication_authorization](/assets/img/development/server/2023-01-18/web_authentication_authorization.png){:.centered width="90%"}
+
+> “**Web**으로 예를 들어보자. 사용자가 게시판에 글 작성하는 예제이다.”
+
+- 
+
