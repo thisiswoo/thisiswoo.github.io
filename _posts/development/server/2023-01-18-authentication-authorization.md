@@ -41,7 +41,22 @@ image:
 
 ![web_authentication_authorization](/assets/img/development/server/2023-01-18/web_authentication_authorization.png){:.centered width="90%"}
 
-> “**Web**으로 예를 들어보자. 사용자가 게시판에 글 작성하는 예제이다.”
+> “**Web**으로 예를 들어보자. 사용자가 게시판에 글 작성하는 서비스라 생각하자.”
 
-- 
+- 사용자가 해당 사이트에 게시글을 작성하려고 하면 우선, **회원가입**과 **로그인**을 해야한다.
+- 이 과정이 **인증**이다.
+- 또한 **인증**이 되었으면 게시판에 게시글을 쓸 수 있는 **권한**이 생겼다.
+- 이 과정이 **인가** 이다.
+- 다른 사람이 게시판에 작성한 게시글 또한 읽을 수 있다.
+- **<span style="color:#ff8080">단</span>**, 다른 사람이 작성한 게시글을 **수정** 할 수 없다.
+- **<span style="color:#ff8080">왜냐하면</span>**, 다른 사람이 작성한 게시글을 수정 할 **<span style="color:#ff8080">권한(인가)</span>**이 없기 때문이다.
+- **인가**가 적용된 개념이다.
 
+# Request Header 활용
+
+![web_authentication_authorization](/assets/img/development/server/2023-01-18/request_header.png){:.centered width="90%"}
+
+> “Client와 Server 사이에 **HTTP**로 **통신**하게 된다.”
+
+1. 해당 사이트 이미 회원 가입이 되어있어 DB에 ID,PW 정보가  있다.
+2. 사용자가 사이트에 접속하려 하고
