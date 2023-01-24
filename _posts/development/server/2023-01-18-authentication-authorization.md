@@ -52,11 +52,47 @@ image:
 - **<span style="color:#ff8080">왜냐하면</span>**, 다른 사람이 작성한 게시글을 수정 할 **<span style="color:#ff8080">권한(인가)</span>**이 없기 때문이다.
 - **인가**가 적용된 개념이다.
 
-# Request Header 활용
+## 1.Request Header 활용
 
 ![web_authentication_authorization](/assets/img/development/server/2023-01-18/request_header.png){:.centered width="90%"}
 
-> “Client와 Server 사이에 **HTTP**로 **통신**하게 된다.”
+> “Client와 Server 사이에 **HTTP**로 **통신**하게 된다. 가상의 사이트에 회원가입이 되어있는 상태라고 가정해보자.”
 
-1. 해당 사이트 이미 회원 가입이 되어있어 DB에 ID,PW 정보가  있다.
-2. 사용자가 사이트에 접속하려 하고
+1. 해당 사이트 이미 회원 가입이 되어있어 DB에 ID,PW 정보가 있다.
+2. 사용자가 login URL로 접근하게 되면 login 요청을 보낼 수 있게된다.
+3. 만약, 로그인 API가 구축 되어있는 상태라고 했을때, DB에 ID, PW를 해당 URL 앞에 달아주고 요청하게 되면 login이 된다.
+
+* 3번은 브라우저가 처리하게 되는데 처리 방식을 간단하게 알아보자.
+
+![browser_encoding](/assets/img/development/server/2023-01-18/encoding.png){:.centered width="90%"}
+
+* 브라우저 요청 처리 방법은 요청 URL을 Base64로 encoder를 이용하여 encoding 하게 된다.
+1. URL의 **`user:1q2w3e!`** 부분을 parsing하여 encoding을 통해서 변환된 문자열을 같게된다.
+2. 그다음 요청 헤더에 **Authorization에 넣어서 보내주는 개념**이다.
+
+![request_header_login](/assets/img/development/server/2023-01-18/request_header_login.png){:.centered width="90%"}
+
+1. Client가 encoding한 요청헤더를 Server에 요청하게 된다.
+2. Server가 DB checking을 하여 DB에 값이 있으면 OK 사인을 주게 된다.
+
+### Request Header만 활용할 시 문제점
+
+- 어떤 처리를 할 때 **매번 인증**을 해야하는 번거러움이 발생하게 된다.
+- 이걸 해결하기 위해 **Browser의 Storage**를 활용하게 된다.
+
+## Browser 활용하기
+
+- **Browser의 Storage** 
+1. local storage
+2. cookie storage
+3. session storage
+
+### cookie storage
+
+1. cookie에 사용자의 ID, PW를 넣는다.
+2. 사용자가 인증이 필요한 요청이 필요 할 때 cookie를 같이 넣어서 보내준다.
+
+![request_header_login](/assets/img/development/server/2023-01-18/browser.png){:.centered width="90%"}
+
+
+![request_header_login](/assets/img/development/server/2023-01-18/hacking.png){:.centered width="90%"}
