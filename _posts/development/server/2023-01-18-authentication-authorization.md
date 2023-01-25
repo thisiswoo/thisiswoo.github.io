@@ -40,7 +40,6 @@ image:
 # Web에서의 인증과 인가
 
 ![web_authentication_authorization](/assets/img/development/server/2023-01-18/web_authentication_authorization.png){:.centered width="90%"}
-
 > “**Web**으로 예를 들어보자. 사용자가 게시판에 글 작성하는 서비스라 생각하자.”
 
 - 사용자가 해당 사이트에 게시글을 작성하려고 하면 우선, **회원가입**과 **로그인**을 해야 한다.
@@ -55,7 +54,6 @@ image:
 ## 1.Request Header 활용
 
 ![request_header](/assets/img/development/server/2023-01-18/request_header.png){:.centered width="90%"}
-
 > “Client와 Server 사이에 **HTTP**로 **통신**하게 된다. 가상의 사이트에 회원가입이 되어있는 상태라고 가정해보자.”
 
 1. 해당 사이트 이미 회원 가입이 되어있어 DB에 ID, PW 정보가 있다.
@@ -65,7 +63,6 @@ image:
 * 3번은 브라우저가 처리하게 되는데 처리 방식을 간단하게 알아보자.
 
 ![browser_encoding](/assets/img/development/server/2023-01-18/encoding.png){:.centered width="90%"}
-
 > “브라우저 요청 처리 방법은 요청 URL을 **Base64**로 **encoder**를 이용하여 **encoding** 하게 된다.”
 
 1. URL의 **`user:1q2w3e!`** 부분을 **`parsing`** 하여 
@@ -74,7 +71,6 @@ image:
 4. 그다음 요청 헤더에 **Authorization에 넣어서 보내주는 개념**이다.
 
 ![request_header_login](/assets/img/development/server/2023-01-18/request_header_login.png){:.centered width="90%"}
-
 > “**여기까지가 기본적으로 로그인한 상태의 로직**이다.”
 
 1. Client가 encoding 한 요청 헤더를 Server에 요청하게 된다.
@@ -96,7 +92,6 @@ image:
 ### Cookie Storage
 
 ![cookie_storage](/assets/img/development/server/2023-01-18/browser.png){:.centered width="90%"}
-
 > “**Cookie Storage의 로직**”
 
 1. Cookie에 사용자의 ID, PW를 넣는고 인증이 필요한 요청을 할때 Cookie도 같이 Server에 보내준다.
@@ -117,7 +112,6 @@ image:
 ### Session Storage
 
 ![session_storage](/assets/img/development/server/2023-01-18/session_storage.png){:.centered width="90%"}
-
 > “**Session Storage의 로직**. **`1번`** 부터 **`3번`**의 로직은 **`Cookie Storage`**와 같다.”
 
 1. Cookie에 사용자의 ID, PW를 넣는고 인증이 필요한 요청을 할때 Cookie도 같이 Server에 보내준다.
@@ -136,7 +130,6 @@ image:
 #### 단점
 
 ![session_load_balancer](/assets/img/development/server/2023-01-18/session_load_balancer.png){:.centered width="90%"}
-
 > “중간에 **`Load Balancer`**가 여러대의 서버에 요청하게 된다.”
 
 1. 서비스가 잘 돼서 서버를 여러 개 두게 되면 **로드 밸런서**도 생기게 된다.
@@ -145,7 +138,6 @@ image:
 3. 그 말은 이젠 DB까지 확인하지 않고 **Server에서 Session을 확인하여 처리**할 수 있게 됐다는 뜻이다. 
 
 ![session_load_balancer2](/assets/img/development/server/2023-01-18/session_load_balancer2.png){:.centered width="90%"}
-
 > “이 상황에서 user가 두 번째 인증 요청을 보내게 된다.”
 
 1. 1번째 인증을 완료하고 2번째 인증이 필요해 다시 요청을 보내게 된다.
@@ -156,7 +148,6 @@ image:
 #### 문제 해결 - 세션 DB
 
 ![session_storage_db](/assets/img/development/server/2023-01-18/session_storage_db.png){:.centered width="90%"}
-
 > “**Session Storage(세션 DB)**를 통해 SESSIONID 요청을 **한 DB(Session Storage)**에 요청하여 해결. 그런데...”
 
 #### 또 다른 문제 발생 - 세션 DB의 문제
@@ -164,4 +155,79 @@ image:
 ![session_storage_problem](/assets/img/development/server/2023-01-18/session_storage_problem.png){:.centered width="90%"}
 
 - Client가 많아져서 요청이 많아지게 되면 **Session Storage에 과부하가 생겨 DB가 터지게 된다**.
-- 사용자를 위해 Cookie나 Browser의 힘을 빌려서 계속 로그인 까지 하게 해줬는데 이젠 보안상의 문제가 생겨 Server쪽에 와서 인증/인가를 해줬더니 문제가 계속 발생하게 된다.
+- 사용자를 위해 Cookie나 Browser의 힘을 빌려서 계속 로그인까지 하게 해줬는데 이젠 보안상의 문제가 생겨 Server 쪽에 와서 인증/인가를 해줬더니 문제가 계속 발생하게 된다.
+
+### Stateful/Stateless
+
+![stateful_stateless.png](/assets/img/development/server/2023-01-18/stateful_stateless.png){:.centered width="90%"}
+
+- **`Client`**, **`Server`**, **`Session 저장소` 3가지 모두 사용자의 상태를 관리**할 수 있게 하였다. 그랬더니 문제가 발생하였다.
+- 그 이유는 **`Client`**와 **`Server`**가 서로 통신할 때 사용하는 **`http`**와 Server 자체가 지향하는 **`REST API`**가 **무상태성(Stateless)을 기초**로 하기 때문이다.
+- 그런데, 실제로 인증과 인가를 구현할 때에는 사용자의 정보, 상태를 **`Client`**, **`Server`**, **`Session 저장소`** 3군데 모두 가지고 있었다.
+- **그 말은 상태성을 갖고 있다는 이야기다**.
+- 두 패러다임이 충돌되고 있다. 두 패러다임의 충돌을 해소해 보자.
+- **`Client`**, **`Server`**, **`Session 저장소`** 모두 상태를 맡겨보았으니 나머지 **통신(정보의 흐름)**에 맡겨보자.
+- 요청과 응답 안에 사용자의 상태를 담아보자. 그걸로만 사용자의 인증과 인가를 처리하자.
+- 그것이 바로 **`TOKEN`**을 활용한 **인증**과 **인가**이다.
+
+## JWT
+
+![jwt](/assets/img/development/server/2023-01-18/jwt.png){:.centered width="90%"}
+> “**`Secret key`**를 사용해서 **JWT**를 **만들어 내고 인증 과정을 거친다**.”
+
+- \* **JWT** 자체는 해독하기 무척 쉽기 때문에 **JWT** 내에는 **민감한 정보(PW)**를 대부분 담지 않는다.
+- 그리고 **`Secret key`** 중요한 만큼 노출되면 **JWT** 자체도 끝이난다.
+- 그래서 토큰을 사용하기 위해서는 **`Secret key`** 서버 내부에 잘 관리해야 한다.
+
+### JWT 활용하기
+
+![jwt_work_flow](/assets/img/development/server/2023-01-18/jwt_work_flow.png){:.centered width="90%"}
+> “**`JWT`** 로직”
+
+1. 요청을 보낸다.
+2. Server에서 DB로 ID, PW를 체크한다.
+3. 체크가 완료되면 
+4. **`Secret key`**를 이용해서 **토큰**을 만들어 낸다.
+    - 실제로는 더 길 수 도있다.
+5. **`Secret key`**를 이용 만든 토큰을 
+6. **`header`**에 담아서 **Client**에 보내준다.
+7. 다음부터는 해당 **`JWT`**로 **요청과 응답을 받는 형태**가 된다.
+
+### JWT 좀 더 알아보기
+
+![token](/assets/img/development/server/2023-01-18/token.png){:.centered width="90%"}
+> “**`token`**”
+
+1. **Client**로부터 **서버로 요청**이 왔다.
+2. **Server는 유효성 검사**를 **서버**에 있는 **`Secret key`**로 진행하게 된다.
+3. 거기서 **유효**하지 않게 되면 버리게 되고, 유효하게 되면 다음 단계인 **사용자 정보를 파악**하게 된다.
+4. decoding 하기 쉽기 때문에 사용자 정보 중에 이름으로 어떤 사용자인지 찾아낸다.
+5. 만료 시기로 토큰의 만료 시기를 활용할 수 있다.
+6. 권한으로 사용자의 권한(사용자/어드민 등)을 확인할 수 있다.
+7. **<span style="color:#ff8080">주의</span>**, 비밀번호는 담으면 안 된다. 비밀번호를 담게 되면 디코딩을 쉽게 할 수 있다는 점 때문에 노출되기 쉽기 때문이다.
+8. **`Secret key`**를 통해서 유효성 검사를 통과한 토근은 이미 인증을 받은 토큰이다.
+
+### JWT 장점
+
+![jwt_strengths](/assets/img/development/server/2023-01-18/jwt_strengths.png){:.centered width="90%"}
+> “**`jwt의 장점`**”
+
+1. Session Storage같은 경우 Session DB와 연관성이 있었는데, 이제는 **로드 밸런서**가 요청하는 곳에 **각자 서버**가 가진 **`Secret key`**로 해독해서 **인증을 진행**하면 된고 **요청을 반환**하면 된다는 장점이 있다.
+2. **확장성이 좋아 서버가 많아져도 똑같이 진행**할 수 있다.
+
+### Token 단점
+
+![jwt_weaknesses](/assets/img/development/server/2023-01-18/jwt_weaknesses.png){:.centered width="90%"}
+
+1. **해킹**을 당할 수 있다.
+2. **Access Token**이 탈취 당하면 해당 해커는 사용자와 똑같은 지위를 갖게 된다.
+
+### Token 만료기한
+
+1. **Token 만료기한**을 설정해 놓으면 만료기간 이후 해커뿐만 아니라 사용자도 사용할 수 없게 된다.
+2. 그래서 사용자 입장에선 굉장히 불편할 수 있다.
+
+### Refresh Token
+
+![refresh_token](/assets/img/development/server/2023-01-18/refresh_token.png){:.centered width="90%"}
+
