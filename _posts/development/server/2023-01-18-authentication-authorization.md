@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java] 인증(Authentication)과 인가(Authorization)"
+title: "[Security] 인증(Authentication)과 인가(Authorization)"
 subtitle: "인증과 인가"
 category: development
 tags: server 인증 Authentication 인가 Authorization
@@ -230,4 +230,36 @@ image:
 ### Refresh Token
 
 ![refresh_token](/assets/img/development/server/2023-01-18/refresh_token.png){:.centered width="90%"}
+> “**`Refresh Token`**은 위 문제를 해결하고자 나온 Token 방식이다.”
 
+1. 요청을 보낸다.
+2. **`Secret key`**를 통해 **Token**을 만들어 낸다. 이때 **`Access Token`**과 **`Refresh Token`**을 한 번에 만들어 낸다.
+3. 그리고 **`Access Token`**은 저장하지 않고, **`Refresh Token`**만 따로 **저장소**에 저장하게 된다.
+4. **`Access Token`**과 **`Refresh Token`**을 한 번에 **응답 헤더(Response Header)**로 보내게 된다.
+5. **Client**는 둘 다 저장하게 된다.
+6. **2번**에서 만든 **`Access Token`**은 **Server**에 저장하지 않는다.
+7. 다음부터는 **Client**가 **`Access Token`**을 이용하여 요청을 보내게 된다.
+
+### Access Token 만료
+
+![access_token_expire](/assets/img/development/server/2023-01-18/access_token_expire.png){:.centered width="90%"}
+> “**`Access Token`**이 **만료**되면...<br/>
+사용자는 **`Access Token`**이 **만료**되었다는 사실을 모르고, 알 필요도 없다.”
+
+1. 사용자는 똑같이 요청을 보내게 된다.
+2. 만료된 **access token** 이면 만료되었다고 Client에 알려준다.
+3. 그럼 **Client**는 다시 **`Access Token`**과 **`Refresh Token`**을 한 번에 **Server**에 요청하게 되어 **저장소**에 있는 **`Refresh Token`**을 비교하고 확인되면
+4. **`Secret key`**를 이용하여 **`갱신`**된 **`Access Token`**을 다시 발급해 준다.
+5. **사용자**는 갱신된 **`Access Token`**을 사용하여 다음 요청들을 보내게 된다.
+
+### Token 핵심
+
+#### Token 장점
+
+1. **토큰으로 상태 관리를 하기에 따로 세션을 둘 필요가 없다.**
+2. **효율성이 좋아지고, DB에 요청하여 직접 확인하지 않아도 되기 때문에 속도가 빠르다.**
+
+#### Token 단점
+
+1. **토큰 관리를 해야 하며, 결국 토큰도 탈취당할 수 있다.**
+2. **보안에 있어 꾸준히 신경 써야 한다.**
