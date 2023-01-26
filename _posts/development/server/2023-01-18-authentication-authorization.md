@@ -279,5 +279,5 @@ image:
     - **HttpOnly** : 서버에서 클라이언트로 정보를 보낼때 보낸 정보에 달아주는 **옵션**. **Storage**에 저장된 정보에 함부로 접근할 수 없게 만드는 **옵션**.
 - **Sliding Session** : **Refresh Token**과 **상호 보안**적인 것.
 - **Refresh Token** : **Sliding Session**과 **상호 보안**적인 것.
-- **SSL/TLS1.3** : 접근하기 쉽고 가성비 좋은 보안 방법. **HTTPS(가장 추천하는 방식)**
+- **SSL/TLS1.3** : 접근하기 쉽고 가성비 좋은 보안 방법. => **HTTPS(가장 추천하는 방식)**
 - **Haking 방법**
