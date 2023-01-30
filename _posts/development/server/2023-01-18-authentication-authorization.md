@@ -54,17 +54,17 @@ image:
 ![browser_encoding](/assets/img/development/server/2023-01-18/encoding.png){:.centered width="90%"}
 > “브라우저 요청 처리 방법은 요청 URL을 **Base64**로 **encoder**를 이용하여 **encoding** 하게 된다.”
 
-1. URL의 **`user:1q2w3e!`** 부분을 **`parsing`** 하여 
-2. **`Base64`**를 통해 **`encoding`**을 하고 
-3. 그렇게 변환된 **`문자열`**을 같게되고
-4. **요청 헤더**의 **Authorization**에 넣어서 보내주는 **개념**이다.
+1. URL의 **`user:1q2w3e!`** 부분을 <span style="color:#ff8080">**`parsing`**</span> 하여 
+2. **`Base64`**를 통해 <span style="color:#ff8080">**`encoding`**</span>을 하고 
+3. 그렇게 변환된 <span style="color:#ff8080">**`문자열`**</span>을 같게되고
+4. **요청 헤더**의 <span style="color:#ff8080">**`Authorization`**</span>에 넣어서 보내주는 **개념**이다.
 
 ![request_header_login](/assets/img/development/server/2023-01-18/request_header_login.png){:.centered width="90%"}
 > “**여기까지가 기본적으로 로그인한 상태의 로직**이다.”
 
 1. Client가 encoding 한 요청 헤더를 Server에 요청하게 된다.
 2. Server가 DB checking을 하고 
-3. DB에 값이 있으면 Client에 **`OK`** 사인을 주게 된다.
+3. DB에 값이 있으면 Client에 <span style="color:#ff8080">**`OK`**</span> 사인을 주게 된다.
 
 ### Request Header만 활용할 시 문제점
 
@@ -92,7 +92,7 @@ image:
 
 ![hacking](/assets/img/development/server/2023-01-18/hacking.png){:.centered width="90%"}
 
-- **<span style="color:#ff8080">단</span>**, 해커의 입장에서도 굉장히 편리한 방법이다.
+- <span style="color:#ff8080">**`하지만`**</span>, 해커의 입장에서도 굉장히 편리한 방법이다.
 1. 보안에 취약하게 노출되어 있어 **사용자 정보를 쉽게 탈취**할 수 있게 된다.
 2. **Client**가 **Server**보다 **`상대적으로` 보안이 취약하다는 단점**이 있다.
 
@@ -106,14 +106,14 @@ image:
 1. Cookie에 사용자의 ID, PW를 넣는고 인증이 필요한 요청을 할 때 Cookie도 같이 Server에 보내준다.
 2. Server는 DB에 쿠키에 담은 정보를 확인 요청하게 된다.
 3. DB는 Server가 요청한 DB 값이 있는지 확인 후 callback 해준다.
-4. Session은 **인증된 사용자의 식별자**와, **랜덤 한 문자열**로 **SESSIONID를 만들어**서
+4. Session은 **인증된 사용자의 식별자**와, **랜덤 한 문자열**로 <span style="color:#ff8080">**`SESSIONID를`**</span>를 만들어서
 5. **응답(Response Header)로 넘겨주고**
 6. **Client가 저장할 수 있도록 하는 것**이다.
 
 #### 장점
 
 1. Client의 보안이 낮은 데이터를 갖고 있게 되지 않게 된다. 그렇게 되면 해커가 정보를 가져가게 되더라도 크게 위험하지 않게 된다.
-2. **`SESSION`**이 **만료기간**을 설정할 수 있어 해커가 가져가게 되더라도 기한이 만료되면 **유효하지 않게 되는 장점**이 있다. 
+2. **SESSION**이 <span style="color:#ff8080">**`만료기간`**</span>을 설정할 수 있어 해커가 가져가게 되더라도 기한이 만료되면 **유효하지 않게 되는 장점**이 있다. 
 3. **Session의 관리**를 **Server 자체**에서 하고 있어 탈취된 Session을 Server에서 삭제하게 되면 더 이상 **Session을 사용하지 못하게** 된다.
 
 #### 단점
@@ -132,7 +132,7 @@ image:
 1. 1번째 인증을 완료하고 2번째 인증이 필요해 다시 요청을 보내게 된다.
 2. 그런데, 로드 밸런서가 SESSIONID 값이 저장되어 있는 3번째 서버가 아닌 2번째 서버에 요청을 보내게 된다.
 3. 2번째 서버에는 SESSIONID 값이 없어 오류가 발생하게 된다.
-4. 이 문제의 원인은 **Server 하나하나 자체에서 Session을 관리**하고 있기 때문에 **문제가 발생**하게 된다.
+4. 이 문제의 원인은 **Server 하나하나 자체에서 Session을 관리**하고 있기 때문에 <span style="color:#ff8080">**`문제가 발생`**</span>하게 된다.
 
 #### 문제 해결 - 세션 DB
 
@@ -143,7 +143,7 @@ image:
 
 ![session_storage_problem](/assets/img/development/server/2023-01-18/session_storage_problem.png){:.centered width="90%"}
 
-- Client가 많아져서 요청이 많아지게 되면 **Session Storage에 과부하가 생겨 DB가 터지게 된다**.
+- Client가 많아져서 요청이 많아지게 되면 Session Storage에 <span style="color:#ff8080">**`과부하`**</span>가 생겨 DB가 터지게 된다.
 - 사용자를 위해 Cookie나 Browser의 힘을 빌려서 계속 로그인까지 하게 해줬는데 이젠 보안상의 문제가 생겨 Server 쪽에 와서 인증/인가를 해줬더니 문제가 계속 발생하게 된다.
 
 ### Stateful/Stateless
@@ -151,22 +151,22 @@ image:
 ![stateful_stateless.png](/assets/img/development/server/2023-01-18/stateful_stateless.png){:.centered width="90%"}
 
 - **`Client`**, **`Server`**, **`Session 저장소` 3가지 모두 사용자의 상태를 관리**할 수 있게 하였다. 그랬더니 문제가 발생하였다.
-- 그 이유는 **`Client`**와 **`Server`**가 서로 통신할 때 사용하는 **`http`**와 Server 자체가 지향하는 **`REST API`**가 **무상태성(Stateless)을 기초**로 하기 때문이다.
+- 그 이유는 **`Client`**와 **`Server`**가 서로 통신할 때 사용하는 **`http`**와 Server 자체가 지향하는 **`REST API`**가 <span style="color:#ff8080">**`무상태성(Stateless)을 기초`**</span>로 하기 때문이다.
 - 그런데, 실제로 인증과 인가를 구현할 때에는 사용자의 정보, 상태를 **`Client`**, **`Server`**, **`Session 저장소`** 3군데 모두 가지고 있었다.
 - **그 말은 상태성을 갖고 있다는 이야기다**.
-- 두 패러다임이 충돌되고 있다. 두 패러다임의 충돌을 해소해 보자.
-- **`Client`**, **`Server`**, **`Session 저장소`** 모두 상태를 맡겨보았으니 나머지 **통신(정보의 흐름)**에 맡겨보자.
+- **두 패러다임**이 <span style="color:#ff8080">**`충돌`**</span>되고 있다. 두 패러다임의 충돌을 해소해 보자.
+- **`Client`**, **`Server`**, **`Session 저장소`** 모두 상태를 맡겨보았으니 나머지 <span style="color:#ff8080">**`통신(정보의 흐름)`**</span>에 맡겨보자.
 - 요청과 응답 안에 사용자의 상태를 담아보자. 그걸로만 사용자의 인증과 인가를 처리하자.
-- 그것이 바로 **`TOKEN`**을 활용한 **인증**과 **인가**이다.
+- 그것이 바로 <span style="color:#ff8080">**`TOKEN`**</span>을 활용한 **인증**과 **인가**이다.
 
 ## JWT
 
 ![jwt](/assets/img/development/server/2023-01-18/jwt.png){:.centered width="90%"}
 > “**`Secret key`**를 사용해서 **JWT**를 **만들어 내고 인증 과정을 거친다**.”
 
-- \* **JWT** 자체는 해독하기 무척 쉽기 때문에 **JWT** 내에는 **민감한 정보(PW)**를 대부분 담지 않는다.
-- 그리고 **`Secret key`** 중요한 만큼 노출되면 **JWT** 자체도 끝이 난다.
-- 그래서 토큰을 사용하기 위해서는 **`Secret key`** 서버 내부에 잘 관리해야 한다.
+- **JWT** 자체는 해독하기 무척 쉽기 때문에 **JWT** 내에는 <span style="color:#ff8080">**`민감한 정보(PW)`**</span>를 대부분 담지 않는다.
+- 그리고 <span style="color:#ff8080">**`Secret key`**</span> 중요한 만큼 노출되면 **JWT** 자체도 끝이 난다.
+- 그래서 토큰을 사용하기 위해서는 **`Secret key`** <span style="color:#ff8080">**`서버 내부에 잘 관리`**</span>해야 한다.
 
 ### JWT 활용하기
 
@@ -188,13 +188,13 @@ image:
 > “**`token`**”
 
 1. **Client**로부터 **서버로 요청**이 왔다.
-2. **유효성 검사**를 **서버**에 있는 **`Secret key`**로 진행하게 된다.
-3. 거기서 **유효하지 않**게 되면 버리게 되고, **유효**하게 되면 다음 단계인 **사용자 정보를 파악**하게 된다.
+2. <span style="color:#ff8080">**`유효성 검사`**</span>를 **서버**에 있는 **`Secret key`**로 진행하게 된다.
+3. 거기서 **유효하지 않**게 되면 버리게 되고, **유효**하게 되면 다음 단계인 <span style="color:#ff8080">**`사용자 정보를 파악`**</span>하게 된다.
 4. **decoding 하기 쉽기** 때문에 사용자 정보 중에 **이름**으로 어떤 사용자인지 찾아낸다.
-5. **만료 시기**로 토큰의 만료 시기를 활용할 수 있다.
-6. **권한**으로 사용자의 권한(사용자/어드민 등)을 확인할 수 있다.
-7. **<span style="color:#ff8080">주의</span>**, **비밀번호는 담으면 안 된다.** 비밀번호를 담게 되면 **디코딩을 쉽게** 할 수 있다는 점 때문에 **노출되기 쉽기 때문**이다.
-8. **`Secret key`**를 통해서 유효성 검사를 통과한 토근은 이미 인증을 받은 토큰이다.
+5. <span style="color:#ff8080">**`만료 시기`**</span>로 토큰의 만료 시기를 활용할 수 있다.
+6. <span style="color:#ff8080">**`권한`**</span>으로 사용자의 권한(사용자/어드민 등)을 확인할 수 있다.
+7. **주의**, <span style="color:#ff8080">**`비밀번호는 담으면 안 된다`**</span>. 비밀번호를 담게 되면 **디코딩을 쉽게** 할 수 있다는 점 때문에 **노출되기 쉽기 때문**이다.
+8. **`Secret key`**를 통해서 유효성 검사를 통과한 토근은 이미 <span style="color:#ff8080">**`인증`**</span>을 받은 토큰이다.
 
 ### JWT 장점
 
@@ -202,14 +202,14 @@ image:
 > “**`jwt의 장점`**”
 
 1. Session Storage같은 경우 Session DB와 연관성이 있었는데, 이제는 **로드 밸런서**가 요청하는 곳에 **각자 서버**가 가진 **`Secret key`**로 해독해서 **인증을 진행**하면 된고 **요청을 반환**하면 된다는 장점이 있다.
-2. **확장성이 좋아 서버가 많아져도 똑같이 진행**할 수 있다.
+2. <span style="color:#ff8080">**`확장성`**</span>이 좋아 **서버가 많아져도 똑같이 진행**할 수 있다.
 
 ### Token 단점
 
 ![jwt_weaknesses](/assets/img/development/server/2023-01-18/jwt_weaknesses.png){:.centered width="90%"}
 
-1. **해킹**을 당할 수 있다.
-2. **Access Token**이 탈취 당하면 해당 해커는 사용자와 똑같은 지위를 갖게 된다.
+1. <span style="color:#ff8080">**`해킹`**</span>을 당할 수 있다.
+2. **Access Token**이 탈취 당하면 해당 해커는 사용자와 똑같은 <span style="color:#ff8080">**`지위`**</span>를 갖게 된다.
 
 ### Token 만료기한
 
@@ -222,23 +222,23 @@ image:
 > “**`Refresh Token`**은 위 문제를 해결하고자 나온 Token 방식이다.”
 
 1. 요청을 보낸다.
-2. **`Secret key`**를 통해 **Token**을 만들어 낸다. 이때 **`Access Token`**과 **`Refresh Token`**을 한 번에 만들어 낸다.
-3. 그리고 **`Access Token`**은 저장하지 않고, **`Refresh Token`**만 따로 **저장소**에 저장하게 된다.
-4. **`Access Token`**과 **`Refresh Token`**을 한 번에 **응답 헤더(Response Header)**로 보내게 된다.
+2. **`Secret key`**를 통해 **Token**을 만들어 낸다. 이때 **`Access Token`**과 <span style="color:#ff8080">**`Refresh Token`**</span>을 한 번에 만들어 낸다.
+3. 그리고 **`Access Token`**은 저장하지 않고, **`Refresh Token`**만 따로 <span style="color:#ff8080">**`저장소`**</span>에 저장하게 된다.
+4. **`Access Token`**과 **`Refresh Token`**을 한 번에 <span style="color:#ff8080">**`응답 헤더(Response Header)`**</span>로 보내게 된다.
 5. **Client**는 둘 다 저장하게 된다.
 6. **2번**에서 만든 **`Access Token`**은 **Server**에 저장하지 않는다.
-7. 다음부터는 **Client**가 **`Access Token`**을 이용하여 요청을 보내게 된다.
+7. 다음부터는 **Client**가 **`Access Token`**을 이용하여 <span style="color:#ff8080">**`요청`**</span>을 보내게 된다.
 
 ### Access Token 만료
 
 ![access_token_expire](/assets/img/development/server/2023-01-18/access_token_expire.png){:.centered width="90%"}
 > “**`Access Token`**이 **만료**되면...<br/>
-사용자는 **`Access Token`**이 **만료**되었다는 사실을 모르고, 알 필요도 없다.”
+사용자는 **`Access Token`**이 **만료**되었다는 사실을 모르고, <span style="color:#ff8080">**`알 필요도 없다`**</span>.”
 
 1. 사용자는 똑같이 요청을 보내게 된다.
 2. 만료된 **access token** 이면 만료되었다고 Client에 알려준다.
 3. 그럼 **Client**는 다시 **`Access Token`**과 **`Refresh Token`**을 한 번에 **Server**에 요청하게 되어 **저장소**에 있는 **`Refresh Token`**을 비교하고 확인되면
-4. **`Secret key`**를 이용하여 **`갱신`**된 **`Access Token`**을 다시 발급해 준다.
+4. **`Secret key`**를 이용하여 <span style="color:#ff8080">**`갱신`**</span>된 **`Access Token`**을 다시 발급해 준다.
 5. **사용자**는 갱신된 **`Access Token`**을 사용하여 다음 요청들을 보내게 된다.
 
 ### Token 핵심
@@ -246,12 +246,12 @@ image:
 #### Token 장점
 
 1. **토큰으로 상태 관리를 하기에 따로 세션을 둘 필요가 없다.**
-2. **효율성이 좋아지고, DB에 요청하여 직접 확인하지 않아도 되기 때문에 속도가 빠르다.**
+2. <span style="color:#ff8080">**`효율성`**</span>이 **좋아**지고, **DB에 요청하여 직접 확인하지 않아도 되기 때문에 속도가 빠르다.**
 
 #### Token 단점
 
-1. **토큰 관리를 해야 하며, 결국 토큰도 탈취당할 수 있다.**
-2. **보안에 있어 꾸준히 신경 써야 한다.**
+1. **토큰 관리**를 해야 하며, 결국 토큰도 <span style="color:#ff8080">**`탈취`**</span>당할 수 있다.
+2. **보안**에 있어 <span style="color:#ff8080">**`꾸준히 신경`**</span> 써야 한다.
 
 # 마치며 - 더 공부해야 할 것들
 
