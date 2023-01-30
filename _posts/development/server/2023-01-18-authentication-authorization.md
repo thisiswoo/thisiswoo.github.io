@@ -21,52 +21,50 @@ image:
 
 ![authentication](/assets/img/development/server/2023-01-18/authentication.png){:.centered width="90%"}
 
-- **(지문 또는 얼굴 등) 입증 가능한 정보로 인증이 필요한 곳에 입증하는 과정**이다. 즉, **식별 가능한 정보로 서비스에 등록된 유저의 신원을 입증하는 과정**
-- 쉽게 말해, **아이폰**으로 **계좌이체**를 하려고 할 때, 어플에 접근하여 **로그인 하는 과정**이 <span style="color:#ff8080">**잠금해제(인증)**</span>이다.
+- **(지문 또는 얼굴 등) 입증 가능한 정보**로 인증이 필요한 곳에 <span style="color:#ff8080">**입증하는 과정**</span>이다. 즉, **식별 가능한 정보로 서비스에 등록된 유저의 신원을 입증하는 과정**
+- 쉽게 말해, **아이폰**으로 **계좌이체**를 하려고 할 때, 어플에 접근하여 **로그인 하는 과정**이 <span style="color:#ff8080">**인증**</span>이다.
 
 ## 인가(Authorization)란?
 
 ![authorization](/assets/img/development/server/2023-01-18/authorization.png){:.centered width="90%"}
 
-- **입증(인증)** 된 신원의 **권한에 대한 허가**를 나타내는 것이 **인가**이다. 즉, **인증된 사용자에 대한 자원 접근 권환 확인**이다.
+- **입증(인증)** 된 신원의 **권한에 대한 허가**를 나타내는 것이 <span style="color:#ff8080">**인가**</span>이다. 즉, **인증된 사용자에 대한 자원 접근 권환 확인**이다.
+- 쉽게 말해, 은행 어플에 접근하여 **로그인(인증)** 한 후, 계좌이체에서 마지막 송금 과정시 **OTP, 생체인증** 등 **권한을 통한 작업**이 <span style="color:#ff8080">**인가**</span>이다.
 
 
 # Web에서의 인증과 인가
 
 ![web_authentication_authorization](/assets/img/development/server/2023-01-18/web_authentication_authorization.png){:.centered width="90%"}
-> “**Web**으로 예를 들어보자. 사용자가 게시판에 글 작성하는 서비스라 생각하자.”
+> “**Web**에서 사용자가 게시판에 글 작성하는 서비스라고 생각해보자.”
 
-- 사용자가 해당 사이트에 게시글을 작성하려고 하면 우선, **회원가입**과 **로그인**을 해야 한다. 이 과정이 <span style="color:#ff8080">**인증**</span>이다.
-- 또한 **인증**이 되었으면 게시판에 게시글을 쓸 수 있는 **권한**이 생겼다. 이 과정이 **인가**이다. 다른 사람이 게시판에 작성한 게시글 또한 읽을 수 있다.
-- **<span style="color:#ff8080">단</span>**, 다른 사람이 작성한 게시글을 **수정**할 수 없다.
-- **<span style="color:#ff8080">왜냐하면</span>**, 다른 사람이 작성한 게시글을 수정할 **<span style="color:#ff8080">권한(인가)</span>**이 없기 때문이다.
-- **인가**가 적용된 개념이다.
+- 사용자가 사이트에 **회원가입**과 **로그인**을 하는 과정이 <span style="color:#ff8080">**인증**</span>이다.
+- **인증**이 됐으면 게시판에 게시글을 쓸 수 있는 **권한**이 생겼다. 이 과정이 <span style="color:#ff8080">**인가**</span>이다. 다른 사람이 게시판에 작성한 게시글 또한 읽을 수 있다.
+- 하지만, 다른 사람이 작성한 게시글을 **수정**할 수 없다. 왜냐하면, 다른 사람이 작성한 게시글을 수정 할 <span style="color:#ff8080">**권한(인가)**</span>이 없기 때문이다. <span style="color:#ff8080">**인가**</span>가 **적용된 개념**이다.
 
 ## 1.Request Header 활용
 
 ![request_header](/assets/img/development/server/2023-01-18/request_header.png){:.centered width="90%"}
-> “Client와 Server 사이에 **HTTP**로 **통신**하게 된다. 가상의 사이트에 회원가입이 되어있는 상태라고 가정해보자.”
+> “Client와 Server 사이에 <span style="color:#ff8080">**HTTP**</span>로 **통신**하게 된다. 가상의 사이트에 회원가입이 되어있는 상태라고 **가정**해보자.”
 
-1. 해당 사이트 이미 회원 가입이 되어있어 DB에 ID, PW 정보가 있다.
-2. 사용자가 login URL로 접근하게 되면 login 요청을 보낼 수 있게 된다.
-3. 만약, 로그인 API가 구축되어 있는 상태라고 했을 때, DB에 ID, PW를 해당 URL 앞에 달아주고 요청하게 되면 login이 된다.
+1. DB에 ID, PW 정보가 있다. 사용자가 login URL로 접근하게 되면 login 요청을 보낼 수 있게 된다.
+2. 만약, 로그인 API가 구축되어 있는 상태라고 **가정** 했을 때, URL 앞에 ID, PW를 넣어주고 요청하게 되면 login이 된다.
 
-* 3번은 브라우저가 처리하게 되는데 처리 방식을 간단하게 알아보자.
+* **2번의 처리 과정을 간단하게 알아보자**.
 
 ![browser_encoding](/assets/img/development/server/2023-01-18/encoding.png){:.centered width="90%"}
 > “브라우저 요청 처리 방법은 요청 URL을 **Base64**로 **encoder**를 이용하여 **encoding** 하게 된다.”
 
 1. URL의 **`user:1q2w3e!`** 부분을 **`parsing`** 하여 
-2. **`encoding`**을 통해서 
-3. 변환된 **`문자열`**을 같게된다.
-4. 그다음 요청 헤더에 **Authorization에 넣어서 보내주는 개념**이다.
+2. **`Base64`**를 통해 **`encoding`**을 하고 
+3. 그렇게 변환된 **`문자열`**을 같게되고
+4. **요청 헤더**의 **Authorization**에 넣어서 보내주는 **개념**이다.
 
 ![request_header_login](/assets/img/development/server/2023-01-18/request_header_login.png){:.centered width="90%"}
 > “**여기까지가 기본적으로 로그인한 상태의 로직**이다.”
 
 1. Client가 encoding 한 요청 헤더를 Server에 요청하게 된다.
 2. Server가 DB checking을 하고 
-3. DB에 값이 있으면 OK 사인을 주게 된다.
+3. DB에 값이 있으면 Client에 **`OK`** 사인을 주게 된다.
 
 ### Request Header만 활용할 시 문제점
 
