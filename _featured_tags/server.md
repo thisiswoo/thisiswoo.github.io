@@ -1,7 +1,7 @@
 ---
 layout: grid
 type: tag
-title: Server(Back-end)
+title: Server
 slug: server
 category: development
 sidebar: true
