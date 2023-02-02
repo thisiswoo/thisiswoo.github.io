@@ -5,7 +5,7 @@ title: Math
 slug: math
 category: books
 sidebar: true
-order: 2
+order: 3
 description: >
-   Math field
+   Math books field
 ---

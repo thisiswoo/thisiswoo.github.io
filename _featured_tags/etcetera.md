@@ -5,7 +5,7 @@ title: Etcetera
 slug: etcetera
 category: books
 sidebar: true
-order: 4
+order: 5
 description: >
-   Etc field
+   Etc books field
 ---

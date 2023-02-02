@@ -5,7 +5,7 @@ title: Science
 slug: science
 category: books
 sidebar: true
-order: 1
+order: 2
 description: >
-   Science field
+   Science books field
 ---
