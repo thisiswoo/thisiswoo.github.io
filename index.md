@@ -9,7 +9,6 @@ sitemap: false
 안녕하세요 **이건우**입니다.<br>
 제가 보고 느끼고 배운 **소중한 것**들을 기술 블로그에 **기록**하고 있습니다.<br>
 배운 것 외에도 **꾸준히** 블로그에 **기술**과 **취미**, **일상**을 **기록**하려 합니다.<br>
-저에 대해 더 알고 싶다면 저의 **[이력서]**를 확인해주세요.
 
 _**My motto to live by.**_
 {:.lead}
@@ -21,6 +20,3 @@ _**My motto to live by.**_
 <!--author-->
 
 <!-- Links -->
-[Xiness]: https://www.xiness.com/
-[resume]: /resume/
-[이력서]: /resume/

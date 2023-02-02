@@ -8,8 +8,8 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    WEB Developer at [Xiness](https://kr.xiness.com).<br>
-    Please check my [Resume][resume] and my [Portfolio](https://thisiswoo.vercel.app/) to find out more about me!<br>
+    **[Xiness](https://kr.xiness.com)**에서 2년차 **Back-end** 개발자로 일하고 있는 **이건우**입니다.<br>
+    저에 대해 더 자세히 알아보려면 제 **[이력서][resume]**와 **[포트폴리오](https://thisiswoo.vercel.app/)**를 확인하세요!<br>
 
     [resume]: /resume/
 
