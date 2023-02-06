@@ -5,7 +5,7 @@ title: Daily
 slug: daily
 category: daily
 sidebar: true
-order: 1
+order: 2
 description: >
    My daily diary
 ---

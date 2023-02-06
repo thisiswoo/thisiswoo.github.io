@@ -1,11 +1,11 @@
 ---
 layout: grid
 type: tag
-title: Travel
-slug: travel
+title: Routine
+slug: routine
 category: daily
 sidebar: true
-order: 3
+order: 1
 description: >
-   My travel diary
+    My Daily Routine diary
 ---

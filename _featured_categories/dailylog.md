@@ -1,5 +1,5 @@
 ---
-layout: list
+layout: grid
 type: category
 title: Daily Log
 slug: daily
