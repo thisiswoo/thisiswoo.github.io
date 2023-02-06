@@ -127,7 +127,7 @@ Vue는 **재사용이 가능한 컴포넌트**로 웹 페이지를 구성할 수
 - Updates — 사후 대응 데이터가 수정될 때 실행된다.
 - Destruction — 요소가 파괴되기 직전에 실행된다.
 
-Continue with [[Vue] Vue.js 라이프사이클 이해하기](vue-lifecycle){:.heading.flip-title}
+Continue with [[Vue] Vue.js 라이프사이클 이해하기](2022-12-22-vue-lifecycle.md){:.heading.flip-title}
 {:.read-more}
 
 # 결론!
