@@ -238,8 +238,9 @@ image:
 1. 사용자는 똑같이 요청을 보내게 된다.
 2. 만료된 **access token** 이면 만료되었다고 Client에 알려준다.
 3. 그럼 **Client**는 다시 **`Access Token`**과 **`Refresh Token`**을 한 번에 **Server**에 요청하게 되어 **저장소**에 있는 **`Refresh Token`**을 비교하고 확인되면
-4. **`Secret key`**를 이용하여 <span style="color:#ff8080">**`갱신`**</span>된 **`Access Token`**을 다시 발급해 준다.
+4. **`Secret key`**를 이용하여 <span style="color:#ff8080">**`갱신`**</span>된 **`Access Token`**을 다시 발급해 주고 준다.
 5. **사용자**는 갱신된 **`Access Token`**을 사용하여 다음 요청들을 보내게 된다.
+6. 만약, **`Refresh Token`**이 만료(<span style="color:#ff8080">**`7일 이전( 예) 2023.01.25 ~ 만료기한 2023.02.01)`**</span>) 되었다면, **`Secret key`**를 통해 **`Access Token`**과 **`Refresh Token`**을 다시 발급하여 위와 같은 로직을 수행하게 된다.
 
 ### Token 핵심
 
@@ -270,3 +271,6 @@ image:
 - **Refresh Token** : **Sliding Session**과 **상호 보안**적인 것.
 - **SSL/TLS1.3** : 접근하기 쉽고 가성비 좋은 보안 방법. => **HTTPS(가장 추천하는 방식)**
 - **Haking 방법**
+
+Continue with [[Security] OAuth와 OpenID](2023-01-26-oauth.md){:.heading.flip-title}
+{:.read-more}

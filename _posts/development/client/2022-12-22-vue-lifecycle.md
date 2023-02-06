@@ -381,5 +381,5 @@ export default {
 - Vue 인스턴스는 크게 **`생성(create)`**되고, **`DOM에 부착(mount)`**되고, **`업데이트(update)`**되며, **`없어지는(destroy)`** 4가지 과정을 거치게 된다.
 - 이 과정에서 Vue는 각각의 단계에서, Vue를 사용하는 사람들을 위해 훅(Hook)을 할 수 있도록 API를 제공하게 된다. 일반적으로 많이 사용하는 종류로는 **`beforeCreate`** 및 **`created`**(**`setup()`** 메서드 자체로 대체됨), **`beforeMount`**, **`mounted`**, **`beforeUpdate`**, **`updated`**, **`beforeDestroy`**, **`destroyed`**가 있다.
 
-Back to [[Vue] Vue.js 란?](what-is-vuejs){:.heading.flip-title}
+Back to [[Vue] Vue.js 란?](2022-12-21-what-is-vuejs.md){:.heading.flip-title}
 {:.read-more}
