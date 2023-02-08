@@ -272,5 +272,5 @@ image:
 - **SSL/TLS1.3** : 접근하기 쉽고 가성비 좋은 보안 방법. => **HTTPS(가장 추천하는 방식)**
 - **Haking 방법**
 
-Continue with [[Security] OAuth와 OpenID](2023-01-26-oauth.md){:.heading.flip-title}
+Continue with [[Security] OAuth](2023-01-26-oauth.md){:.heading.flip-title}
 {:.read-more}
