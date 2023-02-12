@@ -1,11 +1,11 @@
 ---
 layout: grid
 type: tag
-title: Development
-slug: development_book
+title: Tech
+slug: tech
 category: books
 sidebar: true
 order: 1
 description: >
-    Development books field
+    Tech books field
 ---
