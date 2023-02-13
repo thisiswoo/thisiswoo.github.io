@@ -5,5 +5,5 @@ subtitle: "Oxford Illustrated History of Science"
 category: books
 tags: science book oxford
 image:
-  path: /assets/img/books/science/2022-12-03/oxford_science.png
+  path: /assets/img/books/science/2022/2022-12-03/oxford_science.png
 ---
