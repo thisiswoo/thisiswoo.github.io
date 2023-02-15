@@ -5,7 +5,7 @@ subtitle: "How Two Men Revolutionized Physics"
 category: books
 tags: science book
 image:
-path: /assets/img/books/science/2022-12-03/oxford_science.png
+    path: /assets/img/books/science/2021/2021-02-13/faraday-maxwell.png
 ---
 
 > “2021-02-03 ~ 2021-02-13”

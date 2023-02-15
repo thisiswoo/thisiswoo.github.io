@@ -5,8 +5,7 @@ subtitle: "Upgrade Your Brain, Learn Anything Faster, and Unlock Your Exceptiona
 category: books
 tags: etcetera self-help
 image:
-
-[//]: # (    path: /assets/img/books/etcetera/2021-04-02/work_dont_betray.png)
+    path: /assets/img/books/etcetera/2021/2021-05-14/limitless.png
 ---
 
 > “2021-04-25 ~ 2021-05-14”

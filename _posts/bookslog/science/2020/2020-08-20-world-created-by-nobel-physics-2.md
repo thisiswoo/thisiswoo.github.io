@@ -5,5 +5,5 @@ subtitle: "The World Created by the Nobel Prize : Physics 2"
 category: books
 tags: science book oxford
 image:
-path: /assets/img/books/science/2022-12-03/oxford_science.png
+    path: /assets/img/books/science/2020/2020-08-20/nobel-in-the-world-2.png
 ---
