@@ -5,7 +5,7 @@ subtitle: "The more you know, the more interesting mathematicians : from ancient
 category: books
 tags: math book
 image:
-path: /assets/img/books/math/2022-01-16/sapiens.png
+    path: /assets/img/books/math/2022/2022-07-20/more-interesting-mathmaticians.png
 ---
 
 > “2022-07-05 ~ 2022-07-20”

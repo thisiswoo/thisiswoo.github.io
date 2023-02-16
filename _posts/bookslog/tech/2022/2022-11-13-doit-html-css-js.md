@@ -5,7 +5,7 @@ subtitle: "한 권으로 끝내는 웹 기본 교과서"
 category: books
 tags: tech programming
 image:
-path: /assets/img/books/tech/2021-03-28/code.png
+    path: /assets/img/books/tech/2022/2022-11-13/doit-html-css-js.png
 ---
 
 > “2022-10-26 ~ 2022-11-13”

@@ -5,7 +5,7 @@ subtitle: "교육 현장에서 가장 많이 쓰이는 JAVA 프로그래밍의 �
 category: books
 tags: tech programming
 image:
-path: /assets/img/books/tech/2021-03-28/code.png
+    path: /assets/img/books/tech/2022/2022-02-28/thisisjava.png
 ---
 
 > “2022-11-30 ~ 2023-02-28”

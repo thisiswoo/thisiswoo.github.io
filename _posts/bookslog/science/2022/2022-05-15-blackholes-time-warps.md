@@ -5,7 +5,7 @@ subtitle: "Black Holes and Time Warps"
 category: books
 tags: science book
 image:
-path: /assets/img/books/science/2022-12-03/oxford_science.png
+    path: /assets/img/books/science/2022/2022-05-15/blackhole-and-time-warps.png
 ---
 
 > “2022-03-01 ~ 2022-05-15”
