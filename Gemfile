@@ -17,6 +17,7 @@ group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-include-cache"
   gem "jekyll-compose"
+  gem 'jekyll-spaceship'
 end
 
 gem 'wdm' if Gem.win_platform?
