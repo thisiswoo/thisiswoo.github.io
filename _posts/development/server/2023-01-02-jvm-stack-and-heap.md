@@ -5,7 +5,7 @@ subtitle: "Java Virtual Machine의 Stack & Heap"
 category: development
 tags: server java JVM Stack Heap
 image:
-  path: /assets/img/development/server/2023-01-02/jvm_stack_heap_title.png
+  path: /assets/img/development/server/2023-01-02/jvm_stack_heap_cover.png
 ---
 
 > “해당 포스팅은 **우아한Tech**의 [**[10분 테코톡] 🎅무민의 JVM Stack & Heap**](https://www.youtube.com/watch?v=UzaGOXKVhwU&list=LL&index=9&t=632s)의 영상을 기반으로 포스팅하였습니다. 또한 설명이 너무 잘되어었어 복습하고자 글로 남깁니다. 영상을 제작해주신 **우아한Tech**와 **무민**님에게 감사드립니다.”

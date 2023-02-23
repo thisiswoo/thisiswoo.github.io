@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Security] 인증(Authentication)과 인가(Authorization)"
+title: "[Security] 인증과 인가"
 subtitle: "인증과 인가"
 category: development
 tags: server 인증 인가
