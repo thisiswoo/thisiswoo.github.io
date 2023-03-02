@@ -5,7 +5,7 @@ subtitle: "Javascript single threaded"
 category: development
 tags: client javascript threaded
 image:
-  path: /assets/img/development/client/2022-12-12/js_single_thread_bg.png
+  path: /assets/img/development/client/2022-12-12/js_runtime_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>

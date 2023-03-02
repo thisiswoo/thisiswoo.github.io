@@ -5,7 +5,7 @@ subtitle: "Vue.js Lifecycle"
 category: development
 tags: client vue lifecycle
 image:
-  path: /assets/img/development/client/2022-12-22/vue_lifecycle_bg.png
+  path: /assets/img/development/client/2022-12-22/vue_lifecycle_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
