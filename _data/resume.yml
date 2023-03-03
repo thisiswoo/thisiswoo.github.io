@@ -2,14 +2,15 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "GeonWoo Lee"
-  label: "Web Developer"
+  name: "이건우 | 기록을 사관처럼"
+  label: "Java & Spring 기반의 2년차 백엔드 개발자 이건우입니다."
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
-  phone: "(+82) 10-8486-0594"
-  website: "https://thisiswoo.vercel.app/"
+#  phone: "(+82) 10-8486-0594"
+  blog: "https://thisiswoo.vercel.app/"
+  website: "https://thisiswoo.github.io/"
   summary: >
-    Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
+    2년 차 Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
     I like to read books in science, math, and history.<br>
     I'd like to describe myself as a steady learner.<br>
     I am confident that I can satisfy the expectations of my coworkers.
@@ -18,16 +19,16 @@ basics:
     # postalCode: "CA 94115"
     # city: "San Francisco"
     # countryCode: "KR"
-    region: "Republic of Korea"
+    region: "대한민국, 광명시"
   profiles:
     - network: "Instagram"
       username: "samgyeopsalislove"
-      url: "https://www.instagram.com/samgyeopsalislove/"
+      url: "https://www.instagram.com/samgyeopsalislove"
     - network: "Github"
-      username: "thisiswoo"
+      username: "https://github.com/thisiswoo"
       url: "https://github.com/thisiswoo"
-    - network: "Github"
-      username: "blog"
+    - network: "Link"
+      username: "포트폴리오"
       url: "https://thisiswoo.github.io/"
 work:
   - company: "Xiness"
