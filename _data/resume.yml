@@ -2,15 +2,15 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "이건우 | 기록을 사관처럼"
-  label: "Java & Spring 기반의 2년차 백엔드 개발자 이건우입니다."
+  name: "이건우"
+  label: "기록을 사관처럼, 공부를 습관처럼, 변화를 생활처럼"
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
 #  phone: "(+82) 10-8486-0594"
-  blog: "https://thisiswoo.vercel.app/"
+#  blog: "https://thisiswoo.vercel.app/"
   website: "https://thisiswoo.github.io/"
   summary: >
-    2년 차 Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
+    Java & Spring 기반의 2년차 백엔드 개발자 이건우입니다. 2년 차 Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
     I like to read books in science, math, and history.<br>
     I'd like to describe myself as a steady learner.<br>
     I am confident that I can satisfy the expectations of my coworkers.
@@ -32,7 +32,7 @@ basics:
       url: "https://thisiswoo.github.io/"
 work:
   - company: "Xiness"
-    position: "Developer"
+    position: "웹 개발"
     website: "https://www.xiness.com/"
     startDate: "2021-12-01"
     endDate: ""
@@ -114,12 +114,8 @@ skills:
       - "HTML"
       - "CSS"
       - "Javascript"
-      - "Jquery"
-      - "Bootstrap"
-      - "Sass"
-      - "React"
-      - "Next.js"
-      - "Vue.js"
+      - "jQuery"
+      - "Vue"
   - name: "Server(Back-end)"
     level: "Intermediate"
     keywords:
@@ -130,14 +126,12 @@ skills:
     level: "Junior"
     keywords:
       - "MySQL"
-      - "Oracle SQL"
   - name: "Deployment"
     level: "Junior"
     keywords:
       - "Apache"
       - "Tomcat"
       - "Docker"
-      - "Vercel"
   - name: "VSC"
     level: "Intermediate"
     keywords:
