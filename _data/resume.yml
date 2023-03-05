@@ -19,7 +19,7 @@ basics:
     # postalCode: "CA 94115"
     # city: "San Francisco"
     # countryCode: "KR"
-    region: "대한민국, 광명시"
+    # region: "대한민국, 광명시"
   profiles:
     - network: "Instagram"
       username: "samgyeopsalislove"
