@@ -88,6 +88,7 @@ image:
 - 즉, `1`을 `5V`라고 가정할 때 `1`로 표현하고 싶으면 `5V` 이상의 전압을 가하고, `0`으로 표현하고 싶을 땐 `5V` 이하의 전압을 가하게 된다.
 - 디지털 신호 그래프의 `0`은 끊어진 것처럼 보이지만 사실 끊어진 게 아니라 특정 전압 이하이기 때문에 `0`으로 그래프상 표시한 것 뿐이다. 실제론 계속 전류는 흐른다.
 
+![Data Collection Graph](/assets/img/development/client/2023-03-02/data_collection_graph.png){:.centered width="100%"}
 
 [//]: # (Continue with [[Network] OSI 7 Layer - Data Link Layer]&#40;./2023-03-05-week-8th.md&#41;{:.heading.flip-title})
 
