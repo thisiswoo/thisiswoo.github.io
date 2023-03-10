@@ -12,11 +12,8 @@ basics:
   summary: >
     Java & Spring 기반의 2년차 백엔드 개발자 이건우입니다. 
     샛길로 빠진다
-    블로그형 주도 계발
-    2년 차 Hello, I'm GeonWoo Lee, whose goal is to developments as a hobby.<br>
-    I like to read books in science, math, and history.<br>
-    I'd like to describe myself as a steady learner.<br>
-    I am confident that I can satisfy the expectations of my coworkers.
+    블로그형 주도 개발
+
   location:
     # address: "2712 Broadway St"
     # postalCode: "CA 94115"
@@ -34,7 +31,7 @@ basics:
       username: "포트폴리오"
       url: "https://thisiswoo.github.io/"
 work:
-  - company: "Xiness"
+  - company: "(주)자이네스"
     position: "웹 개발"
     website: "https://www.xiness.com/"
     startDate: "2021-12-01"
