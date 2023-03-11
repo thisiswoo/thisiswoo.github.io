@@ -3,7 +3,7 @@
 # See also: <https://jsonresume.org/>.
 basics:
   name: "이건우"
-  label: "기록을 사관처럼, 공부를 습관처럼, 변화를 생활처럼"
+  label: "기록을 사관처럼, 공부를 습관처럼"
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
 #  phone: "(+82) 10-8486-0594"
@@ -40,7 +40,8 @@ work:
       XINESS is a company that provides smart healthcare technologies in various fields to create a world where the preciousness of life becomes a daily life.<br>
       We strive to create a society where anyone can lead a healthy life anytime, anywhere.
     highlights:
-      - "<a href='https://official.k-gate.net/'>K-GATE</a> is an AI-based facial recognition access control system that provides a safe and secure daily life."
+      - "<a href='https://kr.iliasai.com' target='_blank'>IliasAI</a> is an AI-based facial recognition access control system that provides a safe and secure daily life."
+      - "<a href='https://official.k-gate.net/' target='_blank'>K-GATE</a> is an AI-based facial recognition access control system that provides a safe and secure daily life."
   - company: "HANA Electric"
     position: "Interior Electrical Construction Team"
     website: ""
