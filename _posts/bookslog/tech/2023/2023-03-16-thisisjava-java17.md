@@ -8,7 +8,7 @@ image:
     path: /assets/img/books/tech/2023/2023-03-16/thisisjava.png
 ---
 
-> “읽은 기간 : 2022-11-30 ~ 2023-03-16”
+> “읽은 기간 : 2023-01-04 ~ 2023-03-16”
 
 <span style="font-size:30px;">\#**목차**</span>
 * this unordered seed list will be replaced by the toc
