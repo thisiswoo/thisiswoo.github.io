@@ -34,7 +34,7 @@ tagline:               >
   기록을 사관처럼 
 
 # A list of keywords for your blog
-keywords:              ["Developments", "Java", "Javascript", "vue"]
+keywords:              ["Developments", "Java", "JavaScript", "Vue"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -109,18 +109,18 @@ theme_color:           rgb(30,30,33)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
-google_fonts:          Nanum+Gothic:600,600i,400,400i|Noto+Sans:400,400i,700,700i
+google_fonts:          JetBrains+Mono:400|Nanum+Gothic:600,600i,400,400i|Noto+Sans:400,400i,700,700i
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font:                  Nanum Gothic, Noto Sans, Helvetica, Arial, sans-serif
+font:                  JetBrains Mono, Nanum Gothic, Noto Sans, Helvetica, Arial, sans-serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Nanum Gothic, Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          JetBrains Mono, Nanum Gothic, Roboto Slab, Helvetica, Arial, sans-serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
-font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
+font_code:             JetBrains Mono, Menlo, Monaco, Consolas, monospace;
 
 defaults:
   # You can use this to provide a default accent color and background for
@@ -317,7 +317,7 @@ hydejack:
   # Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
     # Set to `true` to always use the dark theme.
-    always:            true
+    always:            false
 
     # Set to `true` to use the dark theme based on visitors' preference (OS setting).
     dynamic:           true
@@ -357,8 +357,6 @@ collections:
 # ----------------------------------------------------------------------------------------
 
 exclude:
-  - ./#jekyll-theme-hydejack/node_modules
-  - ./#jekyll-theme-hydejack/.git
   - .jekyll-cache
   - .sass-cache
   - '*.toml'
@@ -386,14 +384,14 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-include-cache
   - jekyll-last-modified-at
-  - jekyll-spaceship
+  - jemoji
 
 
 # SEO Tag
 # ---------------------------------------------------------------------------------------
 
 # Where you proof that you own this site (used by jekyll-seo-tag)
-google_site_verification: nhpmBN3qk4-ALwLqYMT8elvT7SUEJnGhE2E1yKUX1O4
+google_site_verification: "nhpmBN3qk4-ALwLqYMT8elvT7SUEJnGhE2E1yKUX1O4"
 
 # -- or --
 # webmaster_verifications:
@@ -483,66 +481,4 @@ feed:
     - development
     - daily
     - books
-    - info
-
-# Where things are
-jekyll-spaceship:
-  # default enabled processors
-  processors:
-    - table-processor
-    - mathjax-processor
-    - plantuml-processor
-    - mermaid-processor
-    - polyfill-processor
-    - media-processor
-    - emoji-processor
-    - element-processor
-  mathjax-processor:
-    src:
-      - https://polyfill.io/v3/polyfill.min.js?features=es6
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    config:
-      tex:
-        inlineMath:
-          - ['$','$']
-          - ['\(','\)']
-        displayMath:
-          - ['$$','$$']
-          - ['\[','\]']
-      svg:
-        fontCache: 'global'
-    optimize: # optimization on building stage to check and add mathjax scripts
-      enabled: true # value `false` for adding to all pages
-      include: []   # include patterns for math expressions checking (regexp)
-      exclude: []   # exclude patterns for math expressions checking (regexp)
-  plantuml-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-    css:
-      class: plantuml
-    syntax:
-      code: 'plantuml!'
-      custom: ['@startuml', '@enduml']
-    src: http://www.plantuml.com/plantuml/svg/
-  mermaid-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-    css:
-      class: mermaid
-    syntax:
-      code: 'mermaid!'
-      custom: ['@startmermaid', '@endmermaid']
-    config:
-      theme: default
-    src: https://mermaid.ink/svg/
-  media-processor:
-    default:
-      id: 'media-{id}'
-      class: 'media'
-      width: '100%'
-      height: 350
-      frameborder: 0
-      style: 'max-width: 600px; outline: none;'
-      allow: 'encrypted-media; picture-in-picture'
-  emoji-processor:
-    css:
-      class: emoji
-    src: https://github.githubassets.com/images/icons/emoji/
+#    - info

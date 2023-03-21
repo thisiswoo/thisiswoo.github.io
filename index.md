@@ -25,5 +25,3 @@ _**My motto to live by.**_
 [루틴]: /tag-routine/
 [기술]: /development/
 [취미]: /books/
-
-[//]: # ([일상]: /dailylog/)
