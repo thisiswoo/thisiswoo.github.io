@@ -3,7 +3,7 @@ layout: post
 title: "[Java] JVM Stack & Heap"
 subtitle: "Java Virtual Machine의 Stack & Heap"
 category: development
-tags: server java JVM Stack Heap
+tags: server java jvm 개념
 image:
   path: /assets/img/development/server/2023-01-02/jvm_stack_heap_cover.png
 ---

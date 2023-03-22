@@ -3,7 +3,7 @@ layout: post
 title: "[Java] Java 란?"
 subtitle: "what is Java"
 category: development
-tags: server java
+tags: server java 개념
 image:
   path: /assets/img/development/server/2022-12-25/java_cover.png
 ---
