@@ -78,8 +78,8 @@ legal:
 copyright:             © 2022 GeonWoo Lee. All rights reserved.
 
 # Format of the permalinks
-# permalink:             /blog/:categories/:year-:month-:day-:title/
-permalink:             none
+permalink:             /blog/:categories/:year-:month-:day-:title/
+#permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
