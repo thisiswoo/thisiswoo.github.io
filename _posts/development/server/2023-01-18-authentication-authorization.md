@@ -5,7 +5,7 @@ subtitle: "인증과 인가"
 category: development
 tags: server 인증 인가
 image:
-  path: /assets/img/development/server/2023-01-18/authentication_authorization.png
+  path: /assets/img/development/server/2023-01-18/authentication_authorization_cover.png
 ---
 
 > “해당 포스팅은 **우아한Tech**의 [**[10분 테코톡] 🎡토니의 인증과 인가**](https://www.youtube.com/watch?v=y0xMXlOAfss)의 영상을 기반으로 포스팅하였습니다. 또한 설명이 너무 잘되어었어 복습하고자 글로 남깁니다. 영상을 제작해주신 **우아한Tech**와 **토니**님에게 감사드립니다.”
