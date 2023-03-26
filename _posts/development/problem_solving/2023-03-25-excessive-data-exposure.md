@@ -45,6 +45,8 @@ public class ExampleService {
 - 위 `Service` 로직을 보면 `Specification`을 이용하여 `요청DTO`를 통해 검색조건을 만족하는(없으면 `Object.isEmpty`로 `if문` 패스) 3개의 `join`된 테이블로 `list`를 조회해한다.
 - 하지만 여기서 문제는 바로 `List<ExJoinAndJoinAndJoinTable>` 부분이다.
 
+## 문제의 조인 테이블
+
 ```java
 // file: "재현 코드 = 3개의 조인 테이블 재현 코드.java"
 import java.io.Serializable;
@@ -64,7 +66,7 @@ public class Ex3JoinTable extends SuperUser implements Serializable {
 }
 ```
 
-## 문제의 조인 테이블
+## 클라이언트에 전송되는 과도한 데이터들 
 ![원인 테이블](/assets/img/development/problem_solving/2023-03-26/cause_join_table.png){:.centered width="50%"}
 
 - 무려 **33개**의 컬럼의 데이터가 요청되어있던 것이다.
