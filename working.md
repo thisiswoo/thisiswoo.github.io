@@ -11,7 +11,7 @@ function processFail(jqXHR, textStatus, errorThrown) {
 	}
 	catch (exception) {
 	}
-	if (typeof (console) !== 'undefined' && tㄷypeof (console.log) !== 'undefined') {
+	if (typeof (console) !== 'undefined' && typeof (console.log) !== 'undefined') {
 		console.log(textStatus + " - " + jqXHR.status + " (" + errorThrown + ")");
 	}
 	if (jqXHR.status == 500) {

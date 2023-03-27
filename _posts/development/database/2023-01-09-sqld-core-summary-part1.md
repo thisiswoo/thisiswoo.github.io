@@ -5,7 +5,7 @@ subtitle: "SqlD Core Summary"
 category: development
 tags: database SQL SQLD
 image:
-  path: /assets/img/development/database/2023-01-09/sqld_core_summary_bg.png
+  path: /assets/img/development/database/2023-01-09/sqld_core_summary_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
