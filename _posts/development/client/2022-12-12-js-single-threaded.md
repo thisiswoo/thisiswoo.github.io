@@ -17,7 +17,7 @@ image:
 
 > “**Thread**는 브라우저가 사용자 이벤트를 처리하고 디스플레이를 렌더링하여 화면에 그려주고, 일반적인 웹 페이지 또는 앱을 구성하는 코드의 대부분을 실행하는 데 사용한다.” - [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Thread)
 
-![js-engine](/assets/img/development/client/2022-12-12/js_engine.jpg){:.centered width="100%"}
+![js-engine](/assets/img/development/client/2022-12-12/js_engine.jpg){:.centered width="80%"}
 
 > **Memory Heap(변수,객체 저장소)**: 객체와 변수를 할당하는 데 사용되는 비구조화 메모리의 한 부분.<br/>
 **Call Stack(코드 실행)**: 실행 될 코드들이 메모리(Heap)에 할당된 변수 또는 객체를 찾아 호출되면서 코드가 실행되고 실행된 코드들은 Stack에서 제거.
@@ -67,7 +67,7 @@ printSquare(5); // Call Stack 영역
 // 25
 ```
 
-![call stack flow](/assets/img/development/client/2022-12-12/call_stack_flow.png){:.centered width="100%"}
+![call stack flow](/assets/img/development/client/2022-12-12/call_stack_flow.png){:.centered width="80%"}
 
 #### Stack Overflow
 - 스택이 할당된 공간보다 더 많은 공간을 차지하면 **"stack overflow"** 오류가 발생합니다.
@@ -79,11 +79,11 @@ const foo = () => {
 foo();
 ```
 
-![stack overflow](/assets/img/development/client/2022-12-12/stack_over_flow_example.png){:.centered width="100%"}
+![stack overflow](/assets/img/development/client/2022-12-12/stack_over_flow.png){:.centered width="80%"}
 
 ## WEB APIs 란?
 
-![js-webapis](/assets/img/development/client/2022-12-12/js_webapis.jpg){:.centered width="70%"}
+![js-webapis](/assets/img/development/client/2022-12-12/js_webapis.jpg){:.centered width="80%"}
 
 > “웹 API는 자바스크립트 엔진의 일부는 아니지만 브라우저가 제공하는 런타임 환경의 일부이다. 현대의 브라우저에는 매우 다양한 것을 가능하게 하는 수많은 API가 있다.”
 
@@ -96,7 +96,7 @@ foo();
 
 ## Tasks(Callback) Queue 란?
 
-![js-queue](/assets/img/development/client/2022-12-12/js_queue.jpg){:.centered width="100%"}
+![js-queue](/assets/img/development/client/2022-12-12/js_queue.jpg){:.centered width="80%"}
 
 > “**Tasks(Callback) Queue**는 웹 API에서 전송된 콜백 함수를 추가된 순서대로 저장한다. 이 대기열은 선입선출로 실행되는 데이터 구조이다. 큐는 배열 푸시 방식을 사용하여 큐의 끝에 새로운 콜백 함수를 추가하고 배열 이동 방식을 사용하여 큐의 첫 번째 항목을 제거한다.”
 
@@ -106,7 +106,7 @@ foo();
 > “**Event Loop**의 역할은 콜 스택과 콜백(Tasks Queue) 대기열의 상태를 지속적으로 모니터링하는 것이다. 스택이 비어 있으면 콜백 큐에서 콜백을 가져와 콜 스택에 배치하여 실행을 예약한다.”
 
 # 결론!
-![js_runtime](/assets/img/development/client/2022-12-12/js_runtime.jpg){:.centered width="100%"}
+![js_runtime](/assets/img/development/client/2022-12-12/js_runtime.jpg){:.centered width="80%"}
 
 - 이것이 자바스크립트가 **단일 스레드** 언어임에도 불구하고 **비동기적으로 실행될 수 있는 것으로 묘사되는 이유**이다. 
 - 자바스크립트는 한 번에 하나의 기능만 실행할 수 있기 때문에 동기화되지만 웹 API에서 콜백 큐로 콜백을 푸시 할 수 있고 이벤트 루프가 이러한 콜백을 지속적으로 콜 스택에 추가할 수 있기 때문에 자바스크립트는 비동기적으로 실행될 수 있다고 생각한다.
@@ -119,12 +119,12 @@ foo();
 
 ## 이해를 돕기위한 그림(Call Stack, WEB APIs)
 
-![js-callstack](/assets/img/development/client/2022-12-12/js_callstack.gif){:.centered width="100%"}
+![js-callstack](/assets/img/development/client/2022-12-12/js_callstack.gif){:.centered width="80%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
 **<center>Call Stack</center>**
 
 <br><br>
 
-![js_WEB_APIs](/assets/img/development/client/2022-12-12/js_WEB_APIs.gif){:.centered width="100%"}
+![js_WEB_APIs](/assets/img/development/client/2022-12-12/js_WEB_APIs.gif){:.centered width="80%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
 **<center>WEB APIs</center>**
