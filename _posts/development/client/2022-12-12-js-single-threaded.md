@@ -122,13 +122,13 @@ foo();
 
 ![js-callstack](/assets/img/development/client/2022-12-12/js_callstack.gif){:.centered width="80%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
-**<center>Call Stack</center>**
+<div style="text-align: center;">Call Stack</div>
 
-<br><br>
+<br>
 
 ![js_WEB_APIs](/assets/img/development/client/2022-12-12/js_WEB_APIs.gif){:.centered width="80%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
-**<div style="text-align: center;">WEB APIs</div>**
+<div style="text-align: center;">WEB APIs</div>
 
 # 추가 자료
 ### 콜 스택(Call Stack)과 힙(Heap)
