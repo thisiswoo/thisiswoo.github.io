@@ -25,7 +25,6 @@ image:
 
 - 즉, 위의 그림처럼 **Javascript Engine(Single Threaded)**에는 **`Memory Heap`**과 **`Call Stack`**으로 각 1개씩 구성되어 있다.
 
-
 ## Memory Heap 이란?
 
 > “JavaScript는 객체가 생성될 때 자동으로 메모리를 할당하고 더 이상 사용되지 않을 때 메모리에서 제거한다([garbage collection](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)).<br> 이 자동성은 잠재적인 혼란의 원인된다. **왜냐하면, 개발자에게 메모리 관리에 대해 걱정할 필요가 없다는 잘못된 인상을 줄 수 있다.**” - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#memory_life_cycle)
@@ -143,6 +142,8 @@ function a () { b(); }
 a();
 ```
 ![Execution Context](/assets/img/development/client/2022-12-12/execution_context.png){:.centered width="80%"}
+실행 컨텍스트 환경
+{: style="text-align: center;"}
 
 - **힙(Heap)** : 객체(`Object`), 배열(`Array`), 함수(`function`)와 같이 크키가 **동적**으로 변할 수 있는 **참조타입 값**을 저장하는 곳.
 
@@ -161,12 +162,18 @@ let o = func();
 
 #### 1. GEC(Global Execution Context - 글로벌 실행 컨텍스트)가 생성되고 원시 값은 콜 스택에, 참조 값은 힙에 저장된다.
 ![Memory1](/assets/img/development/client/2022-12-12/memory1.png){:.centered width="80%"}
+GEC 컨텍스트 JS Single Thread
+{: style="text-align: center;"}
 
 #### 2. 함수 func() 을 실행하게 되고 새로운 FEC(Function Execution Context)가 생성되며 동일하게 원시 값은 스택에, 참조 값은 힙에 저장된다.
 ![Memory2](/assets/img/development/client/2022-12-12/memory2.png){:.centered width="80%"}
+FEC 컨텍스트 JS Single Thread
+{: style="text-align: center;"}
 
 #### 3. 이후, 함수 func() 이 객체 obj 를 리턴해서 o 에 저장된다. 리턴하기 때문에 FEC는 콜 스택에서 제거된다.
 ![Memory3](/assets/img/development/client/2022-12-12/memory3.png){:.centered width="80%"}
+작업을 마친 FEC 컨텍스트 JS Single Thread
+{: style="text-align: center;"}
 
 #### 4. 전체 코드가 실행이 끝나고 GEC가 콜 스택에서 제거된다. GEC가 제거됨에 따라서, 힙의 객체를 참조하는 스택의 값이 없기 때문에 가비지 컬렉터(Garbage Collector, GC)에 의해 제거된다.
 
