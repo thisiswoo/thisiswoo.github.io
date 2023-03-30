@@ -13,6 +13,7 @@ image:
 * this unordered seed list will be replaced by the toc
 {:toc}
 
+# JavaScript의 Runtime환경
 ## Thread 란?
 
 > “**Thread**는 브라우저가 사용자 이벤트를 처리하고 디스플레이를 렌더링하여 화면에 그려주고, 일반적인 웹 페이지 또는 앱을 구성하는 코드의 대부분을 실행하는 데 사용한다.” - [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Thread)
@@ -127,4 +128,53 @@ foo();
 
 ![js_WEB_APIs](/assets/img/development/client/2022-12-12/js_WEB_APIs.gif){:.centered width="80%"}
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
-**<center>WEB APIs</center>**
+**<div style="text-align: center;">WEB APIs</div>**
+
+## 추가 자료
+### 콜 스택(Call Stack)과 힙(Heap)
+- **콜 스택(Call Stack)** : **원시타입 값**과 함수 호출의 **실행 컨텍스트(Execution Context)**를 저장하는 곳.
+  - **원시타입이란?** : 객체가 아니면서 메서드도 가지지 않는 데이터 타입(`string`, `number`, `bigint`, `boolean`, `undefined`, `symbol`, `null`)
+  - **실행 컨텍스트(Execution Context)란?** : 실행할 코드에 제공할 환경 정보들을 모아놓은 객체
+    - 예제
+```javascript
+var temp = 'temp';
+function b () { console.log('안녕하세용'); }
+function a () { b(); }
+a();
+```
+![Execution Context](/assets/img/development/client/2022-12-12/execution_context.png){:.centered width="80%"}
+
+- **힙(Heap)** : 객체(`Object`), 배열(`Array`), 함수(`function`)와 같이 크키가 **동적**으로 변할 수 있는 **참조타입 값**을 저장하는 곳.
+
+### 예제를 통한 동작 원리
+```javascript
+let a = 10;
+let b = 35;
+let arr = [];
+function func() {
+  const c = a + b;
+  const obj = { d: c };
+  return obj;
+}
+let o = func();
+```
+
+#### 1. GEC(Global Execution Context - 글로벌 실행 컨텍스트)가 생성되고 원시 값은 콜 스택에, 참조 값은 힙에 저장된다.
+![Memory1](/assets/img/development/client/2022-12-12/memory1.png){:.centered width="80%"}
+
+#### 2. 함수 func() 을 실행하게 되고 새로운 FEC(Function Execution Context)가 생성되며 동일하게 원시 값은 스택에, 참조 값은 힙에 저장된다.
+![Memory2](/assets/img/development/client/2022-12-12/memory2.png){:.centered width="80%"}
+
+#### 3. 이후, 함수 func() 이 객체 obj 를 리턴해서 o 에 저장된다. 리턴하기 때문에 FEC는 콜 스택에서 제거된다.
+![Memory3](/assets/img/development/client/2022-12-12/memory3.png){:.centered width="80%"}
+
+#### 4. 전체 코드가 실행이 끝나고 GEC가 콜 스택에서 제거된다. GEC가 제거됨에 따라서, 힙의 객체를 참조하는 스택의 값이 없기 때문에 가비지 컬렉터(Garbage Collector, GC)에 의해 제거된다.
+
+# 추후 공부할 것
+- [크롬브라우저로 확인하는 inner 방법](https://velog.io/@ggong/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-execution-context){:target="_blank"}
+- [[Javascript] Execution Context와 Lexical Environment](https://iamsjy17.github.io/javascript/2019/06/10/js33_execution_context.html){:target="_blank"}
+- [JavaScript 식별자 찾기 대모험](https://homoefficio.github.io/2016/01/16/JavaScript-%EC%8B%9D%EB%B3%84%EC%9E%90-%EC%B0%BE%EA%B8%B0-%EB%8C%80%EB%AA%A8%ED%97%98/){:target="_blank"}
+
+# Reference
+- [콜 스택(Call stack)과 힙(Heap)](https://github.com/baeharam/Must-Know-About-Frontend/blob/main/Notes/javascript/stack-heap.md){:target="_blank"}
+- [JS Execution Context (실행 컨텍스트) 란?](https://gamguma.dev/post/2022/04/js_execution_context){:target="_blank"}
