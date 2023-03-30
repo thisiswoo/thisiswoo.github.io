@@ -130,7 +130,7 @@ foo();
 <div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
 **<div style="text-align: center;">WEB APIs</div>**
 
-## 추가 자료
+# 추가 자료
 ### 콜 스택(Call Stack)과 힙(Heap)
 - **콜 스택(Call Stack)** : **원시타입 값**과 함수 호출의 **실행 컨텍스트(Execution Context)**를 저장하는 곳.
   - **원시타입이란?** : 객체가 아니면서 메서드도 가지지 않는 데이터 타입(`string`, `number`, `bigint`, `boolean`, `undefined`, `symbol`, `null`)
