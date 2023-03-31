@@ -23,4 +23,4 @@ _**My motto to live by.**_
 [루틴]: /tag-routine/
 [기술]: /development/
 [취미]: /books/
-[문제해결]: /tag-problem-solving/
+[문제 해결]: /tag-problem-solving/
