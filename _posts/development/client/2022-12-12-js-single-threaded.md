@@ -120,14 +120,18 @@ foo();
 ## 이해를 돕기위한 그림(Call Stack, WEB APIs)
 
 ![js-callstack](/assets/img/development/client/2022-12-12/js_callstack.gif){:.centered width="80%"}
-<div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
-<div style="text-align: center;">Call Stack</div>
+[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)
+{:.figcaption}
+Call Stack
+{:.figcaption}
 
 <br>
 
 ![js_WEB_APIs](/assets/img/development/client/2022-12-12/js_WEB_APIs.gif){:.centered width="80%"}
-<div style="text-align: center">[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)</div>
-<div style="text-align: center;">WEB APIs</div>
+[그림출처](https://beomy.github.io/tech/javascript/javascript-runtime/)
+{:.figcaption}
+WEB APIs
+{:.figcaption}
 
 # 추가 자료
 ### 콜 스택(Call Stack)과 힙(Heap)
@@ -143,7 +147,7 @@ a();
 ```
 ![Execution Context](/assets/img/development/client/2022-12-12/execution_context.png){:.centered width="80%"}
 실행 컨텍스트 환경
-{: style="text-align: center;"}
+{:.figcaption}
 
 - **힙(Heap)** : 객체(`Object`), 배열(`Array`), 함수(`function`)와 같이 크키가 **동적**으로 변할 수 있는 **참조타입 값**을 저장하는 곳.
 
@@ -163,17 +167,17 @@ let o = func();
 #### 1. GEC(Global Execution Context - 글로벌 실행 컨텍스트)가 생성되고 원시 값은 콜 스택에, 참조 값은 힙에 저장된다.
 ![Memory1](/assets/img/development/client/2022-12-12/memory1.png){:.centered width="80%"}
 GEC 컨텍스트 JS Single Thread
-{: style="text-align: center;"}
+{:.figcaption}
 
 #### 2. 함수 func() 을 실행하게 되고 새로운 FEC(Function Execution Context)가 생성되며 동일하게 원시 값은 스택에, 참조 값은 힙에 저장된다.
 ![Memory2](/assets/img/development/client/2022-12-12/memory2.png){:.centered width="80%"}
 FEC 컨텍스트 JS Single Thread
-{: style="text-align: center;"}
+{:.figcaption}
 
 #### 3. 이후, 함수 func() 이 객체 obj 를 리턴해서 o 에 저장된다. 리턴하기 때문에 FEC는 콜 스택에서 제거된다.
 ![Memory3](/assets/img/development/client/2022-12-12/memory3.png){:.centered width="80%"}
 작업을 마친 FEC 컨텍스트 JS Single Thread
-{: style="text-align: center;"}
+{:.figcaption}
 
 #### 4. 전체 코드가 실행이 끝나고 GEC가 콜 스택에서 제거된다. GEC가 제거됨에 따라서, 힙의 객체를 참조하는 스택의 값이 없기 때문에 가비지 컬렉터(Garbage Collector, GC)에 의해 제거된다.
 
