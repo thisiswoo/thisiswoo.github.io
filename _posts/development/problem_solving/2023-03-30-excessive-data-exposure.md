@@ -108,7 +108,7 @@ class QClassUserRepository implements ExUserRepository {
             builder.or(qAuthority.authNm.like("%" + searchVO.getSearchKeyword() + "%"));
             builder.or(qClientCompony.coNm.like("%" + searchVO.getSearchKeyword() + "%"));
         }
-        // 등등...
+        // 등등... 
         return jPAQueryFactory
                 .select(
                         Projections.filds(
@@ -128,10 +128,10 @@ class QClassUserRepository implements ExUserRepository {
 }
 ```
 
-- 위 예제 코드를 보면 그럭저럭 나쁘지 않은거 같지만.. 
-- 사실 해당 해당 `QClassUserRepository`에 구현 클래스가 하나이면 상관 없지만 여러 구현 클래스가생기면 문제가 발생하기 시작한다.
-- 예를 들어 매번 검색조건에 날짜가 들어가게 되면 `BooleanBuilder`와 `DateTimeFormatter`을 구현 클래스 안에다가 작성해야하는 번거러움이 발생하게 된다.
-- 위 방법을 좀 더 편리하게 바꾸려면 `BooleanExpression`을 사용하여 메서드를 만들고 호출하는 형식으로 리팩토링하면 코드가 훨씬 깔끔해진다.
+- 위 예제 코드를 보면 그럭저럭 나쁘지 않은 거 같지만.. 
+- 사실 해당 `QClassUserRepository`에 구현 클래스가 하나이면 상관없지만 여러 구현 클래스가 추가로 생기면 문제가 발생하기 시작한다.
+- 예를 들어 매번 검색 조건에 날짜가 들어가게 되면 `BooleanBuilder`와 `DateTimeFormatter`을 구현 클래스 안에다가 작성해야 하는 번거로움이 발생하게 된다.
+- 위 방법을 좀 더 편리하게 바꾸려면 `BooleanExpression`을 사용하여 메서드를 만들어 사용하는 방법으로 **리팩토링**하면 코드가 훨씬 깔끔해진다.
 
 ### 데이터 조회를 QueryDSL로 - BooleanExpression 사용하여 리팩토링
 
@@ -210,7 +210,6 @@ class QClassUserRepository implements ExUserRepository {
 ## JPA findAll 대신 QueryDSL을 활용한 필요한 컬럼 조회
 ![QueryDSL](/assets/img/development/problem_solving/2023-03-26/solution_querydsl.png){:.centered width="50%"}
 - 위의 코드로 인해 코드 량도 좀 더 깔끔하게 줄었다.
-- 물론 검색 조건에 대한 추가작업은 해야하는 일이 남아 있지만 그것을 제외하더라도 크게 성능을 향상 시킨거 같다.
 
 ## 수정한 List
 ```java
@@ -227,7 +226,6 @@ public class ExampleService {
 ```
 
 - 해당 코드를 통해 좀 더 코드가 간편해진 듯하다.
-- 물론 검색 조건의 추가 작업은 진행해야 하지만, 그것이 코드에 또는 성능에 크게 영향을 줄 거 같진 않다.
 
 ## 수정한 List Debugging
 ![수정한 테이블의 컬럼](/assets/img/development/problem_solving/2023-03-26/solution_join_table.png){:.centered width="50%"}
