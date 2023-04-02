@@ -249,8 +249,8 @@ public class ExampleService {
 - 수정 `List` 호출 시간 : **`0.053sec`**
 - 약 **`31%`**의 성능 개선
 
-- 기존 `Detail` 호출 시간 : **`0.027`**
-- 수정 `Detail` 호출 시간 : **`0.005`**
+- 기존 `Detail` 호출 시간 : **`0.027sec`**
+- 수정 `Detail` 호출 시간 : **`0.005sec`**
 - 약 **`81%`**의 성능 개선
 
 ### 3번째 페이지 - 약 74%, 39% 개선
@@ -258,12 +258,12 @@ public class ExampleService {
 ![](/assets/img/development/problem_solving/2023-03-26/gateinfo_list_querydsl.png){:.centered width="100%"}
 ![](/assets/img/development/problem_solving/2023-03-26/gateinfo_detail_non_querydsl.png){:.centered width="100%"}
 ![](/assets/img/development/problem_solving/2023-03-26/gateinfo_detail_querydsl.png){:.centered width="100%"}
-- 기존 `List` 호출 시간 : **`0.027`**
-- 수정 `List` 호출 시간 : **`0.007`**
+- 기존 `List` 호출 시간 : **`0.027sec`**
+- 수정 `List` 호출 시간 : **`0.007sec`**
 - 약 **`74%`**의 성능 개선
 
-- 기존 `Detail` 호출 시간 : **`0.023`**
-- 수정 `Detail` 호출 시간 : **`0.014`**
+- 기존 `Detail` 호출 시간 : **`0.023sec`**
+- 수정 `Detail` 호출 시간 : **`0.014sec`**
 - 약 **`39%`**의 성능 개선
 
 ### 4번째 페이지 - 약 78%, 93% 개선
@@ -271,12 +271,12 @@ public class ExampleService {
 ![](/assets/img/development/problem_solving/2023-03-26/dvccamerainfo_list_querydsl.png){:.centered width="100%"}
 ![](/assets/img/development/problem_solving/2023-03-26/dvccamerainfo_detail_non_querydsl.png){:.centered width="100%"}
 ![](/assets/img/development/problem_solving/2023-03-26/dvccamerainfo_detail_querydsl.png){:.centered width="100%"}
-- 기존 `List` 호출 시간 : **`0.033`**
-- 수정 `List` 호출 시간 : **`0.007`**
+- 기존 `List` 호출 시간 : **`0.033sec`**
+- 수정 `List` 호출 시간 : **`0.007sec`**
 - 약 **`78%`**의 성능 개선
 
-- 기존 `Detail` 호출 시간 : **`0.105`**
-- 수정 `Detail` 호출 시간 : **`0.009`**
+- 기존 `Detail` 호출 시간 : **`0.105sec`**
+- 수정 `Detail` 호출 시간 : **`0.009sec`**
 - 약 **`93%`**의 성능 개선
 
 # 결론
