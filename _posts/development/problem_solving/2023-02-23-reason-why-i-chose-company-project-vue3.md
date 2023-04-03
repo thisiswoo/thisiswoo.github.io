@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[마이그레이션] 내가 회사 프로젝트 마이그레이션 작업 중 vue2가 아닌 vue3로 선택한 이유"
-subtitle: "내가 회사 프로젝트 마이그레이션 작업 중 vue2가 아닌 vue3로 선택한 이유"
+title: "[마이그레이션] 내가 회사 프로젝트 마이그레이션을 vue2가 아닌 vue3로 선택한 이유"
+subtitle: "내가 회사 프로젝트 마이그레이션을 vue2가 아닌 vue3로 선택한 이유"
 category: development
 tags: problem_solving 마이그레이션 vue3
 image:
