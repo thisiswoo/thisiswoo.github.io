@@ -3,29 +3,26 @@
 # See also: <https://jsonresume.org/>.
 basics:
   name: "이건우"
-  label: "기록을 사관처럼, 공부를 습관처럼"
+  label: "기록을 사관처럼"
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
-#  phone: "(+82) 10-8486-0594"
-#  blog: "https://thisiswoo.vercel.app/"
+  phone: "(+82) 10-8486-0594"
   website: "https://thisiswoo.github.io/"
   summary: >
-    Java & Spring 기반의 2년차 백엔드 개발자 이건우입니다. 
-    샛길로 빠진다
-    블로그형 주도 개발
+    Java & Spring 기반의 2년 차 백엔드 개발자 이건우입니다. 주로 웹 개발/배포/운영을 하고 있습니다.
+    항상 꾸준함을 유지하기 위해 저만의 루틴을 실천 중이며, 소중히 배운 것들을 기록하기 위해 Gitgub과 기술 블로그를 운영하고 있습니다.<br><br>
 
-  location:
-    # address: "2712 Broadway St"
-    # postalCode: "CA 94115"
-    # city: "San Francisco"
-    # countryCode: "KR"
-    # region: "대한민국, 광명시"
+    회사 개발 문화에 관심이 많아 일주일에 한 번 **스터디 모임**을 **추진**하여 진행하며, 이를 통한 새로운 지식들을 **기술 블로그**에 **기록**하고 있습니다.<br>
+    또한, 실무에서 개발 이슈 발생시 **문제의 원인**과 **테스트**를 통해 **문제 파악**과 해결해 나가는 재미에 푹 빠져있습니다.
+#  location:
+#     address: "2712 Broadway St"
+#     postalCode: "CA 94115"
+#     city: "San Francisco"
+#     countryCode: "KR"
+#     region: "대한민국, 광명시"
   profiles:
-    - network: "Instagram"
-      username: "samgyeopsalislove"
-      url: "https://www.instagram.com/samgyeopsalislove"
     - network: "Github"
-      username: "https://github.com/thisiswoo"
+      username: "thisiswoo"
       url: "https://github.com/thisiswoo"
     - network: "Link"
       username: "포트폴리오"
@@ -109,36 +106,43 @@ awards:
 #     website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
 #     summary: "Innovative middle-out compression algorithm that changes the way we store data."
 skills:
+  - name: "Server(Back-end)"
+    #    level: "Intermediate"
+    keywords:
+      - "Java"
+      - "Spring Boot"
+      - "Spring MVC"
+      - "Spring Data JPA"
+      - "QueryDSL"
+      - "Gradle"
+      - "Maven"
+  - name: "DevOps"
+#    level: "Junior"
+    keywords:
+      - "MySQL"
+      - "Jenkins"
+      - "Git"
+      - "GitHub"
+      - "GitLab"
   - name: "Client(Front-end)"
-    level: "Intermediate"
+#    level: "Intermediate"
     keywords:
       - "HTML"
       - "CSS"
       - "Javascript"
-      - "jQuery"
       - "Vue"
-  - name: "Server(Back-end)"
-    level: "Intermediate"
+      - "jQuery"
+  - name: "Tools"
+#    level: "Junior"
     keywords:
-      - "Java"
-      - "Spring"
-      - "Spring Boot"
-  - name: "Data"
-    level: "Junior"
+      - "IntelliJ"
+      - "VSCode"
+      - "Vim"
+  - name: "Collaboration"
+#    level: "Intermediate"
     keywords:
-      - "MySQL"
-  - name: "Deployment"
-    level: "Junior"
-    keywords:
-      - "Apache"
-      - "Tomcat"
-      - "Docker"
-  - name: "VSC"
-    level: "Intermediate"
-    keywords:
-      - "Git"
-      - "Github"
-      - "GitLab"
+      - "Jira & Wiki Confluence"
+      - "Slack"
 # languages:
 #   - language: "Korean"
 #     fluency: "Native speaker"
@@ -147,6 +151,7 @@ skills:
 interests:
   - name: "Reading"
     keywords:
+      - "Tech"
       - "Science"
       - "Math"
       - "History"

@@ -3,6 +3,7 @@ layout: resume
 title: Resume
 permalink: /resume/
 description: >
+  안녕하세요. 주 30시간 공부하기 루틴을 실천하고 있는 Java & Spring 기반 2년차 백엔드 개발자 이건우입니다.
 hide_description: true
 sidebar: true
 order: 4
@@ -24,5 +25,5 @@ buttons:
   print: false
   pdf: /assets/Resume.pdf
   # vcf: http://h2vx.com/vcf/<!--url-->
-  json: /assets/resume.json
+#  json: /assets/resume.json
 ---
