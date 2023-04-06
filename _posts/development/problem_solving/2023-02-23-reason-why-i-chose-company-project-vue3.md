@@ -100,7 +100,7 @@ Options API를 Composition API로 리팩토링한 결과
 
 
 <!-- Links -->
-[코지코더님의 인강]: https://kossiecoder.thinkific.com/
+[코지 코더님의 인강]: https://kossiecoder.thinkific.com/
 [책]: https://product.kyobobook.co.kr/detail/S000001916802
 [사이드 프로젝트]: https://thisiswoo.vercel.app/projects
 [공식 블로그]: https://blog.vuejs.org/posts/vue-3.2
