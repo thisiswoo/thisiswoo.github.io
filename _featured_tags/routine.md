@@ -2,10 +2,10 @@
 layout: grid
 type: tag
 title: Routine
-slug: routine
+#slug: routine
 category: daily
 sidebar: true
-order: 1
+#order: 1
 description: >
     My Daily Routine diary
 ---

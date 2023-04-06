@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: Client
-slug: client
+#slug: client
 category: development
 sidebar: true
 order: 2
