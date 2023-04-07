@@ -1,10 +1,10 @@
 ---
 layout: grid
 type: category
-title: Daily Log
+title: Daily
 slug: daily
 sidebar: true
 order: 2
 description: >
-  My daily life record
+    My daily life record
 ---

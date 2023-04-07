@@ -6,7 +6,7 @@ layout: grid
 type: category
 
 # The title of the tag's page.
-title: Books Log
+title: Books
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
 slug: books

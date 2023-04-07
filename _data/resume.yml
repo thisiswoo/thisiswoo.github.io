@@ -38,7 +38,7 @@ work:
     summary: >
       디지털 후각 데이터 기반의 후각 스마트 터널, 스캐너, 및 의료용 스캐너 개발 스타트업.
     highlights:
-      - "기존 JSP의 화면을 <a href='https://thisiswoo.github.io/development/reason-why-i-chose-company-project-vue3.html' target='_blank'><b>Vue3로 마이그레이션</b></a> (2023.02 ~ 현재)"
+      - "기존 JSP의 화면을 <a href='https://thisiswoo.github.io/development/reason-why-i-chose-company-project-vue3.html' target='_blank'><b>Vue3로 마이그레이션</b></a> (2023.09 ~ 현재)"
       - "Spring Security를 활용한 권한 별 접근 가능한 사용자/어드민 페이지 개발"
       - "Spring Boot와 QueryDSL을 활용하여 기존 DB 조회를 <a href='https://thisiswoo.github.io/development/excessive-data-exposure.html' target='_blank'><b>65% 성능 개선</b></a>"
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
