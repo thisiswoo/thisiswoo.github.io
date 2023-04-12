@@ -82,6 +82,8 @@ dependencies {
 - 테스트 작업 시 `variable '변수명' not initialized in the default constructor`라는 해당 오류 발생 시 해당 프로젝트의 `Gradle` 버전 확인
 - `Gradle` 버전(`5.x 미만`, `5.x 이상`)에 따라 `lombok` 설정 후 테스트 재진행
 
+# Reference
+- [[스프링/Spring] Lombok: variable not initialized in the default constructor](https://deeplify.dev/back-end/spring/lombok-required-args-constructor-initialize-error){:target="_blank"}
 
 <!-- Links -->
 [스프링 부트와 AWS로 혼자 구현하는 웹 서비스]: https://product.kyobobook.co.kr/detail/S000001019679
