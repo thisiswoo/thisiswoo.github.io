@@ -113,7 +113,10 @@ class QClassUserRepository implements ExUserRepository {
                 .select(
                         Projections.filds(
                                 UserListDTO.class,
-                                // 조회 컬럼
+                                qUser.id,
+                                qAuthority.auth,
+                                qClientCompony.nm
+                                // 조회 컬럼..
                         )
                 )
                 .from(qUser)
@@ -167,8 +170,8 @@ class QClassUserRepository implements ExUserRepository {
                 .where(
                         betWeenRegDt(searchVO.getRegStrDate(), searchVO.getRegEndDate(), "regDt"),
                         betWeenModDt(searchVO.getModStrDate(), searchVO.getModEndDate(), "modDt"),
-                        likeSearchKeyword(searchVO.getSearchKeyword()),
-                        // 등등
+                        likeSearchKeyword(searchVO.getSearchKeyword())
+                        // 등등...
                 )
                 .orderBy(qUser.regDt.desc())
                 .fetch();
