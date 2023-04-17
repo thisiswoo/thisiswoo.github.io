@@ -159,6 +159,9 @@ class QClassUserRepository implements ExUserRepository {
                 .select(
                         Projections.filds(
                                 UserListDTO.class,
+                                qUser.id,
+                                qAuthority.auth,
+                                qClientCompony.nm
                                 // 조회 컬럼
                         )
                 )
@@ -168,8 +171,8 @@ class QClassUserRepository implements ExUserRepository {
                 .leftjoin(qClientCompony)
                 .on(qUser.coSn.eq(qClientCompony.coSn))
                 .where(
-                        betWeenRegDt(searchVO.getRegStrDate(), searchVO.getRegEndDate(), "regDt"),
-                        betWeenModDt(searchVO.getModStrDate(), searchVO.getModEndDate(), "modDt"),
+                        betWeenRegDt(searchVO.getRegStrDate(), searchVO.getRegEndDate(), EnDateTy.SVC_STR_DT),
+                        betWeenModDt(searchVO.getModStrDate(), searchVO.getModEndDate(), EnDateTy.SVC_END_DT),
                         likeSearchKeyword(searchVO.getSearchKeyword())
                         // 등등...
                 )
@@ -178,21 +181,21 @@ class QClassUserRepository implements ExUserRepository {
     }
     
     // 검색조건 등록 날짜
-    private BooleanExpression betWeenRegDt(String schStrRegDt, String schEndRegDt, String schDateType) {
+    private BooleanExpression betWeenRegDt(String schStrRegDt, String schEndRegDt, EnDateTy schDateType) {
         return getBooleanExpression(schStrRegDt, schEndRegDt, schDateType);
     }
     // 검색조건 수정 날짜
-    private BooleanExpression betWeenModDt(String schStrModDt, String schEndModDt, String schDateType) {
+    private BooleanExpression betWeenModDt(String schStrModDt, String schEndModDt, EnDateTy schDateType) {
         return getBooleanExpression(schStrModDt, schEndModDt, schDateType);
     }
     // 날짜 parsing 
-    private BooleanExpression getBooleanExpression(String strDt, String endDt, String schDateType) {
+    private BooleanExpression getBooleanExpression(String strDt, String endDt, EnDateTy schDateType) {
         QUser qUser = QUser.user;
         if (StringUtils.isBlank(strDt) || StringUtils.isBlank(endDt)) return null;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-dd");
         LocalDateTime parseStrDate = LocalDateTime.of(LocalDate.parse(searchVO.getStrDate(), formatter), LocalTime.of(0, 0, 0));
         LocalDateTime parseEndDate = LocalDateTime.of(LocalDate.parse(searchVO.getEndDate(), formatter), LocalTime.of(23, 59, 59));
-        return schDateType("regDt") ? qUser.regDt.between(parseStrDate, parseEndDate) : qUser.modDt.between(parseStrDate, parseEndDate);
+        return schDateType.equals(EnDateTy.SVC_STR_DT) ? qUser.regDt.between(parseStrDate, parseEndDate) : qUser.modDt.between(parseStrDate, parseEndDate);
     }
     // 검색어
     private BooleanExpression likeSearchKeyword(String keyword) {
