@@ -6,7 +6,7 @@ basics:
   label: "기록을 사관처럼"
   picture: /assets/img/thisiswoo.png
   email: "thisiswoo0594@gmail.com"
-  phone: "(+82) 10-8486-0594"
+#  phone: "(+82) 10-1234-5678"
   website: "https://thisiswoo.github.io/"
   summary: >
     Java & Spring 기반의 2년 차 백엔드 개발자 이건우입니다. 주로 웹 개발/배포/운영을 하고 있습니다.<br><br>
