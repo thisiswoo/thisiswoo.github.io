@@ -139,6 +139,7 @@ WEB APIs
   - **원시타입이란?** : 객체가 아니면서 메서드도 가지지 않는 데이터 타입(`string`, `number`, `bigint`, `boolean`, `undefined`, `symbol`, `null`)
   - **실행 컨텍스트(Execution Context)란?** : 실행할 코드에 제공할 환경 정보들을 모아놓은 객체
     - 예제
+
 ```javascript
 var temp = 'temp';
 function b () { console.log('안녕하세용'); }
@@ -165,16 +166,19 @@ let o = func();
 ```
 
 #### 1. GEC(Global Execution Context - 글로벌 실행 컨텍스트)가 생성되고 원시 값은 콜 스택에, 참조 값은 힙에 저장된다.
+<br/>
 ![Memory1](/assets/img/development/client/2022-12-12/memory1.png){:.centered width="80%"}
 GEC 컨텍스트 JS Single Thread
 {:.figcaption}
 
 #### 2. 함수 func() 을 실행하게 되고 새로운 FEC(Function Execution Context)가 생성되며 동일하게 원시 값은 스택에, 참조 값은 힙에 저장된다.
+<br/>
 ![Memory2](/assets/img/development/client/2022-12-12/memory2.png){:.centered width="80%"}
 FEC 컨텍스트 JS Single Thread
 {:.figcaption}
 
 #### 3. 이후, 함수 func() 이 객체 obj 를 리턴해서 o 에 저장된다. 리턴하기 때문에 FEC는 콜 스택에서 제거된다.
+<br/>
 ![Memory3](/assets/img/development/client/2022-12-12/memory3.png){:.centered width="80%"}
 작업을 마친 FEC 컨텍스트 JS Single Thread
 {:.figcaption}
