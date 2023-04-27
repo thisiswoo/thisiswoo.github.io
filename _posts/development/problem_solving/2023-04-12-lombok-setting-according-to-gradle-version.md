@@ -59,7 +59,7 @@ dependencies {
 ### 나의 gradle 버전 확인
 ![](/assets/img/development/problem_solving/2023-04-12/gradle_version.png){:.centered width="100%"}
 ```shell
-.gradlew --version
+./gradlew --version
 ```
 - 나의 `Gradle Version`은 `7.6.1`
 - 내가 `build.gradle` 설정에서 설정해 준 버전은 `Gradle 5.x 미만`의 설정이어서 `variable '변수명' not initialized in the default constructor`라는 오류가 발생했던 것이었다.
