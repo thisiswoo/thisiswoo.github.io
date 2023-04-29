@@ -5,10 +5,10 @@ subtitle: "하나씩 벗겨가는 양파껍질 학습법"
 category: books
 tags: tech programming
 image:
-    path: /assets/img/books/tech/2023/2023-03-17/java_nextstep.png
+    path: /assets/img/books/tech/2023/2023-04-02/java_nextstep.png
 ---
 
-> “읽은 기간 : 2023-03-17 ~ ”
+> “읽은 기간 : 2023-03-17 ~ 2023-04-02”
 
 <span style="font-size:30px;">\#**목차**</span>
 * this unordered seed list will be replaced by the toc
