@@ -13,7 +13,7 @@ sitemap: false
 _**My motto to live by.**_
 {:.lead}
 
-> “**Effort never betrays. The important thing is an unbreakable heart.**”
+> “**In the end, it's consistency**”
 
 ---
 
