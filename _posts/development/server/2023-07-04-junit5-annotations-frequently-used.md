@@ -37,7 +37,7 @@ class JUnitTest() {
 ```
 
 ### @Test 결과
-![](/assets/img/development/server/2023-06-08/annotations_test.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_test.png){:.centered width="80%"}
 **@Test Annotation**
 {:.figcaption}
 
@@ -73,7 +73,7 @@ public class DisplayNameTest {
 ```
 
 ### @DisplayName 결과
-![](/assets/img/development/server/2023-06-08/annotations_displayname.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_displayname.png){:.centered width="80%"}
 **@DisplayName Annotation**
 {:.figcaption}
 
@@ -131,7 +131,7 @@ public class DisplayNameGenerationTest {
 ```
 
 ### @DisplayNameGeneration 결과
-![](/assets/img/development/server/2023-06-08/annotations_displaynamegeneration.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_displaynamegeneration.png){:.centered width="80%"}
 **@DisplayNameGeneration Annotation**
 {:.figcaption}
 
@@ -179,13 +179,13 @@ class ParameterizedTestTest {
 
 #### 일반 반복 테스트 결과
 
-![](/assets/img/development/server/2023-06-08/annotations_parameterizetest_normal.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_parameterizetest_normal.png){:.centered width="80%"}
 **일반 반복 테스트**
 {:.figcaption}
 
 #### @ValueSource 반복 테스트 결과
 
-![](/assets/img/development/server/2023-06-08/annotations_parameterizetest_valuesource.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_parameterizetest_valuesource.png){:.centered width="80%"}
 **@ValueSource 반복 테스트**
 {:.figcaption}
 
@@ -225,7 +225,7 @@ public class CvsSourceTest {
 
 #### @CsvSource 테스트 결과
 
-![](/assets/img/development/server/2023-06-08/annotations_csvsource.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_csvsource.png){:.centered width="80%"}
 **@CsvSource 테스트**
 {:.figcaption}
 
@@ -249,7 +249,7 @@ public class RepeatTest {
 
 ### @RepeatedTest 테스트 결과
 
-![](/assets/img/development/server/2023-06-08/annotations_repeattest.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-04/annotations_repeattest.png){:.centered width="80%"}
 **@RepeatedTest 테스트**
 {:.figcaption}
 
