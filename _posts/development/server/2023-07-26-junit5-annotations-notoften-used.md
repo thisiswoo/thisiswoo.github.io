@@ -5,7 +5,7 @@ subtitle: "JUnit @Annotations"
 category: development
 tags: server JUnit5 Annotations
 image:
-    path: /assets/img/development/server/2023-06-01/junit5_cover.png
+    path: /assets/img/development/server/2023-07-26/junit5_annotation_ver2_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
@@ -117,16 +117,17 @@ class TagExampleTest {
 ### @Tag 결과
 - 테스트 하기 전에 intelliJ IDE에서는 내가 원하는 `@Tag("xxx"")`에 지정해준 테스트만을 하기 위해선 설정을 해주어야 한다.
     
-  - ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_1.png){:.centered width="80%"}
-  - `intelliJ IDE` 우측 상단 `Edit Configurations...` 클릭
-  
-  - ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_2.png){:.centered width="80%"}
-  - `Build and Run` 에서 `Method` 선택되어 있는 부분을 `Tags` 선택
 
-  - ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_3.png){:.centered width="80%"}
-  - `Tags` 선택 후 내가 테스트할 메서드 (`@Tag("키워드")`, 나의 예제에선 `@Tag("top")`)의 태그 이름을 넣어준다
-  
-  - ![](/assets/img/development/server/2023-07-26/annotations_nested.png){:.centered width="80%"}
+  ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_1.png){:.centered width="80%"}
+  `intelliJ IDE` 우측 상단 `Edit Configurations...` 클릭
+
+  ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_2.png){:.centered width="80%"}
+  `Build and Run` 에서 `Method` 선택되어 있는 부분을 `Tags` 선
+
+  ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_3.png){:.centered width="80%"}
+  `Tags` 선택 후 내가 테스트할 메서드 (`@Tag("키워드")`, 나의 예제에선 `@Tag("top")`)의 태그 이름을 넣어준다
+
+  ![](/assets/img/development/server/2023-07-26/annotations_tag.png){:.centered width="80%"}
   **@Tag Annotation**
   {:.figcaption}
 
