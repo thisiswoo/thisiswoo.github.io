@@ -122,7 +122,7 @@ class TagExampleTest {
   `intelliJ IDE` 우측 상단 `Edit Configurations...` 클릭
 
   ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_2.png){:.centered width="80%"}
-  `Build and Run` 에서 `Method` 선택되어 있는 부분을 `Tags` 선
+  `Build and Run` 에서 `Method` 선택되어 있는 부분을 `Tags` 선택
 
   ![](/assets/img/development/server/2023-07-26/settings_tag_annotation_by_intellij_3.png){:.centered width="80%"}
   `Tags` 선택 후 내가 테스트할 메서드 (`@Tag("키워드")`, 나의 예제에선 `@Tag("top")`)의 태그 이름을 넣어준다
@@ -482,7 +482,7 @@ class TempDirExampleTest {
 - 이에 비해 `Dynamic Test`는 `Runtime` 동안에 테스트가 **생성되고 수행**되기 때문에, **프로그램이 수행되는 도중에도 동작을 변경할 수 있는 특징**이 있다.
 
 ## @TestFactory
-Continue with [[JUnit5] Dynamic Test @TestFactory](./2023-07-04-junit5-dynamictest-testfactory.md){:.heading.flip-title}
+Continue with [[JUnit5] Dynamic Test @TestFactory](./2023-07-10-junit5-dynamictest-testfactory.md){:.heading.flip-title}
 {:.read-more}
 
 ## @TestTemplate
@@ -544,7 +544,7 @@ public class TestTemplateTest {
 ```
 
 ### @TestTemplate 결과
-![](/assets/img/development/server/2023-07-26/test_template.png){:.centered width="80%"}
+![](/assets/img/development/server/2023-07-26/test_template_1.png){:.centered width="80%"}
 **@TestTemplate Annotation Result**
 {:.figcaption}
 

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "[JUnit5] Dynamic Test @TestFactory"
+title: "[JUnit5] @TestFactory"
 subtitle: "JUnit Dynamic Test @TestFactory"
 category: development
 tags: server JUnit5 Annotations
 image:
-    path: /assets/img/development/server/2023-06-01/junit5_cover.png
+    path: /assets/img/development/server/2023-07-10/junit5_testfactory_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
@@ -190,8 +190,8 @@ public class TestFactoryExample {
 
 ### @TestFactory 테스트 결과
 
-![](/assets/img/development/server/2023-06-08/annotations_testfactory.png){:.centered width="80%"}
-**@TestFactory 테스트**
+![](/assets/img/development/server/2023-07-10/annotations_testfactory.png){:.centered width="80%"}
+**@TestFactory 테스트**결과
 {:.figcaption}
 
 ### dynamicTestsWithInvalidReturnType() Error 로그
