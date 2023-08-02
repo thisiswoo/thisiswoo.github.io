@@ -155,6 +155,7 @@ class CollectionTest {
 {:.figcaption}
 
 ### AssertJ 기본 검증 메서드
+
 | 메서드            | 설명                                |
 |----------------|-----------------------------------|
 | `isEqualTo(값)` | 검증대상과 **동일한 값**인지 비교한다.           |
@@ -173,10 +174,8 @@ class CollectionTest {
 **Collection Test**
 {:.figcaption}
 
-
-
-
 ### AssertJ 문자열 검증 메서드
+
 | 메서드            | 설명                               |
 |----------------|----------------------------------|
 | `contains(값)`  | 검증대상에 (값)이 **포함**되어있는지 확인한다.     |
@@ -208,5 +207,7 @@ Back to [[JUnit5] JUnit5](./2023-06-01-junit5.md#결과-출력){:.heading.flip-t
 # Reference
 - [AssertJ](https://assertj.github.io/doc/){:target="_blank"}
 - [JUnit5에서 타사 라이브러리(AssertJ, Hamcrest, Truth) 추천](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions-third-party){:target="_blank"}
+- [Collection Test](https://kkoon9.tistory.com/135){:target="_blank"}
+
 
 <!-- Links -->
