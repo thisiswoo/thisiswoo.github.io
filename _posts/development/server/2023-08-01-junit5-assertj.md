@@ -170,7 +170,7 @@ class CollectionTest {
 - `isIn()`과 `isNotIn()`의 값 목록은 `가변 인자(변하는 인자의 개수)` 로 주거나 `List`와 타입을 이용해서 전달한다.
 
 #### AssertJ 기본 검증 메서드 결과
-![](/assets/img/development/server/2023-08-01/a){:.centered width="80%"}
+![](/assets/img/development/server/2023-08-01/collection_test.png){:.centered width="80%"}
 **Collection Test**
 {:.figcaption}
 
