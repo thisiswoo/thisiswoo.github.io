@@ -174,26 +174,87 @@ class CollectionTest {
 **Collection Test**
 {:.figcaption}
 
+#### AssertJ isIn(), IsNotIn 메서드 결과
+![](/assets/img/development/server/2023-08-01/isin_isnotin.png){:.centered width="80%"}
+**isIn(), isNotIn Test**
+{:.figcaption}
+
 ### AssertJ 문자열 검증 메서드
 
-| 메서드            | 설명                               |
-|----------------|----------------------------------|
-| `contains(값)`  | 검증대상에 (값)이 **포함**되어있는지 확인한다.     |
-| `startsWith(값)` | 검증대상의 **시작 값**이 (값)과 동일한지 비교한다.  |
-| `endsWith(값)`   | 검증대상의 **마지막 값**이 (값)과 동일한지 비교한다. |
+| 메서드                         | 설명                                  |
+|-----------------------------|-------------------------------------|
+| `contains(값)`               | 검증대상에 (값)이 **포함**되어있는지 확인한다.        |
+| `containsOnlyOnce(값)`       | 검증대상에 (값)이 딱 **한 번만 포함**되어있는지 확인한다. |
+| `containsOnlyDigits()`      | **숫자만 포함**하는지 검증한다.                 |
+| `containsWhitespaces()`     | **공백 문자를 포함**하고 있는지 검증한다.           |
+| `containsOnlyWhitespaces()` | **공백 문자만 포함**하는지 검증한다.              |
+| `doesNotContain(값)`         | 검증대상의 **공백 문자만 포함**하는지 검증한다.        |
+| `startsWith(값)`             | 검증대상의 **시작 값**이 (값)과 동일한지 비교한다.     |
+| `endsWith(값)`               | 검증대상의 **마지막 값**이 (값)과 동일한지 비교한다.    |
+
+```java
+import static org.assertj.core.api.Assertions.*;
+
+public class AssertJTest {
+
+    @Test
+    void 문자열_테스트() {
+        assertThat("Hello, world! Nice to meet you.") // 주어진 "Hello, world! Nice to meet you."라는 문자열은
+                .isNotEmpty() // 비어있지 않고
+                .contains("Nice") // "Nice"를 포함하고
+                .contains("world") // "world"도 포함하고
+                .doesNotContain("ZZZ") // "ZZZ"는 포함하지 않으며
+                .startsWith("Hell") // "Hell"로 시작하고
+                .endsWith("u.") // "u."로 끝나며
+                .isEqualTo("Hello, world! Nice to meet you."); // "Hello, world! Nice to meet you."과 일치
+    }
+}
+```
+
+#### AssertJ 문자열 검증 메서드 결과
+![](/assets/img/development/server/2023-08-01/string_test.png){:.centered width="80%"}
+**String Test**
+{:.figcaption}
 
 ### AssertJ 숫자 검증 메서드
-| 메서드                        | 설명                      |
-|----------------------------|-------------------------|
-| `isPositive()`             | 검증대상이 **양수**인지 확인한다.    |
-| `isNegative()`             | 검증대상이 **음수**인지 확인한다.    |
-| `isZero()`                 | 검증대상이 **`0`** 인지 확인한다.  |
-| `isGraterThan(값)`          | 검증대상이 값을 **초과**한지 확인한다. |
-| `isLessThan(값)`            | 검증대상이 값보다 **미만**인지 확인한다. |
-| `isGraterThanOrEqualTo(값)` | 검증대상이 값 **이상**인지 확인한다.  |
-| `isLessThanOrEqualTo(값)`   | 검증대상이 값 **이하**인지 확인한다.  |
+
+| 메서드                        | 설명                         |
+|----------------------------|----------------------------|
+| `isPositive()`             | 검증대상이 **양수**인지 확인한다.       |
+| `isNegative()`             | 검증대상이 **음수**인지 확인한다.       |
+| `isZero()`                 | 검증대상이 **`0`** 인지 확인한다.     |
+| `isGraterThan(값)`          | 검증대상이 값을 **초과**한지 확인한다.    |
+| `isLessThan(값)`            | 검증대상이 값보다 **미만**인지 확인한다.   |
+| `isGraterThanOrEqualTo(값)` | 검증대상이 값 **이상**인지 확인한다.     |
+| `isLessThanOrEqualTo(값)`   | 검증대상이 값 **이하**인지 확인한다.     |
+| `isBetween(값1, 값2)`        | `값1`과 `값2` **사이에 포함**되는지 검증한다. |
+
+```java
+import static org.assertj.core.api.Assertions.*;
+
+public class AssertJTest {
+
+    @Test
+    void 숫자_테스트() {
+        assertThat(3.14d) // 주어진 3.14라는 숫자는
+                .isPositive() // 양수이고
+                .isGreaterThan(3) // 3보다 크며
+                .isLessThan(4) // 4보다 작습니다
+                .isEqualTo(3, offset(1d)) // 오프셋 1 기준으로 3과 같고
+                .isEqualTo(3.1, offset(0.1d)) // 오프셋 0.1 기준으로 3.1과 같으며
+                .isEqualTo(3.14); // 오프셋 없이는 3.14와 같습니다
+    }
+}
+```
+
+#### AssertJ 숫자 검증 메서드 결과
+![](/assets/img/development/server/2023-08-01/number_test.png){:.centered width="80%"}
+**Number Test**
+{:.figcaption}
 
 ### AssertJ filteredOn 메서드
+
+### assertThatThrownBy() : 예외처리
 
 
 
@@ -208,6 +269,7 @@ Back to [[JUnit5] JUnit5](./2023-06-01-junit5.md#결과-출력){:.heading.flip-t
 - [AssertJ](https://assertj.github.io/doc/){:target="_blank"}
 - [JUnit5에서 타사 라이브러리(AssertJ, Hamcrest, Truth) 추천](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions-third-party){:target="_blank"}
 - [Collection Test](https://kkoon9.tistory.com/135){:target="_blank"}
+- [AssertJ 소개](https://www.daleseo.com/assertj/){:target="_blank"}
 
 
 <!-- Links -->
