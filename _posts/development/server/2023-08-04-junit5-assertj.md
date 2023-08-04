@@ -281,21 +281,7 @@ public class AssertJTest {
 - `as(String description, Object... args)`를 사용하여 테스트 코드의 실패 메시지를 설정할 수 있다.
 - `as`는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.
 
-```java
-import static org.assertj.core.api.Assertions.assertThat;
 
-class FailMessageTest {
-    
-    @Test
-    void fail_message_테스트() {
-        String str = "JUnit";
-        assertThat(str)
-                // as는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.
-                .as("기대값(Expected) {AssertJ}와 실제값(Actual) {%s}이 일치하지 않습니다.", str)
-                .isEqualTo("AssertJ");
-    }
-}
-```
 
 #### as - Fail Message 결과
 ![](/assets/img/development/server/2023-08-04/fail_message.png){:.centered width="80%"}
