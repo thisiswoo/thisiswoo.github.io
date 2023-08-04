@@ -13,9 +13,8 @@ image:
 {:toc}
 
 # JUnit5 AssertJ
-
 ## AssertJ VS Assertions
-### JUnit의 AssertJ 라이브러리를 사용 권장
+### JUnit 팀의 AssertJ 라이브러리를 사용 권장
 > "`JUnit Jupiter`에서 제공하는 `Assertions` 기능만으로도 많은 테스트 시나리오에 충분하지만, 더 강력한 성능과 매처와 같은 추가 기능이 필요하거나 필요한 경우가 있습니다. **이러한 경우 JUnit 팀은 `AssertJ`, `Hamcrest`, `Truth` 등과 같은 타사 어설션 라이브러리를 사용할 것을 권장합니다.** 따라서 개발자는 원하는 `Assertions` 라이브러리를 자유롭게 사용할 수 있습니다. - JUnit5 Doc"
 
 ### AssertJ의 장점
