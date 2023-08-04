@@ -38,6 +38,7 @@ dependencies {
 
 ### AssertJ VS Assertions 차이점
 #### junit.jupiter의 Assertions
+
 ```java
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -60,6 +61,7 @@ class AssertionsTest {
 {:.figcaption}
 
 #### assertj.core의 Assertions
+
 ```java
 import static org.assertj.core.api.Assertions.*;
 
@@ -87,6 +89,7 @@ public class AssertJTest {
 - 하지만 `Collection Test`를 보면 크게 다르다는걸 느끼게 될 것이다.  
 
 #### Collection Test
+
 ```java
 class CollectionTest {
 
@@ -438,12 +441,12 @@ class AssertThrowsTest {
 
 - 에러 메세지의 값이 `"String index out of range"` 가 포함되어 있어야 하는 테스트이지만 `"String index out of length"` 여서 테스트가 실패하게 된다.
 
-#### assertThatThrownBy() : 예외처리 에러1 결과
+#### assertThatThrownBy() - 예외처리 에러1 결과
 ![](/assets/img/development/server/2023-08-04/assertthrows_error_1.png){:.centered width="80%"}
 **AssertThatThrownBy Fail Test1**
 {:.figcaption}
 
-#### assertThatThrownBy() : 예외처리 에러2
+#### assertThatThrownBy() - 예외처리 에러2
 
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -465,12 +468,12 @@ class AssertThrowsTest {
 
 - 에러 메세지의 값이 `"String index out of range: 3"` 가 포함되어 있어야 하는 테스트이지만 `"4"` 여서 테스트가 실패하게 된다.
 
-#### assertThatThrownBy() : 예외처리 에러2 결과
+#### assertThatThrownBy() - 예외처리 에러2 결과
 ![](/assets/img/development/server/2023-08-04/assertthrows_error_2.png){:.centered width="80%"}
 **AssertThatThrownBy Fail Test2**
 {:.figcaption}
 
-#### assertThatThrownBy() : 예외처리 성공
+#### assertThatThrownBy() - 예외처리 성공
 
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -493,7 +496,7 @@ class AssertThrowsTest {
 
 - 에러 메세지의 값이 `"String index out of range: 3"` 가 포함되어야하는 값에 각각 `"String index out of range"` 과 `"3"`이 포함되어 테스트가 성공하게 된다.
 
-#### assertThatThrownBy() : 예외처리 결과
+#### assertThatThrownBy() - 예외처리 결과
 ![](/assets/img/development/server/2023-08-04/filteredon_test.png){:.centered width="80%"}
 **AssertThatThrownBy Test**
 {:.figcaption}
