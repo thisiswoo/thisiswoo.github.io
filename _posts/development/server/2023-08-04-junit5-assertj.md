@@ -274,51 +274,33 @@ public class AssertJTest {
 **Compare Test**
 {:.figcaption}
 
-[//]: # (### as - Fail Message)
+### as - Fail Message
+- `as(String description, Object... args)`를 사용하여 테스트 코드의 실패 메시지를 설정할 수 있다.
+- `as`는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.
 
-[//]: # (- `as&#40;String description, Object... args&#41;`를 사용하여 테스트 코드의 실패 메시지를 설정할 수 있다.)
+```java
+import static org.assertj.core.api.Assertions.assertThat;
 
-[//]: # (- `as`는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.)
+class FailMessageTest {
+    
+    @Test
+    void fail_message_테스트() {
+        String str = "JUnit";
+        assertThat(str)
+                // as는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.
+                .as("기대값(Expected) {AssertJ}와 실제값(Actual) {%s}이 일치하지 않습니다.", str)
+                .isEqualTo("AssertJ");
+    }
+}
+```
 
-[//]: # ()
-[//]: # (```java)
-
-[//]: # (import static org.assertj.core.api.Assertions.assertThat;)
-
-[//]: # ()
-[//]: # (class FailMessageTest {)
-
-[//]: # (    )
-[//]: # (    @Test)
-
-[//]: # (    void fail_message_테스트&#40;&#41; {)
-
-[//]: # (        String str = "JUnit";)
-
-[//]: # (        assertThat&#40;str&#41;)
-
-[//]: # (                // as는 검증 문보다 앞에 작성해야 하며, 그렇지 않을 경우 검증 문 이후 호출이 중단됨으로 무시된다.)
-
-[//]: # (                .as&#40;"기대값&#40;Expected&#41; {AssertJ}와 실제값&#40;Actual&#41; {%s}이 일치하지 않습니다.", str&#41;)
-
-[//]: # (                .isEqualTo&#40;"AssertJ"&#41;;)
-
-[//]: # (    })
-
-[//]: # (})
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (#### as - Fail Message 결과)
-
-[//]: # (![]&#40;/assets/img/development/server/2023-08-04/fail_message.png&#41;{:.centered width="80%"})
-
-[//]: # (**Fail Message Test**)
-
-[//]: # ({:.figcaption})
+#### as - Fail Message 결과
+![](/assets/img/development/server/2023-08-04/fail_message.png){:.centered width="80%"}
+**Fail Message Test**
+{:.figcaption}
 
 ### filteredOn 메서드
+
 ```java
 import static org.assertj.core.api.Assertions.*;
 
@@ -423,6 +405,7 @@ class FilteredOnTest {
     }
 }
 ```
+
 - 위 `@BeforeEach`를 통해 `@Test` 어노테이션이 붙은 테스트 메서드를 실행하기 전 `createMember()` 메서드를 실행하여 `Member` 객체들을 생성한다.
 - 이후 `extracting()` 메서드에서 `람다 표현식`을 **더 간단하게 표현**하는 방법인 **`메서드 레퍼런스`**를 이용하여 `Member` 객체의 메서드를 참조(`Method Reference`)를 이용하여 `.filteredOn()`을 구현한다.
 - 마지막 `.containsExactly()` 메서드에 인자로 `tuple()`을 사용하여 각기 다른 인자값들을 받아 테스트 하게 되는데, **이때 `.containsExactly()`는 순서 원소의 개수와 값이 모두 일치해야 한다.**
@@ -432,9 +415,9 @@ class FilteredOnTest {
 **Fail Message Test**
 {:.figcaption}
 
-
 ### assertThatThrownBy() : 예외처리
 #### assertThatThrownBy() : 예외처리 에러1
+
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -452,6 +435,7 @@ class AssertThrowsTest {
     }
 }
 ```
+
 - 에러 메세지의 값이 `"String index out of range"` 가 포함되어 있어야 하는 테스트이지만 `"String index out of length"` 여서 테스트가 실패하게 된다.
 
 #### assertThatThrownBy() : 예외처리 에러1 결과
@@ -460,6 +444,7 @@ class AssertThrowsTest {
 {:.figcaption}
 
 #### assertThatThrownBy() : 예외처리 에러2
+
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -477,6 +462,7 @@ class AssertThrowsTest {
     }
 }
 ```
+
 - 에러 메세지의 값이 `"String index out of range: 3"` 가 포함되어 있어야 하는 테스트이지만 `"4"` 여서 테스트가 실패하게 된다.
 
 #### assertThatThrownBy() : 예외처리 에러2 결과
@@ -485,6 +471,7 @@ class AssertThrowsTest {
 {:.figcaption}
 
 #### assertThatThrownBy() : 예외처리 성공
+
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -503,6 +490,7 @@ class AssertThrowsTest {
     }
 }
 ```
+
 - 에러 메세지의 값이 `"String index out of range: 3"` 가 포함되어야하는 값에 각각 `"String index out of range"` 과 `"3"`이 포함되어 테스트가 성공하게 된다.
 
 #### assertThatThrownBy() : 예외처리 결과
