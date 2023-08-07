@@ -171,9 +171,45 @@ class CollectionTest {
 
 - `isIn()`과 `isNotIn()`의 값 목록은 `가변 인자(변하는 인자의 개수)` 로 주거나 `List`와 타입을 이용해서 전달한다.
 
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class JUnitTest {
+    @Test
+    void 기본_테스트_메서드() {
+        // isEqualTo()
+        String str1 = new String("hello");
+        String str2 = new String("hello");
+        assertThat(str1).isEqualTo(str2); // 비교 대상의 내용이 같은지 확인
+        // isSameAs()
+        String str3 = str1;
+        assertThat(str1).isSameAs(str3); // 같은 객체를 참조하고 있는지 확인
+
+        // isNotNull()
+        assertThat(str1).isNotNull(); // 객체가 null이 아닌지 확인
+
+        // isNull()
+        String str4 = null;
+        assertThat(str4).isNull(); // 객체가 null인지 확인
+
+        // isNotEmpty() and isEmpty()
+        List<String> emptyList = new ArrayList<>();
+        List<String> nonEmptyList = Arrays.asList("apple", "banana");
+        assertThat(emptyList).isEmpty(); // 비어있는지 확인
+        assertThat(nonEmptyList).isNotEmpty(); // 비어있지 않은지 확인
+
+        // isIn() and isNotIn()
+        String fruit1 = "apple";
+        String fruit2 = "orange";
+        assertThat(fruit1).isIn(nonEmptyList); // "apple"이 리스트에 포함되어 있는지 확인
+        assertThat(fruit2).isNotIn(nonEmptyList); // "orange"가 리스트에 포함되어 있지 않은지 확인
+    }
+}
+```
+
 #### AssertJ 기본 검증 메서드 결과
-![](/assets/img/development/server/2023-08-04/collection_test.png){:.centered width="80%"}
-**Collection Test**
+![](/assets/img/development/server/2023-08-04/basic_test.png){:.centered width="80%"}
+**Basic Test**
 {:.figcaption}
 
 #### AssertJ isIn(), IsNotIn 메서드 결과
