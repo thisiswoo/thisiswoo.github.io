@@ -46,8 +46,8 @@ work:
   - company: "K-Gate"
     position: "웹 개발"
     website: "https://official.k-gate.net/"
-    startDate: "2021-12-01"
-    endDate: ""
+    startDate: "2022-03-01"
+    endDate: "2023-01-11"
     summary: >
       안면인식 출입통제 권한 별 시스템/운영자 어드민 웹 개발.
     highlights:
