@@ -16,12 +16,12 @@ image:
 - `JPA QueryDSL`에서 **`group_concat()`** 함수 사용법
 
 ## MySQL group_concat 함수 란?
-- **`GROUP_CONCAT`** 은 `MySQL`에서 제공하는 [집계 함수] 중 하나로, **`선택한 row(열)의 값을 연결하여 하나의 문자열로 반환`** 한다. 
+- **`GROUP_CONCAT`** 은 `MySQL`에서 제공하는 [집계 함수] 중 하나로, **선택한 row(열)의 값을 연결하여 하나의 문자열로 반환** 한다. 
 - 기본적으로 이 함수는 쉼표(,)를 사용하여 값들을 연결하지만, `SEPARATOR` 키워드를 사용하여 다른 문자 또는 문자열을 구분자로 지정할 수 있다.
 
 ## MySQL group_concat 기본 사용법
 ### GROUP_CONCAT() 문법
-```mysql
+```text
 GROUP_CONCAT(
     [DISTINCT] expression [,expression ...]
     [ORDER BY {unsigned_integer | col_name | expr}
@@ -71,8 +71,8 @@ GROUP BY id;
 
 ## JPA QueryDSL에서 group_concat() 적용하기
 ### 문제 발생
-- **`Hibernate`** 는 특정 데이터베이스에 종속되지 않고 `객체지향`스럽게 사용할 수 있도록 `추상화`해주어 **특정 DB에 종속된 함수(예, `MySQL`의 `group_concat`)는 제공하지 않는다.** 
-- 때문에 `Hibernate`에서 제공하지 않고 특정 DB에서 제공하는 함수를 사용하려면 **`Dialect를 커스텀`** 하여 SQL 함수를 등록해주어야한다.
+
+> "**`Hibernate`** 는 특정 데이터베이스에 종속되지 않고 `객체지향`스럽게 사용할 수 있도록 `추상화`해주어 **특정 DB에 종속된 함수(예, `MySQL`의 `group_concat`)는 제공하지 않는다.**<br>때문에 `Hibernate`에서 제공하지 않고 특정 DB에서 제공하는 함수를 사용하려면 **`Dialect를 커스텀`** 하여 SQL 함수를 등록해주어야한다."
 
 ### CustomMySQLDialect 파일 생성
 - `package com.xxxxx.xxxxx.xxx.config;` 에 `CustomMySQLDialect.class` 파일을 생성
@@ -120,7 +120,7 @@ spring.jpa.database-platform=com.xxxxx.xxxxx.xxx.config.CustomMySQLDialect
 ![](/assets/img/development/server/2023-09-04_jpa-groupconcat/group_concat_01.png){:.centered width="80%"}
 - 위 쿼리문 처럼 `group_concat`을 하기 전 결과를 보게 되면 `출입이력_일련번호`와 `유저_일련번호`는 같지만 `문진표_답변` 컬럼의 데이터 값이 달라서 총 3개의 `row`가 나오게 된다. 
 - 내가 원하는 건 `출입이력_일련번호`와 `유저_일련번호`, `문진표_답변`을 **`한 row`** 에 나오게 하고 싶다.
-- 해결책은 아래와 같다
+- 해결책은 아래와 같다.
 
 ### group_concat 사용 후 SQL문
 ![](/assets/img/development/server/2023-09-04_jpa-groupconcat/group_concat_02.png){:.centered width="80%"}
