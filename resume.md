@@ -3,7 +3,7 @@ layout: resume
 title: Resume
 permalink: /resume/
 description: >
-  안녕하세요. 주 30시간 공부하기 루틴을 실천하고 있는 Java & Spring 기반 2년차 백엔드 개발자 이건우입니다.
+  제가 보고 느끼고 배운 소중한 것들을 기술 블로그에 기록하고 있습니다.
 hide_description: true
 sidebar: true
 order: 4
