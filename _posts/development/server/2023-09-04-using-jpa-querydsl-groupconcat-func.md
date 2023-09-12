@@ -206,4 +206,4 @@ public class QClassAccessCntrlHistRepository implements ExAccessCntrlHistReposit
 - **`group_concat()`** 을 사용할 땐 꼭 **`GROUP BY 컬럼명`** 을 이용하여 한 줄(row)에 출력할 수 있게 해야한다.
 
 <!-- Link -->
-[집계 함수]: https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html
+[집계 함수]: https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html정
