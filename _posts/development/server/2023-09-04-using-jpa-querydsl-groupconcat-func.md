@@ -35,7 +35,7 @@ GROUP_CONCAT(
 - **`ASC | DESC`** : 정렬 순서를 지정하며, 필요에 따라 생략할 수 있다
 - **`SEPARATOR`** : 값들을 연결할 때 사용할 구분자를 지정. 기본값은 쉼표(,).
 
-```mysql
+```sql
 SELECT 
     student_name,
     GROUP_CONCAT(
@@ -46,7 +46,7 @@ GROUP BY student_name;
 ```
 
 ### GROUP_CONCAT() 예제
-```mysql
+```sql
 CREATE TABLE test (
     id INT,
     value VARCHAR(255)
