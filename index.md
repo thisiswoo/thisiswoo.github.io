@@ -9,17 +9,11 @@ sitemap: false
 제가 보고 느끼고 배운 **소중한 것**들을 기술 블로그에 **기록**하고 있습니다.<br>
 배운 것 외에도 **꾸준히** 블로그에 **[기술]**과 **[문제 해결]** 그리고 **[취미]**와 일상을 **기록**하려 합니다.<br>
 
-_**My motto to live by.**_
-{:.lead}
-
-> “**In the end, it's consistency**”
-
 ---
 
 <!--author-->
 
 <!-- Links -->
-[루틴]: /tag-routine/
 [기술]: /development/
 [취미]: /books/
 [문제 해결]: /tag-problem-solving/
