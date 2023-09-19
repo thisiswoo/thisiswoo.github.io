@@ -135,55 +135,55 @@ spring.jpa.database-platform=com.xxxxx.xxxxx.xxx.config.CustomMySQLDialect
 public class QClassAccessCntrlHistRepository implements ExAccessCntrlHistRepository { 
     private final JPAQueryFactory jpaQueryFactory;
 
-  @Override
-  public List<ResAccessCntrlHistVO> getAccessCntrlList(ReqAccessCntrlHistSearchVO searchVO) {
-    QAccessCntrlHist qAccessCntrlHist = QAccessCntrlHist.accessCntrlHist;
-    QGateInfo qGateInfo = QGateInfo.gateInfo;
-    QUsr qUsr = QUsr.usr;
-    QQuestnAnsr qQuestnAnsr = QQuestnAnsr.questnAnsr1;
-
-    Pageable pageable = PageRequest.of(searchVO.getStart(), searchVO.getLength()); // Pageable로 만들어주기 위함
-
-    return jpaQueryFactory
-            .select(
-                    Projections.fields(
-                            ResAccessCntrlHistVO.class,
-                            qAccessCntrlHist.accessCntrlHistSn,
-                            qAccessCntrlHist.accessCntrlRegDt,
-                            qUsr.usrCameraId,
-                            qGateInfo.gateNm,
-                            qAccessCntrlHist.img,
-                            qUsr.nm,
-                            qUsr.mbtlno,
-                            qUsr.usrTy,
-                            qUsr.mngGradeTy,
-                            qAccessCntrlHist.tempr,
-                            qAccessCntrlHist.temprStts,
-                            qAccessCntrlHist.accessCntrlTy,
-                            Expressions.stringTemplate("group_concat({0})", qQuestnAnsr.questnAnsr).as("questnAnsr"),
-                            qQuestnAnsr.nm.max().as("qNm"),
-                            qQuestnAnsr.mbtlno.max().as("qMbtlno")
-                    )
-            )
-            .from(qAccessCntrlHist)
-            .leftJoin(qUsr)
-            .on(qAccessCntrlHist.usrSn.eq(qUsr.usrSn))
-            .leftJoin(qGateInfo)
-            .on(qAccessCntrlHist.gateInfoSn.eq(qGateInfo.gateInfoSn))
-            .leftJoin(qQuestnAnsr)
-            .on(qAccessCntrlHist.questnAnsrId.eq(qQuestnAnsr.questnAnsrId))
-            .where(
-                    eqGateInfoSn(searchVO.getGateInfoSn()),
-                    betWeenStrAccessCntrlRegDt(searchVO.getSchStrDt(), searchVO.getSchEndDt()),
-                    eqAccessCntrlTy(searchVO.getAccessCntrlTy()),
-                    likeSearchKeyword(searchVO.getSearchKeyword())
-            )
-            .groupBy(qAccessCntrlHist.accessCntrlHistSn, qUsr.nm, qQuestnAnsr.nm, qUsr.mbtlno, qQuestnAnsr.mbtlno)
-            .orderBy(qAccessCntrlHist.accessCntrlRegDt.desc())
-            .offset(pageable.getOffset())
-            .limit(pageable.getPageSize())
-            .fetch();
-  }
+    @Override
+    public List<ResAccessCntrlHistVO> getAccessCntrlList(ReqAccessCntrlHistSearchVO searchVO) {
+        QAccessCntrlHist qAccessCntrlHist = QAccessCntrlHist.accessCntrlHist;
+        QGateInfo qGateInfo = QGateInfo.gateInfo;
+        QUsr qUsr = QUsr.usr;
+        QQuestnAnsr qQuestnAnsr = QQuestnAnsr.questnAnsr1;
+      
+        Pageable pageable = PageRequest.of(searchVO.getStart(), searchVO.getLength()); // Pageable로 만들어주기 위함
+      
+        return jpaQueryFactory
+                .select(
+                        Projections.fields(
+                                ResAccessCntrlHistVO.class,
+                                qAccessCntrlHist.accessCntrlHistSn,
+                                qAccessCntrlHist.accessCntrlRegDt,
+                                qUsr.usrCameraId,
+                                qGateInfo.gateNm,
+                                qAccessCntrlHist.img,
+                                qUsr.nm,
+                                qUsr.mbtlno,
+                                qUsr.usrTy,
+                                qUsr.mngGradeTy,
+                                qAccessCntrlHist.tempr,
+                                qAccessCntrlHist.temprStts,
+                                qAccessCntrlHist.accessCntrlTy,
+                                Expressions.stringTemplate("group_concat({0})", qQuestnAnsr.questnAnsr).as("questnAnsr"),
+                                qQuestnAnsr.nm.max().as("qNm"),
+                                qQuestnAnsr.mbtlno.max().as("qMbtlno")
+                        )
+                )
+                .from(qAccessCntrlHist)
+                .leftJoin(qUsr)
+                .on(qAccessCntrlHist.usrSn.eq(qUsr.usrSn))
+                .leftJoin(qGateInfo)
+                .on(qAccessCntrlHist.gateInfoSn.eq(qGateInfo.gateInfoSn))
+                .leftJoin(qQuestnAnsr)
+                .on(qAccessCntrlHist.questnAnsrId.eq(qQuestnAnsr.questnAnsrId))
+                .where(
+                        eqGateInfoSn(searchVO.getGateInfoSn()),
+                        betWeenStrAccessCntrlRegDt(searchVO.getSchStrDt(), searchVO.getSchEndDt()),
+                        eqAccessCntrlTy(searchVO.getAccessCntrlTy()),
+                        likeSearchKeyword(searchVO.getSearchKeyword())
+                )
+                .groupBy(qAccessCntrlHist.accessCntrlHistSn, qUsr.nm, qQuestnAnsr.nm, qUsr.mbtlno, qQuestnAnsr.mbtlno)
+                .orderBy(qAccessCntrlHist.accessCntrlRegDt.desc())
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetch();
+    }
 }
 ```
 
