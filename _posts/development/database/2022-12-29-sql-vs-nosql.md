@@ -50,7 +50,7 @@ VALUES (“EMP1”, 21, “1234567890”);
 ## NoSQL(Non SQL) 이란?
 
 ![NoSQL](/assets/img/development/database/2022-12-29/nosql_title.jpg){:.centered width="70%"}
-**<center>SQL</center>**
+**<center>NoSQL</center>**
 
 - **NoSQL은 고정 스키마가 필요하지 않고 쉽게 확장**되며 조인을 수행할 수 없는 **비관계형 데이터베이스**이다.
 - **방대한 데이터 스토리지가 필요한 분산 데이터 저장소에 적합**하여 **빅데이터와 실시간 웹 앱에 많이 사용**된다.
