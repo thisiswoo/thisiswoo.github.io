@@ -31,6 +31,16 @@ basics:
       username: "포트폴리오"
       url: "https://thisiswoo.github.io/"
 work:
+  - company: "LeeWoo_OMS"
+    position: "웹 개발"
+    website: ""
+    startDate: "2023-10-22"
+    endDate: ""
+    summary: >
+      상자, 원단 물류 시스템 Client/Admin 웹 개발 중.
+    highlights:
+      - "기존 물류 ERP 시스템에서 주문(상자/원단) 시스템 및 주문 관리 시스템 개발 중"
+      - "Spring Security를 활용한 권한 별 접근 가능한 주문 사용자/주문 관리자 페이지 개발 중"
   - company: "일리아스 AI"
     position: "웹 개발"
     website: "https://kr.iliasai.com"
