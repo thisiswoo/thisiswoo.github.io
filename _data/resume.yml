@@ -11,11 +11,11 @@ basics:
   summary: >
     Java & Spring 기반의 2년 차 백엔드 개발자 이건우입니다. 주로 웹 개발/배포/운영을 하고 있습니다.<br><br>
     
-    항상 초심을 잃지 않고 **꾸준함**을 유지하기 위해 **사내 스터디 모임**을 **추진**하여 **진행**하고 있습니다. 
+    항상 초심을 잃지 않고 **꾸준함**을 유지하기 위해 **사내 스터디 모임** 뿐만 아니라 **개인 프로젝트** 및 **토이 프로젝트**를 추진하여 진행하고 있습니다.<br> 
     이를 통해 습득한 지식을 **Github**와 **기술 블로그**에 **기록 • 공유**하는 저만의 **루틴**을 실천중입니다. 
-    또한, 실무에서 이슈 발생시 테스트를 통해 원인을 **분석**하고 해결 • 개선하는 재미에 푹 빠져있습니다.<br><br>
+    또한, 실무에서 이슈 발생시 테스트를 통해 원인을 **분석**하고 해결 • 개선을 하고 있습니다.<br><br>
     
-    **자신**하지만 자만하지 않으며, 항상 **겸손**한 자세로 배우고, 공유하며 모두 함께 **성장**할 수 있도록 하겠습니다.
+    **꾸준함의 힘**을 알기에 **꾸준함**과 **기록**을 통해 **정진**하겠습니다.
 
 #  location:
 #     address: "2712 Broadway St"
@@ -37,7 +37,7 @@ work:
     startDate: "2022-09-22"
     endDate: ""
     summary: >
-      디지털 후각 데이터 기반의 후각 스마트 터널, 스캐너, 및 의료용 스캐너 개발 스타트업.
+      디지털 후각 데이터 기반의 후각 스마트 터널, 스캐너 및 의료용 스캐너 개발 스타트업의 통합관리 시스템 개발 중.
     highlights:
       - "기존 JSP의 화면을 <a href='https://thisiswoo.github.io/development/reason-why-i-chose-company-project-vue3.html' target='_blank'><b>Vue3로 마이그레이션</b></a> (2023.09 ~ 현재)"
       - "Spring Security를 활용한 권한 별 접근 가능한 사용자/어드민 페이지 개발"
@@ -92,6 +92,14 @@ projects:
     endDate: ""
     summary: "Github Pages를 이용한 기술 블로그 운영"
     url: "https://thisiswoo.github.io/"
+  - title: "전국 동물병원 진료비 안내 서비스 작업 중(3인)"
+    startDate: "2023-11-02"
+    endDate: ""
+    summary: "기존 교육기관의 프로젝트를 확장하여 기획 중"
+    url: ""
+    highlights:
+      - "2023년 11월 기획 완료 예정"
+      - "2023년 12월 개발 시작 예정"
   - title: "자바스크립트를 Vue.js로 마이그레이션(vue3 적용)"
     startDate: ""
     endDate: ""
@@ -153,6 +161,7 @@ skills:
       - "Javascript"
       - "Vue"
       - "jQuery"
+      - "JSP"
   - name: "Tools"
 #    level: "Junior"
     keywords:
