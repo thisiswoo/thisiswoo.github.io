@@ -5,7 +5,7 @@ subtitle: "Spring Security Overview"
 category: development
 tags: server spring
 image:
-  path: /assets/img/development/server/2023-09-19_spring_security/spring_security_cover.png
+  path: /assets/img/development/server/2023-09-19_spring_security_overview/spring_security_cover.png
 ---
 
 <span style="font-size:30px;">\#**목차**</span>
