@@ -9,7 +9,7 @@ basics:
 #  phone: "(+82) 10-1234-5678"
   website: "https://thisiswoo.github.io/"
   summary: >
-    Java & Spring 기반의 2년 차 백엔드 개발자 이건우입니다. 주로 웹 개발/배포/운영을 하고 있습니다.<br><br>
+    Java & Spring 기반의 3년 차 백엔드 개발자 이건우입니다. 주로 웹 개발/배포/운영을 하고 있습니다.<br><br>
     
     항상 초심을 잃지 않고 **꾸준함**을 유지하기 위해 **사내 스터디 모임** 뿐만 아니라 **개인 프로젝트** 및 **토이 프로젝트**를 추진하여 진행하고 있습니다.<br> 
     이를 통해 습득한 지식을 **Github**와 **기술 블로그**에 **기록 • 공유**하는 저만의 **루틴**을 실천중입니다. 
@@ -37,47 +37,58 @@ work:
     startDate: "2023-10-22"
     endDate: ""
     summary: >
-      상자, 원단 물류 시스템 Client/Admin 웹 개발 중.
+      물류(상자, 원단) 시스템 개발 진행 중
     highlights:
-      - "기존 물류 ERP 시스템에서 주문(상자/원단) 시스템 및 주문 관리 시스템 개발 중"
-      - "Spring Security를 활용한 권한 별 접근 가능한 주문 사용자/주문 관리자 페이지 개발 중"
+      - "ERP API 호출을 이용한 물류(주문, 상품 등록, 주문 상세, 배송, 재 주문, 상품 즐겨찾기, 정산 관리 등) 시스템 개발 진행 중"
+      - "Spring Security를 활용한 권한별 접근 리소스 개발 중"
   - company: "일리아스 AI"
     position: "웹 개발"
     website: "https://kr.iliasai.com"
     startDate: "2022-09-22"
     endDate: ""
     summary: >
-      디지털 후각 데이터 기반의 후각 스마트 터널, 스캐너 및 의료용 스캐너 개발 스타트업의 통합관리 시스템 개발 중.
+      디지털 후각 데이터 서비스와 후각 AI 기반 솔루션 시스템(디지털 후각 데이터 서비스, 후각 AI 기반 반입금지 물품 소지 판독 제품, 후각 AI 기반 의료 진단 제품)
     highlights:
+      - "프로젝트 세팅(vue.js(3.x), Spring boot 2.7.x(maven))"
       - "기존 JSP의 화면을 <a href='https://thisiswoo.github.io/development/reason-why-i-chose-company-project-vue3.html' target='_blank'><b>Vue3로 마이그레이션</b></a> (2023.09 ~ 현재)"
-      - "Spring Security를 활용한 권한 별 접근 가능한 사용자/어드민 페이지 개발"
+      - "Spring Security를 활용한 권한별 접근 리소스 개발"
       - "Spring Boot와 QueryDSL을 활용하여 기존 DB 조회를 <a href='https://thisiswoo.github.io/development/excessive-data-exposure.html' target='_blank'><b>65% 성능 개선</b></a>"
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
+      - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
   - company: "K-Gate"
     position: "웹 개발"
     website: "https://official.k-gate.net/"
     startDate: "2022-03-01"
     endDate: "2023-01-11"
     summary: >
-      안면인식 출입통제 권한 별 시스템/운영자 어드민 웹 개발.
+      안면인식을 활용한 출입통제 게이트 서비스 개발(게이트형 / 스텐드형)
     highlights:
-      - "Spring Boot와 QueryDSL을 활용한 권한 별 사용자/어드민 페이지 개발"
-      - "Mini Computer(Window/Linux)와 안드로이드 SDK를 이용하여 출입관리 시스템 구축"
-      - "Google 원격을 통한 Mini Computer와의 원격 제어 구현"
-      - "Spring Scheduler를 활용한 주기적인 데이터 관리"
-      - "Apache POI 라이브러리를 이용한 개인정보 조회 이력 엑셀 다운로드 개발"
-      - "[접근 권한 : 시스템] - (서비스 관리)계정관리, 고객사별 게이트 관리 / SMS알림톡 이력 관리 / (설정) 카메라 설정, 게이트 설정 / 공지사항 개발"
-      - "[접근 권한 : 운영자] - (서비스 관리) 기본 정보 관리, 담당자 관리, 게이트 관리, 개인정보 조회 관리 / (사용자 관리) 이벤트 처리 상태 관리 / SMS알림톡 이력 관리 / 출입이력 관리 / (공지사항) 시스템 공지사항, 사내 공지사항 개발"
-  - company: "Trans"
+      - "Spring Security를 활용한 권한별 접근 리소스 개발"
+      - "NUC PC(window/linux - 서버)와 Android 카메라를 연결하여 실시간 출입관리 시스템 개발"
+      - "Spring Scheduler와 queryDSL을 활용하여 주기적인 데이터 업데이트 개발"
+      - "apache poi 라이브러리를 활용한 개인정보 조회 이력 .xlsx(엑셀) 확장자 파일 다운로드 개발"
+      - "i18n을 활용한 다국어 모드 적용"
+      - "[접근 권한 : 시스템] : (서비스 관리) 계정관리, 고객사별 게이트 관리 / SMS 알림톡 이력 관리/ (설정) 카메라 설정, 게이트 설정/ 시스템 공지사항 개발(등록, 수정, 삭제, 리스트, 상세)"
+      - "[접근 권한 : 사용자] : (사용자 관리) SMS알림톡 이력 관리 / 출입이력 관리 / (공지사항) 시스템 공지사항, 사내 공지사항 개발(등록, 수정, 삭제, 리스트, 상세)"
+      - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
+  - company: "Trans - 스마트 통번역"
     position: "웹 개발"
     website: ""
     startDate: "2022-01-03"
     endDate: "2022-04-01"
     summary: >
-      각종 인증문서 스마트 번역(4개국어 - 영어, 일어, 중국어, 베트남어) 시스템 웹 개발.
+      국가기관 인증 문서(기본증명서, 가족관계증명서, 혼인관계증명서, 인감증명서, 주민등록증, 운전면허증, 여권)를 4개국어(영어, 중국어, 일본어, 베트남어)로 웹 번역 시스템 구축
     highlights:
-      - "주민등록증 번역페이지 구현"
-      - "Apache POI 라이브러리를 이용한 <a href='https://thisiswoo.vercel.app/works/trans' target='_blank'><b>주민등록증 번역 및 Word 파일 다운로드</b></a> 구현"
+      - "apache poi 라이브러리를 이용한 <a href='https://thisiswoo.vercel.app/works/trans' target='_blank'><b>주민등록증 번역 및 word 확장자 파일 다운로드</b></a> 개발"
+  - company: "ComeOn Bell"
+    position: "웹 개발"
+    website: ""
+    startDate: "2022-01-11"
+    endDate: "2022-02-21"
+    summary: >
+      초등학교 사각지대 벨 설치를 이용한 위험 인지 문자 알림 서비스 및 웹 서비스 개발
+    highlights:
+      - "충남 공주시 태봉초등학교 내 사각지대 벨 설치하여 긴급 알림 문자 서비스 및 관리자 페이지 개발"
 education:
   - institution: "글로벌아이티 인재개발원 - <a href='https://thisiswoo.vercel.app/projects/oldpetbill'>모범상 수상</a>"
 #    area: "<a href='https://thisiswoo.vercel.app/projects/oldpetbill'>모범상 수상</a>"
@@ -105,11 +116,8 @@ projects:
   - title: "전국 동물병원 진료비 안내 서비스 작업 중(3인)"
     startDate: "2023-11-02"
     endDate: ""
-    summary: "기존 교육기관의 프로젝트를 확장하여 기획 중"
+    summary: "기존 교육기관의 프로젝트를 확장하여 기획 및 개발 중(매주 목요일 종합 회의)"
     url: ""
-    highlights:
-      - "2023년 11월 기획 완료 예정"
-      - "2023년 12월 개발 시작 예정"
   - title: "자바스크립트를 Vue.js로 마이그레이션(vue3 적용)"
     startDate: ""
     endDate: ""
@@ -152,7 +160,7 @@ skills:
       - "Java"
       - "Spring Boot"
       - "Spring MVC"
-      - "QueryDSL"
+      - "queryDSL"
       - "Gradle"
       - "Maven"
   - name: "DevOps"
@@ -169,7 +177,7 @@ skills:
       - "HTML"
       - "CSS"
       - "Javascript"
-      - "Vue"
+      - "Vue.js(3.x)"
       - "jQuery"
       - "JSP"
   - name: "Tools"
