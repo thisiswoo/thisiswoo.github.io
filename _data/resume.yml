@@ -77,7 +77,7 @@ work:
     startDate: "2022-01-03"
     endDate: "2022-04-01"
     summary: >
-      국가기관 인증 문서(기본증명서, 가족관계증명서, 혼인관계증명서, 인감증명서, 주민등록증, 운전면허증, 여권)를 4개국어(영어, 중국어, 일본어, 베트남어)로 웹 번역 시스템 구축
+      국가기관 인증 문서(기본증명서, 가족관계증명서, 혼인관계증명서, 인감증명서, 주민등록증, 운전면허증, 여권)를 4개국어(영어, 중국어, 일본어, 베트남어)로 웹 번역 시스템 개발
     highlights:
       - "apache poi 라이브러리를 이용한 <a href='https://thisiswoo.vercel.app/works/trans' target='_blank'><b>주민등록증 번역 및 word 확장자 파일 다운로드</b></a> 개발"
   - company: "ComeOn Bell"
