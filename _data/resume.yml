@@ -4,7 +4,7 @@
 basics:
   name: "이건우"
   label: "기록을 사관처럼"
-  picture: /assets/img/thisiswoo.png
+  picture: /assets/img/sidebar-bg.png
   email: "thisiswoo0594@gmail.com"
 #  phone: "(+82) 10-1234-5678"
   website: "https://thisiswoo.github.io/"
@@ -112,11 +112,6 @@ projects:
     endDate: ""
     summary: "Github Pages를 이용한 기술 블로그 운영"
     url: "https://thisiswoo.github.io/"
-  - title: "전국 동물병원 진료비 안내 서비스 작업 중(3인)"
-    startDate: "2023-11-02"
-    endDate: ""
-    summary: "기존 교육기관의 프로젝트를 확장하여 기획 및 개발 중(매주 목요일 종합 회의)"
-    url: ""
   - title: "자바스크립트를 Vue.js로 마이그레이션(vue3 적용)"
     startDate: ""
     endDate: ""
