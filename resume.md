@@ -23,7 +23,7 @@ no_language_icons: false
 no_skill_icons: false
 buttons:
   print: false
-  pdf: /assets/이건우_기록을사관처럼.pdf
+  pdf: /assets/[Resume] Geon-Woo LEE - KR.pdf
   # vcf: http://h2vx.com/vcf/<!--url-->
 #  json: /assets/resume.json
 ---
