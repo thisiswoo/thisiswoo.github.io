@@ -40,7 +40,7 @@ work:
     highlights:
       - "ERP API 호출을 이용한 물류(주문, 상품 등록, 주문 상세, 배송, 재 주문, 상품 즐겨찾기, 정산 관리 등) 시스템 개발 진행 중"
       - "Spring Security를 활용한 권한별 접근 리소스 개발 중"
-      -  "apache.poi 라이브러리를 활용한 Excel 파일 다운로드 구현"
+      - "apache.poi 라이브러리를 활용한 Excel 파일 다운로드 구현"
       - "itextpdf 라이브러리를 활용한 PDF 파일 다운로드 구현"
   - company: "일리아스 AI"
     position: "웹 개발"
@@ -184,7 +184,7 @@ skills:
   - name: "Collaboration"
 #    level: "Intermediate"
     keywords:
-      - "Wiki Confluence"
+      - "Confluence"
       - "Slack"
 # languages:
 #   - language: "Korean"
