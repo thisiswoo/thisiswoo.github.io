@@ -28,7 +28,7 @@ basics:
       url: "https://github.com/thisiswoo"
     - network: "Link"
       username: "포트폴리오"
-      url: "https://thisiswoo.github.io/"
+      url: "https://thisiswoo.vercel.app"
 work:
   - company: "LeeWoo_OMS"
     position: "웹 개발"
