@@ -17,6 +17,7 @@ image:
 # 중소기업 취업청년 전월세보증금 대출
 
 ![중소기업 취업청년 전월세보증금 대출](/assets/img/info/publicpolicy/2024/2024-02-28-rent-deposit-loan-for-small-business-youth/중소기업취업청년전월세보증금대출.png){:.centered width="100%"}
+
 ## 중소기업 취업청년 전월세보증금 대출이란?
 - <span style="color:#ff8080">**국토교통부**</span>의 <span style="color:#ff8080">**주택기금과**</span>에서 주관하고 <span style="color:#ff8080">**주택도시보증공사**</span>에서 운영하는 **중소기업에 취업한 청년**들에게 <span style="color:#ff8080">**저금리**</span>로 **전월세보증금**을 <span style="color:#ff8080">**대출**</span>해주는 **정책**이다.
 
