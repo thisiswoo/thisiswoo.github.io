@@ -3,7 +3,7 @@ layout: post
 title: "[온통청년] 중소기업 취업청년 전월세보증금 대출"
 subtitle: "중소기업 취업청년 전월세보증금 대출"
 category: info
-tags: info 온통청년 중소기업취업청년전월세보증금보증금대출
+tags: publicpolicy 온통청년 중소기업취업청년전월세보증금보증금대출
 image:
   path: /assets/img/info/publicpolicy/2024/2024-02-28-rent-deposit-loan-for-small-business-youth/중소기업취업청년전월세보증금대출_cover.png
 ---
