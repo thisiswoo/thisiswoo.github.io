@@ -1,11 +1,11 @@
 ---
 layout: grid
 type: tag
-title: Client
-slug: client
+title: devOps
+slug: devops
 category: development
 sidebar: true
-order: 3
+order: 2
 description: >
-   get to know the client(Front-end)
+   get to know the devOps
 ---

@@ -6,7 +6,7 @@ description: >
   제가 보고 느끼고 배운 소중한 것들을 기술 블로그에 기록하고 있습니다.
 hide_description: true
 sidebar: true
-order: 4
+order: 5
 left_column:
   - work
   - volunteer
