@@ -30,11 +30,11 @@ basics:
       username: "포트폴리오"
       url: "https://thisiswoo.vercel.app"
 work:
-  - company: "LeeWoo_OMS"
-    position: "웹 개발"
+  - company: "OMS"
+    position: "웹 개발/배포"
     website: ""
     startDate: "2023-10-22"
-    endDate: ""
+    endDate: "2024-03-08"
     summary: >
       물류(상자, 원단) 시스템 개발 진행 중
     highlights:
@@ -42,11 +42,12 @@ work:
       - "Spring Security를 활용한 권한별 접근 리소스 개발 중"
       - "apache.poi 라이브러리를 활용한 Excel 파일 다운로드 구현"
       - "itextpdf 라이브러리를 활용한 PDF 파일 다운로드 구현"
-  - company: "일리아스 AI"
-    position: "웹 개발"
+      - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
+  - company: "ilias AI"
+    position: "웹 개발/배포"
     website: "https://kr.iliasai.com"
     startDate: "2022-09-22"
-    endDate: ""
+    endDate: "2023-11-07"
     summary: >
       디지털 후각 데이터 서비스와 후각 AI 기반 솔루션 시스템(디지털 후각 데이터 서비스, 후각 AI 기반 반입금지 물품 소지 판독 제품, 후각 AI 기반 의료 진단 제품)
     highlights:
@@ -57,7 +58,7 @@ work:
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
   - company: "K-Gate"
-    position: "웹 개발"
+    position: "웹 개발/배포"
     website: "https://official.k-gate.net/"
     startDate: "2022-03-01"
     endDate: "2023-01-11"
