@@ -5,7 +5,7 @@ title: Client
 slug: client
 category: development
 sidebar: true
-order: 3
+order: 2
 description: >
    get to know the client(Front-end)
 ---
