@@ -15,7 +15,7 @@ slug: books
 sidebar: true
 
 # Order of the category on the sidebar.
-order: 4
+order: 2
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
