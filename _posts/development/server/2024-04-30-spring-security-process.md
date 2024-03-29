@@ -14,8 +14,26 @@ image:
 
 # Spring Security 내부 동작 과정
 ![](/assets/img/development/server/2024-04-30_spring_security_process/springsecurity_architechture.png){:.centered width="100%"}
-
+Spring Security 내부 동작 과정을 요약한 이미지
+{:.figcaption}
 
 # Reference
+- [Security Filters](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-security-filters){:target="_blank"}
+- [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
