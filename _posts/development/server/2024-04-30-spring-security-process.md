@@ -18,10 +18,22 @@ Spring Security 내부 동작 과정을 요약한 이미지
 {:.figcaption}
 
 ## Spring 요청 과정
-- 일반적으로 Client가 Server로 요청을 보내면, **DispatcherServlet** 이라는 서블릿이 하나의 **HttpServletRequest** 를 받아서 요청을 처리하고 응답을 Client로 보낸다.
+![](/assets/img/development/server/2024-04-30_spring_security_process/springmvc_architechture.png){:.centered width="100%"}
+Spring MVC 요약한 이미지
+{:.figcaption}
+
+- 위 그림처럼 일반적으로 `Client`가 `Server`로 요청을 보내면, **DispatcherServlet** 이라는 서블릿이 하나의 **HttpServletRequest** 를 받아서 요청을 처리하고 응답을 `Client`로 보낸다.
+
+[//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-junit5-annotations-frequently-used.md&#41;{:.heading.flip-title})
+[//]: # ({:.read-more})
+
+## Spring Security 요청 과정
+![](/assets/img/development/server/2024-04-30_spring_security_process/springsecurity_architechture.png){:.centered width="100%"}
+Spring Security 내부 동작 과정을 요약한 이미지
+{:.figcaption}
+
 - 그런데, 하나 이상의 **Filter** 가 포함된다면, Client에서 보낸 요청이 서블릿으로 전달되기 전에 **Filter** 를 거치게 된다.
-- Client 가 Application 에 하나의 요청을 보내면, **ServletContainer** 는 하나의 **필터 체인(FilterChain)** 을 생성한다.
-- 
+- `Client` 가 `Application` 에 하나의 요청을 보내면, **ServletContainer** 는 하나의 **필터 체인(FilterChain)** 을 생성한다.
 
 
 
