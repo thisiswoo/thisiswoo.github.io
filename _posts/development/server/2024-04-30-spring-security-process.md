@@ -17,6 +17,7 @@ image:
 Spring Security 내부 동작 과정을 요약한 이미지
 {:.figcaption}
 
+
 ## Spring 요청 과정
 ![](/assets/img/development/server/2024-04-30_spring_security_process/springmvc_architechture.png){:.centered width="100%"}
 Spring MVC 요약한 이미지
