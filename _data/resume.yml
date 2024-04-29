@@ -36,10 +36,10 @@ work:
     startDate: "2023-10-22"
     endDate: "2024-03-08"
     summary: >
-      물류(상자, 원단) 시스템 개발 진행 중
+      물류(상자, 원단) 주문 시스템 개발
     highlights:
-      - "ERP API 호출을 이용한 물류(주문, 상품 등록, 주문 상세, 배송, 재 주문, 상품 즐겨찾기, 정산 관리 등) 시스템 개발 진행 중"
-      - "Spring Security를 활용한 권한별 접근 리소스 개발 중"
+      - "ERP API 호출을 이용한 물류(주문, 상품 등록, 주문 상세, 배송, 재 주문, 상품 즐겨찾기, 정산 관리 등) 시스템 개발 진행"
+      - "Spring Security를 활용한 권한별 접근 리소스 개발"
       - "apache.poi 라이브러리를 활용한 Excel 파일 다운로드 구현"
       - "itextpdf 라이브러리를 활용한 PDF 파일 다운로드 구현"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
@@ -54,6 +54,7 @@ work:
       - "프로젝트 세팅(vue.js(3.x), Spring boot 2.7.x(maven))"
       - "기존 JSP의 화면을 <a href='https://thisiswoo.github.io/development/reason-why-i-chose-company-project-vue3.html' target='_blank'><b>Vue3로 마이그레이션</b></a> (2023.09 ~ 현재)"
       - "Spring Security를 활용한 권한별 접근 리소스 개발"
+      - "Firebase를 활용한 위험 Level의 출입자 알림 서비스 개발"
       - "Spring Boot와 QueryDSL을 활용하여 기존 DB 조회를 <a href='https://thisiswoo.github.io/development/excessive-data-exposure.html' target='_blank'><b>65% 성능 개선</b></a>"
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
@@ -63,7 +64,7 @@ work:
     startDate: "2022-03-01"
     endDate: "2023-01-11"
     summary: >
-      안면인식을 활용한 출입통제 게이트 서비스 개발(게이트형 / 스텐드형)
+      안면인식을 활용한 출입통제 게이트 서비스 개발(게이트형 / 스탠드형)
     highlights:
       - "Spring Security를 활용한 권한별 접근 리소스 개발"
       - "NUC PC(window/linux - 서버)와 Android 카메라를 연결하여 실시간 출입관리 시스템 개발"
