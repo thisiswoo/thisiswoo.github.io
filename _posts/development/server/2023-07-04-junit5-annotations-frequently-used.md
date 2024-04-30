@@ -328,7 +328,7 @@ class JUnit5LifeCycleTest {
 **JUnit5 LifeCycle Example 1**
 {:.figcaption}
 
-Continue with [[JUnit5] JUnit5](./2023-07-26-junit5-annotations-notoften-used.md){:.heading.flip-title}
+Continue with [[JUnit5] JUnit5 어노테이션2](./2023-07-26-junit5-annotations-notoften-used.md){:.heading.flip-title}
 {:.read-more}
 
 Back to [[JUnit5] JUnit5](./2023-06-01-junit5.md){:.heading.flip-title}
