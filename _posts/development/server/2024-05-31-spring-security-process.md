@@ -24,16 +24,16 @@ Spring MVC 요약한 이미지
 {:.figcaption}
 
 간략하게 Spring MVC 동작 과정을 살펴보저.
-1. 사용자(client)가 웹 브라우저를 통해 특정 URL로 요청을 보낸다.
+1. 사용자(client)가 웹 브라우저를 통해 특정 URL로 <span style="color:#ff8080">**요청**</span>을 보낸다.
 2. Spring의 모든 요청은 `FrontController` 역할을 하는 `DispatcherServlet`에 의해 처음 받아지게 된다.
-3. 이때, `DispatcherServlet`은 `HandlerMapping`에 매핑 정보를 찾게 되는데, 요청 URL과 일치하는 핸들러를 찾는 역할을 수행한다.
-4. 찾은 매핑 정보를 통해 `DispatcherServlet`은 `HandlerAdaptor`를 통해 각 핸들러 타입(`@Controller`의 `@RequestMapping`)을 연결해주는 역할을 하게 된다.
+3. 이때, `DispatcherServlet`은 `HandlerMapping`에 매핑 정보를 찾게 되는데, 요청 URL과 일치하는 <span style="color:#ff8080">**핸들러**</span>를 찾는 역할을 수행한다.
+4. 찾은 매핑 정보를 통해 `DispatcherServlet`은 `HandlerAdaptor`를 통해 각 핸들러 타입(`@Controller`의 `@RequestMapping`)을 <span style="color:#ff8080">**연결**</span>해주는 역할을 하게 된다.
 5. 그렇게 비지니스 로직을 거쳐 응답 받은 `DispatcherServlet`은 `ViewResolver` 를 통해 `Model` 객체를 반환하여 `View`에 전달하게 된다.
 6. 사용자(`client`)는 응답받은 페이지와 데이터를 보게 된다.
 
 [//]: # (이것이 `Spring MVC` 패턴의 기본적인 기능이다. 좀 더 자세한 내용은 아래의 포스트를 참고하길 바란다.)
 
-[//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-junit5-annotations-frequently-used.md&#41;{:.heading.flip-title})
+[//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-spring-mvc-pattern.md&#41;{:.heading.flip-title})
 [//]: # ({:.read-more})
 
 ## Spring Security 요청 과정

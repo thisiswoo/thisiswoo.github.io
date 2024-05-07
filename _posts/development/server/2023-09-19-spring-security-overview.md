@@ -136,7 +136,7 @@ Continue with [[Security] OpenID Connect](./2023-02-08-openid.md){:.heading.flip
 **스프링 시큐리티**는 이런 방식으로 **인증**, **인가 과정을 관리**하고, **애플리케이션을 다양한 웹 공격으로부터 보호**한다. 
 **이를 통해 개발자는 보안과 관련된 부분에 대해 신경 쓰지 않고, 비즈니스 로직에 집중할 수 있게 해준다.**
 
-[//]: # (Continue with [[Security] Spring Security 작동 원리]&#40;./2023-11-09-spring-security-how-it-works.md&#41;{:.heading.flip-title})
+[//]: # (Continue with [[Spring] Spring Security 내부 동작 과정]&#40;./2024-05-31-spring-security-process.md&#41;{:.heading.flip-title})
 [//]: # ({:.read-more})
 
 # Reference
