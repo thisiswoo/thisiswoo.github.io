@@ -32,8 +32,8 @@ Spring MVC 요약한 이미지
 6. 사용자(`client`)는 응답받은 페이지와 데이터를 보게 된다.
 
 위 내용이 기본적인 Spring MVC의 요청 흐름이다.<br/>
-그렇다면, 요청에 문제가 있거나, 권한이 없는 요청 등이 중요한 데이터에 접근하려 한다면 어떻게 처리해야 할까?<br/>
-이 문제를 Srping Security가 해결할 수 있게 되었다.<br/>  
+**그렇다면, 요청에 문제가 있거나, 권한이 없는 요청 등이 중요한 데이터에 접근하려 한다면 어떻게 처리해야 할까?**<br/>
+이 문제를 **Srping Security가 해결**할 수 있게 되었다.<br/>  
 
 [//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-spring-mvc-pattern.md&#41;{:.heading.flip-title})
 [//]: # ({:.read-more})
@@ -53,6 +53,20 @@ Spring Security 내부 동작 과정을 요약한 이미지
 - 즉, `Spring Filter`에서는 `Spring Container`의 기능들을 사용할 수 없다는 얘기다.
 - 그래서 `Spring Security`는 `Servlet Filter`에 [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}라는 필터에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다.
 
+### package org.springframework.security.web
+```java
+public interface SecurityFilterChain {
+    boolean matches(HttpServletRequest request);
+
+    List<Filter> getFilters();
+}
+```
+- `SecurityFilterChain`의 구현체는 `matches()`를 통해 자신에게 온 요청인지 확인하고 매칭된다면 `getFilters()`를 통해 `FilterChainProxy`에게 필터 체인을 제공한다. 즉, 여러 개의 필터 체인을 가지고 있을 수 있으며 요청에 따라 다른 보안 로직을 처리할 수 있다는 뜻이다.
+
+
+[//]: # (Continue with [[Spring] Spring IoC, DI, AOP, PSA]&#40;./2023-07-04-spring-ioc-di-aop_psa.md&#41;{:.heading.flip-title})
+[//]: # ({:.read-more})
+
 ### 그렇다면 왜 서블릿 필터와 스프링 컨텍스트로 나누는 전략을 취했을까?
 1. **분리된 책임** : **서블릿 필터(Servlet Filter)** 는 주로 **웹 요청과 응답에 대한 사전처리 및 사후 처리를 담당**한다. 반면, **스프링 컨텍스트(Spring Context)** 는 **애플리케이션의 비즈니스 로직, 빈 관리, 데이터 접근, 서비스 계층 등을 관리**하게 된다. 이러한 분리는 <span style="color:#ff8080">**관심사의 분리(Separation of concerns, SoC)**</span> 원칙을 따르며, 각각의 영역이 자신의 역할에 집중할 수 있도록 설계되었다. 그래서 개발자는 각 영역에 맞는 코드 작업과 테스트할 수 있다.
 2. **유연성과 확장성** : **서블릿 필터(Servlet Filter)** 와 **스프링 컨텍스트(Spring Context)** 를 분리함으로써, **각각 독립적으로 발전하고 확장할 수 있는 유연성을 제공**한다. 예를 들어, 보안, 로깅, 인증 같은 기능을 필터에서 처리하고, 비즈니스 로직은 스프링 컨텍스트에서 처리할 수 있다. 이는 <span style="color:#ff8080">**코드의 재사용 성과 유지보수 성을 향상**</span>시키게 된다.
@@ -62,16 +76,9 @@ Spring Security 내부 동작 과정을 요약한 이미지
 이러한 이유로, **서블릿 필터(Servlet Filter)** 와 스프링 **컨텍스트(Spring Context)** 를 분리하여 애플리케이션의 구조를 더욱 견고하고 안전하게 만들며, 개발자가 유연하고 효율적인 애플리케이션을 개발하고 관리할 수 있도록 돕는다.<br/>
 물론, 이러한 장점만 있는 것은 아니다.<br/><br/>
 가장 큰 <span style="color:#ff8080">**단점**</span>은 <span style="color:#ff8080">**복잡성이 증가**</span>하여 두 시스템을 별도로 관리해야 하기 때문에 개발 및 유지 관리에 더 많은 노력과 시간이 투자가 된다.<br/>
-하지만, 앞서 언급한 장점들을 고려했을 때, 일반적으로 웹 애플리케이션 개발에서는 서블릿 필터와 스프링 컨텍스트를 나누는 전략을 사용하는 것이 유리하며, 대규모 서비스나 복잡한 웹 애플리케이션 개발 시에는 이러한 전략의 장점들이 뚜렷이 나타나게 된다.
+하지만, 앞서 언급한 장점들을 고려했을 때, 일반적으로 웹 애플리케이션 개발에서는 **서블릿 필터(Servlet Filter)** 와 **스프링 컨텍스트(Spring Context)** 를 나누는 전략을 사용하는 것이 유리하며, 대규모 서비스나 복잡한 웹 애플리케이션 개발 시에는 이러한 전략의 장점들이 뚜렷이 나타나게 된다.
 
 
-[//]: # (Continue with [[Spring] Spring IoC, DI, AOP, PSA]&#40;./2023-07-04-spring-ioc-di-aop_psa.md&#41;{:.heading.flip-title})
-[//]: # ({:.read-more})
-
-
-- 위 그림 처럼 일반적으로 `Client`가 `Server`로 요청을 보내면, **DispatcherServlet** 이라는 서블릿이 하나의 **HttpServletRequest** 를 받아서 요청을 처리하고 응답을 `Client`로 보낸다.
-- 그런데, 하나 이상의 **Filter** 가 포함된다면, Client에서 보낸 요청이 서블릿으로 전달되기 전에 **Filter** 를 거치게 된다.
-- `Client` 가 `Application` 에 하나의 요청을 보내면, **ServletContainer** 는 하나의 **필터 체인(FilterChain)** 을 생성한다.
 
 
 
@@ -79,7 +86,7 @@ Spring Security 내부 동작 과정을 요약한 이미지
 - [Security Filters](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-security-filters){:target="_blank"}
 - [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}
 - [Spring Security Milestones](https://github.com/spring-projects/spring-security/milestones){:target="_blank"}
-
+- [Progrow](https://somuchthings.tistory.com/195){:target="_blank"}
 
 
 
