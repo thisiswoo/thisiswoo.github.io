@@ -20,57 +20,32 @@ Spring Security 내부 동작 과정을 요약한 이미지
 - Spring Security 내부 동작 과정을 알기 위해선 <span style="color:#ff8080">**Spring MVC의 기본 동작 원리**</span>를 알고 있어야 한다.
 - 우선, 아래 Spring MVC 내부 동작 과정에 대해 간략하게 알아보자.
 
-[//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-spring-mvc-pattern.md&#41;{:.heading.flip-title})
-[//]: # ({:.read-more})
-
 ## Spring MVC 요청 과정
 ![](/assets/img/development/server/2024-05-31_spring_security_process/springmvc_architechture.png){:.centered width="100%"}
 Spring MVC 요약한 이미지
 {:.figcaption}
 
-[//]: # (사용자는 웹 브라우저를 통해 특정 URL로 요청을 보낸다. 그 요청에는 **HTTP 메서드**, **헤더 정보**, **본문 데이터 등**이 포함될 수 있다.)
-
-[//]: # (요청은 웹 서버에 도착하고, DispatcherServlet에 의해 처리됩니다.)
-
-[//]: # (DispatcherServlet은 요청 URL, HTTP 메서드, 요청 헤더 정보 등을 분석하여 요청을 처리할 수 있는 핸들러를 HandlerMapping에 검색합니다.)
-
-[//]: # (HandlerMapping은 요청에 맞는 핸들러를 찾고, 해당 핸들러를 DispatcherServlet에 반환합니다.)
-
-[//]: # (DispatcherServlet은 핸들러의 타입을 기반으로 HandlerAdapter를 선택하고, HandlerAdapter에게 핸들러를 전달합니다.)
-
-[//]: # ()
-[//]: # (HandlerAdapter는 핸들러를 실행하고, 핸들러는 비즈니스 로직을 수행하여 Model 객체를 생성합니다.)
-
-[//]: # (Model 객체는 핸들러의 실행 결과를 담고 있으며, View에서 사용될 데이터를 포함합니다.)
-
-[//]: # (DispatcherServlet은 ViewResolver에게 Model 객체를 전달하고, ViewResolver는 Model 객체에 담겨있는 데이터를 기반으로 View를 생성합니다.)
-
-[//]: # (View는 템플릿 엔진을 사용하여 Model 객체의 데이터를 HTML 코드로 변환합니다.)
-
-[//]: # (DispatcherServlet은 생성된 HTML 코드를 사용자에게 HTTP 응답으로 전송합니다.)
-
-
 1. 사용자는 웹 브라우저를 통해 <span style="color:#ff8080">**특정 `URL`로 요청**</span>을 보낸다. 그 요청에는 **HTTP 메서드**, **헤더 정보**, **본문 데이터 등**이 포함될 수 있다.
 2. 모든 요청은 Spring의 웹 서버에 도착하고, `FrontController` 역할을 하는 <span style="color:#ff8080">**`DispatcherServlet`**</span>에 의해 처리가 되는데, **요청 URL**, **HTTP 메서드**, **요청 헤더 정보 등**을 분석하여 요청을 처리할 수 있는 핸들러를 <span style="color:#ff8080">**`HandlerMapping`**</span>에 조회한다.
-3. <span style="color:#ff8080">**`HandlerAdapter` 목록**</span>에서 요청에 맞는 <span style="color:#ff8080">**핸들러**</span>를 조회한다.
-4. `DispatcherServlet`은 조회한 핸들러의 타입을 기반으로 <span style="color:#ff8080">**`HandlerAdapter`**</span>를 통해서 핸들러를 실행한다.
-5. 핸들러(`@Controller`, `@RestController`의 `@RequestMapping`, `@GetMapping`, `@PostMapping` 등)는 비즈니스 로직을 거쳐 응답받은 데이터를 `ModelAndView` 객체를 생성하여 `DispatcherServlet`에 반환한다.
-6. `DispatcherServlet`은 <span style="color:#ff8080">**`ViewResolver`**</span>를 찾고 다시 `DispatcherServlet`에 <span style="color:#ff8080">**`View` 객체(`JSP`, `Thymeleaf` 등)를 생성**</span> 후 `DispatcherServlet`에 반환한다. 
-6. `View` 객체를 받은 `DispatcherServlet`은 <span style="color:#ff8080">**렌더링**</span>된 HTML 코드를 사용자(`Client`)에게 <span style="color:#ff8080">**`HTTP 응답`**</span>으로 전송하게 된다. 
+3. <span style="color:#ff8080">**`HandlerAdapter` 목록**</span>에서 요청에 맞는 <span style="color:#ff8080">**핸들러를 조회**</span>한다.
+4. `DispatcherServlet`은 조회한 핸들러의 타입을 기반으로 <span style="color:#ff8080">**`HandlerAdapter`**</span>를 통해서 <span style="color:#ff8080">**핸들러를 실행**</span>한다.
+5. **핸들러**는 일반적으로 `@Controller`나 `@RestController`와 같은 <span style="color:#ff8080">**애노테이션으로 정의**</span>되며, `@RequestMapping`, `@GetMapping`, `@PostMapping` 등의 애노테이션을 통해 비즈니스 로직을 거쳐 <span style="color:#ff8080">**`Model` 객체를 생성**</span>하여 `DispatcherServlet`에 반환한다.
+6. `DispatcherServlet`은 <span style="color:#ff8080">**`ViewResolver`**</span>에게 `Model` 객체를 전달하고, `ViewResolver`는 `Model`객체에 담겨있는 데이터를 기반으로 <span style="color:#ff8080">**`View`를 생성**</span>한다. 
+7. `View`는 <span style="color:#ff8080">**템플릿 엔진(`JSP`, `Thymeleaf` 등)**</span>을 사용하여 `Model` 객체의 데이터를 <span style="color:#ff8080">**`HTML`코드로 변환(렌더링)**</span>하고, 렌더링된 HTML 코드를 사용자(`Client`)에게 <span style="color:#ff8080">**`HTTP 응답`**</span>으로 전송하게 된다. 
+
+[//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-spring-mvc-pattern.md&#41;{:.heading.flip-title})
+[//]: # ({:.read-more})
 
 위 내용이 기본적인 Spring MVC의 요청 흐름이다.<br/>
-**그렇다면, 요청에 문제가 있거나, 권한이 없는 요청 등이 중요한 데이터에 접근하려 한다면 어떻게 처리해야 할까?**<br/>
-이 문제를 **Srping Security가 해결**할 수 있게 되었다.<br/>  
+
+**그렇다면, 요청에 문제가 있거나, 권한이 없는 요청 등이 중요한 데이터에 접근하려 한다면 어떻게 처리해야 할까?** 이 문제를 <span style="color:#ff8080">**Srping Security가 해결**</span>할 수 있게 되었다. 
 
 ## Spring Securit 의 기본 동작 원리와 흐름
 ![](/assets/img/development/server/2024-05-31_spring_security_process/springsecurity_architechture.png){:.centered width="100%"}
 Spring Security 내부 동작 과정을 요약한 이미지
 {:.figcaption}
 
-- `Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하게 된다.
-- 참고로 [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.
-  - `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.
-  - `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
+> **참고**<br/>`Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하게 된다.<br/>참고로 [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.<br/>&nbsp;&nbsp;- `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.<br/>&nbsp;&nbsp;- `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
 - 선행된 요청들은 `Servlet Filter`의 과정을 모두 거치고 나서 `Spring Container`의 `Context`로 넘어와 다음 로직들을 실행하게 된다.
 - 문제는 `Servlet Filter`와 `Spring Context`가 서로 다른 환경에서 작동한다는 것이다.
 - `Servlet Filter`는 `WAS`에서, `Spring Context`는 `Spring Framework` 내에서 실행되기 때문에 `Spring Filter`에서는 직접적으로 `Spring`의 기능들을 활용하기는 어렵다. 
