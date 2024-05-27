@@ -30,8 +30,9 @@ Spring MVC 요약한 이미지
 3. <span style="color:#ff8080">**`HandlerAdapter` 목록**</span>에서 요청에 맞는 <span style="color:#ff8080">**핸들러를 조회**</span>한다.
 4. `DispatcherServlet`은 조회한 핸들러의 타입을 기반으로 <span style="color:#ff8080">**`HandlerAdapter`**</span>를 통해서 <span style="color:#ff8080">**핸들러를 실행**</span>한다.
 5. **핸들러**는 일반적으로 `@Controller`나 `@RestController`와 같은 <span style="color:#ff8080">**애노테이션으로 정의**</span>되며, `@RequestMapping`, `@GetMapping`, `@PostMapping` 등의 애노테이션을 통해 비즈니스 로직을 거쳐 <span style="color:#ff8080">**`Model` 객체를 생성**</span>하여 `DispatcherServlet`에 반환한다.
-6. `DispatcherServlet`은 <span style="color:#ff8080">**`ViewResolver`**</span>에게 `Model` 객체를 전달하고, `ViewResolver`는 `Model`객체에 담겨있는 데이터를 기반으로 <span style="color:#ff8080">**`View`를 생성**</span>한다. 
-7. `View`는 <span style="color:#ff8080">**템플릿 엔진(`JSP`, `Thymeleaf` 등)**</span>을 사용하여 `Model` 객체의 데이터를 <span style="color:#ff8080">**`HTML`코드로 변환(렌더링)**</span>하고, 렌더링된 HTML 코드를 사용자(`Client`)에게 <span style="color:#ff8080">**`HTTP 응답`**</span>으로 전송하게 된다. 
+6. `DispatcherServlet`은 <span style="color:#ff8080">**`ViewResolver`**</span>에게 `Model` 객체를 전달하고, 뷰 이름을 실제 뷰 페이지 경로로 변환하고, **[View Template Engine(Thymeleaf, JSP 등)](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines){:target="_blank"}** 을 이용하여 `Model` 객체의 데이터를 HTML로 렌더링 하는 <span style="color:#ff8080">**`View` 객체를 생성**</span>한다. 
+7. 그렇게 렌더링 되어 생성된 <span style="color:#ff8080">**`HTML`**</span> 코드를, `DispatcherServlet`에 응답해 준다. 
+8. `DispatcherServlet`은 `ViewResolver`에서 렌더링 된 HTML 코드를 사용자(`Client`)에게 <span style="color:#ff8080">**`HTTP 응답`**</span>으로 전송한다. 
 
 [//]: # (Continue with [[Spring] Spring MVC]&#40;./2023-07-04-spring-mvc-pattern.md&#41;{:.heading.flip-title})
 [//]: # ({:.read-more})
