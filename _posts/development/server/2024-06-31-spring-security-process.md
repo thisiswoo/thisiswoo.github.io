@@ -46,6 +46,18 @@ Spring MVC 요약한 이미지
 Spring Security 내부 동작 과정을 요약한 이미지
 {:.figcaption}
 
+위 그림은 `Spring MVC`에서 `Spring Security`를 적용했을 때의 그림이다.
+
+1. 사용자는 웹 브라우저 또는 기타 애플리케이션을 통해 요청을 보낸다. 요청은 웹 서버(예: `Nginx`, `Apache`)에 도달하고, 웹 서버는 요청을 `Servlet Container`(예: `Tomcat`)로 전달한다.
+2. `Servlet Container`는 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, 각 필터는 요청을 처리하고 다음 필터로 전달할지 여부를 결정한다.
+3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 `FilterChainProxy` `@Bean`을 조회한다.
+   - <span style="color:#ff8080">**여기서 문제가 발생**</span>한다. **서블릿 필터**와 **스프링 컨텍스트**가 서로 다른 환경에서 작동한다는 것이다. 필터는 `WAS`내에서 `Spring Security`는 `Spring Context`에서 <span style="color:#ff8080">**각각 독립적인 구성요소**</span>로 운영 된다. 즉, <span style="color:#ff8080">**필터에서는 직접적으로 스프링 기능을 활용하기 어렵다.**</span>
+   - 그렇다면, 어떻게 Spring Security를 사용할 수 있게 해결했을까? 바로, [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}가 `Spring Security`의 `FilterChainProxy`에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다. 즉, <span style="color:#ff8080">**위임(delegating)**</span>을 통해 **문제를 해결**하였다.
+4. 
+
+1. 위 `Spring MVC` 의 요청 흐름 그림에서 `Srping Security`는 `ServletContainer`의 `FilterChain`을 통해 요청이 처리되며, 요청이 `DispatcherServlet`에 도달하기 전에 `DelegatingFilterProxy`에 의해 가로채진다.
+2. `DelegatingFilterProxy`는 `SpringContainer`에 
+
 > **참고**<br/>`Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하게 된다.<br/>참고로 [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.<br/>&nbsp;&nbsp;- `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.<br/>&nbsp;&nbsp;- `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
 - 선행된 요청들은 `Servlet Filter`의 과정을 모두 거치고 나서 `Spring Container`의 `Context`로 넘어와 다음 로직들을 실행하게 된다.
 - 문제는 `Servlet Filter`와 `Spring Context`가 서로 다른 환경에서 작동한다는 것이다.
@@ -71,7 +83,7 @@ public interface SecurityFilterChain {
 1. **분리된 책임** : **서블릿 필터(Servlet Filter)** 는 주로 **웹 요청과 응답에 대한 사전처리 및 사후 처리를 담당**한다. 반면, **스프링 컨텍스트(Spring Context)** 는 **애플리케이션의 비즈니스 로직, 빈 관리, 데이터 접근, 서비스 계층 등을 관리**하게 된다. 이러한 분리는 <span style="color:#ff8080">**관심사의 분리(Separation of concerns, SoC)**</span> 원칙을 따르며, 각각의 영역이 자신의 역할에 집중할 수 있도록 설계되었다. 그래서 개발자는 각 영역에 맞는 코드 작업과 테스트할 수 있다.
 2. **유연성과 확장성** : **서블릿 필터(Servlet Filter)** 와 **스프링 컨텍스트(Spring Context)** 를 분리함으로써, **각각 독립적으로 발전하고 확장할 수 있는 유연성을 제공**한다. 예를 들어, 보안, 로깅, 인증 같은 기능을 필터에서 처리하고, 비즈니스 로직은 스프링 컨텍스트에서 처리할 수 있다. 이는 <span style="color:#ff8080">**코드의 재사용 성과 유지보수 성을 향상**</span>시키게 된다.
 3. **기술적인 호환성** : 서블릿 API는 JavaEE 사양의 일부로, 다양한 웹 애플리케이션 서버(WAS)에서 지원된다. 스프링 프레임워크는 이러한 서블릿 API 위에서 동작하며, 스프링 기능을 제공한다. 이 구조는 스프링 기반 애플리케이션을 다양한 환경에서 실행할 수 있는 <span style="color:#ff8080">**기술적 호환성을 보장**</span>한다.
-4. **보안의 강화** : 보안 관련 처리를 <span style="color:#ff8080">**서블릿 필터(Servlet Filter)** 단계에서 먼저 처리함으로써, 악의적인 요청이 **스프링 컨텍스트(Spring Context)** 내부의 비즈니스 로직에 도달하기 전에 차단**</span>될 수 있다. 이는 애플리케이션의 전반적인 <span style="color:#ff8080">**보안 수준을 향상**</span>시키게 된다.
+4. **보안의 강화** : 보안 관련 처리를 <span style="color:#ff8080">**서블릿 필터(Servlet Filter)** 단계에서 먼저 처리함으로써, 악의적인 요청이 **스프링 컨텍스트(Spring Context) 내부의 비즈니스 로직에 도달하기 전에 차단**</span>될 수 있다. 이는 애플리케이션의 전반적인 <span style="color:#ff8080">**보안 수준을 향상**</span>시키게 된다.
 
 이러한 이유로, **서블릿 필터(Servlet Filter)** 와 스프링 **컨텍스트(Spring Context)** 를 분리하여 애플리케이션의 구조를 더욱 견고하고 안전하게 만들며, 개발자가 유연하고 효율적인 애플리케이션을 개발하고 관리할 수 있도록 돕는다.<br/>
 물론, 이러한 장점만 있는 것은 아니다.<br/><br/>
