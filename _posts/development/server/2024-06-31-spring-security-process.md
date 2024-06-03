@@ -50,9 +50,9 @@ Spring Security 내부 동작 과정을 요약한 이미지
 
 1. 사용자는 웹 브라우저 또는 기타 애플리케이션을 통해 요청을 보낸다. 요청은 웹 서버(예: `Nginx`, `Apache`)에 도달하고, 웹 서버는 요청을 `Servlet Container`(예: `Tomcat`)로 전달한다.
 2. `Servlet Container`는 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, 각 필터는 요청을 처리하고 다음 필터로 전달할지 여부를 결정한다.
-3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 `FilterChainProxy` `@Bean`을 조회한다.
+3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 `SecurityFilterChainProxy` `@Bean`을 조회한다.
    - <span style="color:#ff8080">**여기서 문제가 발생**</span>한다. **서블릿 필터**와 **스프링 컨텍스트**가 서로 다른 환경에서 작동한다는 것이다. 필터는 `WAS`내에서 `Spring Security`는 `Spring Context`에서 <span style="color:#ff8080">**각각 독립적인 구성요소**</span>로 운영 된다. 즉, <span style="color:#ff8080">**필터에서는 직접적으로 스프링 기능을 활용하기 어렵다.**</span>
-   - 그렇다면, 어떻게 Spring Security를 사용할 수 있게 해결했을까? 바로, [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}가 `Spring Security`의 `FilterChainProxy`에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다. 즉, <span style="color:#ff8080">**위임(delegating)**</span>을 통해 **문제를 해결**하였다.
+   - 그렇다면, **어떻게 Spring Security를 사용할 수 있게 해결했을까?** 바로, [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}가 `Spring Security`의 `FilterChainProxy`에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다. 즉, <span style="color:#ff8080">**위임(delegating)**</span>을 통해 **문제를 해결**하였다.
 4. 
 
 1. 위 `Spring MVC` 의 요청 흐름 그림에서 `Srping Security`는 `ServletContainer`의 `FilterChain`을 통해 요청이 처리되며, 요청이 `DispatcherServlet`에 도달하기 전에 `DelegatingFilterProxy`에 의해 가로채진다.
