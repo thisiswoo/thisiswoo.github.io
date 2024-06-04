@@ -49,7 +49,7 @@ Spring Security 내부 동작 과정을 요약한 이미지
 위 그림은 `Spring MVC`에서 `Spring Security`를 적용했을 때의 그림이다.
 
 1. 사용자는 웹 브라우저 또는 기타 애플리케이션을 통해 요청을 보낸다. 요청은 <span style="color:#ff8080">**웹 서버**</span>(예: `Nginx`, `Apache`)에 도달하고, 웹 서버는 요청을 `Servlet Container`(예: `Tomcat`)로 <span style="color:#ff8080">**전달**</span>한다.
-2. `Servlet Container`는 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, 각 <span style="color:#ff8080">**필터는 요청을 처리하고 다음 필터로 전달할지 여부를 결정**</span>한다.
+2. `Servlet Container`는 전달 받은 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, <span style="color:#ff8080">**요청을 처리하고 다음 필터로 전달할지 여부를 결정**</span>한다.
 3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 [SecurityFilterChain](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter#configuring-httpsecurity){:target="_blank"}의 `@Bean`을 조회한다.
 
     **Spring Security less than 5.7 version**
@@ -88,11 +88,11 @@ Spring Security 내부 동작 과정을 요약한 이미지
 
       > **참고**<br/>`Spring Security 5.4`에서는 `SecurityFilterChain` <span style="color:#ff8080">**빈(@Bean)**</span>을 생성하여 `HttpSecurity`를 **구성**하는 기능을 도입하였고, `Spring Security 5.7.0-M2` 부터 `WebSecurityConfigurerAdapter`의 기능이 **Deprecated** 되었다.
 
-   - <span style="color:#ff8080">**여기서 문제가 발생**</span>한다. **서블릿 필터**와 **스프링 컨텍스트**가 서로 다른 환경에서 작동한다는 것이다. 필터는 `WAS`내에서 `Spring Security`는 `Spring Context`에서 <span style="color:#ff8080">**각각 독립적인 구성요소**</span>로 운영 된다. 즉, <span style="color:#ff8080">**필터에서는 직접적으로 스프링 기능을 활용하기 어렵다.**</span>
+   - <span style="color:#ff8080">**여기서 문제가 발생**</span>한다. 필터는 `WAS`내에서 `Spring Security`는 `Spring Context`에서 <span style="color:#ff8080">**각각 독립적인 구성요소**</span>로 운영 된다. 즉, <span style="color:#ff8080">**필터에서는 직접적으로 스프링 기능을 활용하기 어렵다.**</span>
    - 그렇다면, **어떻게 Spring Security를 사용할 수 있게 해결했을까?** 바로, [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}가 `Spring Security`의 `FilterChainProxy`에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다. 즉, <span style="color:#ff8080">**위임(delegating)**</span>을 통해 **문제를 해결**하였다.
 
 4. 그렇게 조회한 `@Bean`의 `SecurityFilterChain`에 설정된 보안(`CSRF`, `XSS` 등), 인증(`Authentication`), 인가(`Authorization`) 등의 작업을 통해 원하는 접근 제어를 할 수 있다.
-5. `SecurityFilterChain`에서 설정한 설정 값들이 모두 통과하게 되면 다음 필터의 단계로 넘어가게 되며, 모든 FilterChain의 필터들이 정상적으로 Complete 하게 되면 클라이언트의 요청은 `DispatcherServlet`으로 넘어가게 된다.
+5. `SecurityFilterChain`에서 설정한 설정 값들이 모두 통과하게 되면 다음 필터의 단계로 넘어가게 되며, 모든 `FilterChain`의 필터들이 정상적으로 통과하게 되면 클라이언트의 요청은 `DispatcherServlet`으로 넘어가게 된다.
 
 
 
