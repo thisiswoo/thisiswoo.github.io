@@ -48,15 +48,63 @@ Spring Security 내부 동작 과정을 요약한 이미지
 
 위 그림은 `Spring MVC`에서 `Spring Security`를 적용했을 때의 그림이다.
 
-1. 사용자는 웹 브라우저 또는 기타 애플리케이션을 통해 요청을 보낸다. 요청은 웹 서버(예: `Nginx`, `Apache`)에 도달하고, 웹 서버는 요청을 `Servlet Container`(예: `Tomcat`)로 전달한다.
-2. `Servlet Container`는 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, 각 필터는 요청을 처리하고 다음 필터로 전달할지 여부를 결정한다.
-3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 `SecurityFilterChainProxy` `@Bean`을 조회한다.
+1. 사용자는 웹 브라우저 또는 기타 애플리케이션을 통해 요청을 보낸다. 요청은 <span style="color:#ff8080">**웹 서버**</span>(예: `Nginx`, `Apache`)에 도달하고, 웹 서버는 요청을 `Servlet Container`(예: `Tomcat`)로 <span style="color:#ff8080">**전달**</span>한다.
+2. `Servlet Container`는 요청을 `FilterChain` (`FilterChain`은 `Servlet Container`에 등록된 필터들의 목록)에 전달하고, 필터들은 순서대로 실행되며, 각 <span style="color:#ff8080">**필터는 요청을 처리하고 다음 필터로 전달할지 여부를 결정**</span>한다.
+3. `FilterChain`의 `DelegatingFilterProxy`는 `Spring Context`에서 [SecurityFilterChain](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter#configuring-httpsecurity){:target="_blank"}의 `@Bean`을 조회한다.
+
+    **Spring Security less than 5.7 version**
+    ```java
+    @Configuration
+    public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeHttpRequests((authz) -> authz
+                    .anyRequest().authenticated()
+                )
+                .httpBasic(withDefaults());
+        }
+    }
+    ```
+    
+    **Spring Security 5.7 version or more**
+    ```java
+    @Configuration
+    public class SecurityConfiguration {
+    
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+            // 각종 설정 들을 구성한다.
+            http
+                .authorizeHttpRequests((authz) -> authz
+                    .anyRequest().authenticated()
+                )
+                .httpBasic(withDefaults());
+            return http.build();
+        }
+    }
+    ```
+
+      > **참고**<br/>`Spring Security 5.4`에서는 `SecurityFilterChain` <span style="color:#ff8080">**빈(@Bean)**</span>을 생성하여 `HttpSecurity`를 **구성**하는 기능을 도입하였고, `Spring Security 5.7.0-M2` 부터 `WebSecurityConfigurerAdapter`의 기능이 **Deprecated** 되었다.
+
    - <span style="color:#ff8080">**여기서 문제가 발생**</span>한다. **서블릿 필터**와 **스프링 컨텍스트**가 서로 다른 환경에서 작동한다는 것이다. 필터는 `WAS`내에서 `Spring Security`는 `Spring Context`에서 <span style="color:#ff8080">**각각 독립적인 구성요소**</span>로 운영 된다. 즉, <span style="color:#ff8080">**필터에서는 직접적으로 스프링 기능을 활용하기 어렵다.**</span>
    - 그렇다면, **어떻게 Spring Security를 사용할 수 있게 해결했을까?** 바로, [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}가 `Spring Security`의 `FilterChainProxy`에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다. 즉, <span style="color:#ff8080">**위임(delegating)**</span>을 통해 **문제를 해결**하였다.
-4. 
 
-1. 위 `Spring MVC` 의 요청 흐름 그림에서 `Srping Security`는 `ServletContainer`의 `FilterChain`을 통해 요청이 처리되며, 요청이 `DispatcherServlet`에 도달하기 전에 `DelegatingFilterProxy`에 의해 가로채진다.
-2. `DelegatingFilterProxy`는 `SpringContainer`에 
+4. 그렇게 조회한 `@Bean`의 `SecurityFilterChain`에 설정된 보안(`CSRF`, `XSS` 등), 인증(`Authentication`), 인가(`Authorization`) 등의 작업을 통해 원하는 접근 제어를 할 수 있다.
+5. `SecurityFilterChain`에서 설정한 설정 값들이 모두 통과하게 되면 다음 필터의 단계로 넘어가게 되며, 모든 FilterChain의 필터들이 정상적으로 Complete 하게 되면 클라이언트의 요청은 `DispatcherServlet`으로 넘어가게 된다.
+
+
+
+
+
+
+
+
+
+
+위 `Spring MVC` 의 요청 흐름 그림에서 `Srping Security`는 `ServletContainer`의 `FilterChain`을 통해 요청이 처리되며, 요청이 `DispatcherServlet`에 도달하기 전에 `DelegatingFilterProxy`에 의해 가로채진다.
+`DelegatingFilterProxy`는 `SpringContainer`에 
 
 > **참고**<br/>`Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하게 된다.<br/>참고로 [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.<br/>&nbsp;&nbsp;- `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.<br/>&nbsp;&nbsp;- `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
 - 선행된 요청들은 `Servlet Filter`의 과정을 모두 거치고 나서 `Spring Container`의 `Context`로 넘어와 다음 로직들을 실행하게 된다.
