@@ -94,24 +94,7 @@ Spring Security 내부 동작 과정을 요약한 이미지
 4. 그렇게 조회한 `@Bean`의 `SecurityFilterChain`에 설정된 보안(`CSRF`, `XSS` 등), 인증(`Authentication`), 인가(`Authorization`) 등의 작업을 통해 원하는 접근 제어를 할 수 있다.
 5. `SecurityFilterChain`에서 설정한 설정 값들이 모두 통과하게 되면 다음 필터의 단계로 넘어가게 되며, 모든 `FilterChain`의 필터들이 정상적으로 통과하게 되면 클라이언트의 요청은 `DispatcherServlet`으로 넘어가게 된다.
 
-
-
-
-
-
-
-
-
-
-위 `Spring MVC` 의 요청 흐름 그림에서 `Srping Security`는 `ServletContainer`의 `FilterChain`을 통해 요청이 처리되며, 요청이 `DispatcherServlet`에 도달하기 전에 `DelegatingFilterProxy`에 의해 가로채진다.
-`DelegatingFilterProxy`는 `SpringContainer`에 
-
-> **참고**<br/>`Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하게 된다.<br/>참고로 [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.<br/>&nbsp;&nbsp;- `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.<br/>&nbsp;&nbsp;- `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
-- 선행된 요청들은 `Servlet Filter`의 과정을 모두 거치고 나서 `Spring Container`의 `Context`로 넘어와 다음 로직들을 실행하게 된다.
-- 문제는 `Servlet Filter`와 `Spring Context`가 서로 다른 환경에서 작동한다는 것이다.
-- `Servlet Filter`는 `WAS`에서, `Spring Context`는 `Spring Framework` 내에서 실행되기 때문에 `Spring Filter`에서는 직접적으로 `Spring`의 기능들을 활용하기는 어렵다. 
-- 즉, `Spring Filter`에서는 `Spring Container`의 기능들을 사용할 수 없다는 얘기다.
-- 그래서 `Spring Security`는 `Servlet Filter`에 [DelegatingFilterProxy](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-delegatingfilterproxy){:target="_blank"}라는 필터에 <span style="color:#ff8080">**위임(delegation)**</span>하는 전략을 취하게 되었다.
+> **참고**<br/>`Spring Security`는 [Servlet Filter](https://docs.spring.io/spring-security/reference/servlet/architecture.html#servlet-filters-review){:target="_blank"} 기반으로 동작하며, [Servlet과 Srping Context는 다르다](https://medium.com/@sigridjin/servletcontainer%EC%99%80-springcontainer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EA%B0%80-626d27a80fe5){:target="_blank"}.<br/>&nbsp;&nbsp;- `Servlet Filter` : <span style="color:#ff8080">**웹의 모든 요청**</span>을 <span style="color:#ff8080">**가로채어 먼저**</span> 처리하는 역할을 수행한다, 톰캣과 같은 <span style="color:#ff8080">**WAS에서 작동**</span>한다.<br/>&nbsp;&nbsp;- `Spring Context` : <span style="color:#ff8080">**스프링 IoC 컨테이너**</span>를 기반으로 구축되며, `DI`, `AOP` 등 다양한 기능을 제공한다.
 
 ### package org.springframework.security.web
 ```java
