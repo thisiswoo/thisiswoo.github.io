@@ -79,6 +79,13 @@ image:
 
 - Linux는 자유로운 소프트웨어 철학과 협력을 통해 만들어진 운영체제이며 이것은 오픈소스(무료)로 전향하였기 때문에 가능한 것이다. 이 결과 리눅스는 오늘날 다양한 분야에서 중요한 역할들을 수행하고 있다. 앞으로도 리눅스는 끊임없이 발전하며 서버, 클라우드 컴퓨팅, 사물인터넷, 인공지능, 우주 개발 등 다양한 분야에서 더욱 중요한 운영체제로 자리매김할 것으로 기대된다.
 
+### TMI
+![](/assets/img/development/server/2024-06-25-why_use_linux_for_server_deployment/the_curse_of_linus_torvalds.PNG){:.centered width="80%"}
+[리누스 토발즈: Nvidia, Fuxx You!](https://www.youtube.com/watch?v=iYWzMvlj2RQ&rco=1){:target="_blank"}
+{:.figcaption}
+
+- 리누스 토르발즈는 한 강연에서 Nvidia 사가 안드로이드 시장에다가 칩만 많은 양을 판매하려는 정책 때문에 정말 최악 중에 하나인 회사라고 발켰다.
+
 # Reference
 - [Global Server Operating System Market Share, By Operating System, 2023](https://www.fortunebusinessinsights.com/server-operating-system-market-106601){:target="_blank"}
 - [TOP500 - Operating System](https://www.top500.org/statistics/list/){:target="_blank"}
