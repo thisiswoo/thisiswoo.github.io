@@ -38,7 +38,7 @@ image:
 - 1990년 [윈도우 3.0](https://en.wikipedia.org/wiki/Windows_3.0){:target="_blank"} 버전은 처음으로 널리 성공한 버전이며, 좀 더 나은 멀티테스킹 기능을 갖추고, MS-DOS의 파일 관리/프로그램 실행 역할은 <span style="color:#ff8080"><strong>아이콘</strong></span>을 기반으로 하여 사용자들에게 큰 사랑을 받게 되었다.
 - 1995년 [윈도우 95](https://en.wikipedia.org/wiki/Windows_95){:target="_blank"}, 1998년 [윈도우 98](https://en.wikipedia.org/wiki/Windows_98){:target="_blank"}, 우리가 윈도우를 가장 많이 사용하게 만들어준 [윈도우 XP](https://en.wikipedia.org/wiki/Windows_XP){:target="_blank"}, 현재까지도 많이 사용하는 [윈도우 10](https://en.wikipedia.org/wiki/Windows_10) 까지 사용 친화적으로 발전해오면서 각 기업에서 서류 작업을 필기로 하던 업무를 컴퓨터로 대체했고, PC(Personal Computer - 개인용 컴퓨터)의 이름처럼 회사뿐만 아니라 각 가정에서도 사용 가능한 OS를 만들게 되면서 윈도우 OS가 전 세계 시장 점유율은 굉장히 높아졌다. 또한 게임, 관공서 프로그램, 인터넷의 발전, 애플리케이션의 발전 등 다른 프로그램과의 호환성이 굉장히 좋아 윈도우의 시장을 더욱 크게 하였다.  
 
-이렇게 전 세계적으로 가장 많이 사용하게 되는 Desktop의 운영체젝가 되었는데, 여기엔 단점도 존재한다.
+이렇게 전 세계적으로 가장 많이 사용하게 되는 Desktop의 운영체제가 되었는데, 여기엔 단점도 존재한다.
 
 #### Windows의 단점
 1. 유료 운영체제 정책을 유지하면서 회사와 가정에서는 일부 정품을 구매하는 비용을 아끼기 위해 일명 크랙 버전으로 널리 사용되기도 하였다.
@@ -67,10 +67,10 @@ image:
 [전 세계 Mobile 운영체제 시장 점유율 - by statcounter](https://gs.statcounter.com/os-market-share/mobile/worldwide#monthly-200901-202405){:target="_blank"}
 {:.figcaption}
 
-- 1990년대 중반, 운영 환경에 리눅스를 채택하는 일이 슈퍼 컴퓨팅 커뮤니티에서 불붙기 시작했다. NASA(미 한공 우주국) 등의 단체들이 점차 운영 체계에 비용이 드는 기계들에 리눅스로 구동하는 저렴한 일상 컴퓨터 클러스터로 대체하기 시작했다. 델과 IBM, 이후 휴렛 팩커드(HP)가 데스크톱 운영 체제를 독점하던 마이크로소프트에서 자유를 얻고자, 리눅스 지원을 제공하기 시작했다. 
+- 1990년대 중반, 운영 환경에 리눅스를 채택하는 일이 슈퍼 컴퓨팅 커뮤니티에서 불붙기 시작했다. NASA(미 항공 우주국) 등의 단체들이 점차 운영 체계에 비용이 드는 기계들에 리눅스로 구동하는 저렴한 일상 컴퓨터 클러스터로 대체하기 시작했다. 델과 IBM, 이후 휴렛 팩커드(HP)가 데스크톱 운영 체제를 독점하던 마이크로소프트에서 자유를 얻고자, 리눅스 지원을 제공하기 시작했다. 
 - 뿐만 아니라 IBM, Google, Amazon 등 수많은 IT 기업들이 리눅스를 채택하고 지원하기 시작하였고, Ubuntu와 Fedora 등 사용자 친화적인 Desktop 배포판이 등장하게 되었다.
 - Google의 Android 운영체제가 리눅스 커널을 기반으로 개발되어 모바일 시장에 리눅스 기반의 운영체제인 Android가 많은 사랑을 받게 된다.
-- 또한, 전 세계 개발자 커뮤니티의 기여와 오픈 소스 라이선스가 리눅스의 발전을 굉장히 촉진시키고, 클라우드와 컨테이너 기술의 부상으로 인해 AWS, GCP, Azure 등의 클라우드 서비스와 Docker, Kubernetes(K8s) 등의 컨테이너 기술이 리눅스를 기반으로 작동됨으로써 운영체제 시장에서 리눅스의 사용량은 굉장히 늘어났다.
+- 또한, 전 세계 개발자 커뮤니티의 기여와 오픈 소스 라이선스가 리눅스의 발전을 굉장히 촉진시키고, 클라우드와 컨테이너 기술의 부상으로 인해 AWS(Amazon Web Services), GCP(Google Cloud Platform), Azure(Microsoft Azure) 등의 클라우드 서비스와 Docker, Kubernetes(K8s) 등의 컨테이너 기술이 리눅스를 기반으로 작동됨으로써 운영체제 시장에서 리눅스의 사용량은 굉장히 늘어났다.
 
 ## 결론
 ![](/assets/img/development/server/2024-06-25-why_use_linux_for_server_deployment/worldwide_os_statistics_total.png){:.centered width="80%"}
@@ -84,7 +84,7 @@ image:
 [리누스 토발즈: Nvidia, Fuxx You!](https://www.youtube.com/watch?v=iYWzMvlj2RQ&rco=1){:target="_blank"}
 {:.figcaption}
 
-- 리누스 토르발즈는 한 강연에서 Nvidia 사가 안드로이드 시장에다가 칩만 많은 양을 판매하려는 정책 때문에 정말 최악 중에 하나인 회사라고 발켰다.
+- 리누스 토르발즈는 한 강연에서 NVIDIA가 안드로이드 시장에다가 칩만 많은 양을 판매하려는 정책 때문에 정말 최악 중에 하나인 회사라고 발키며 본인의 의사를 손가락과 함께 확실히 밝혔다. 할 말은 하는 형님이시다!
 
 # Reference
 - [Global Server Operating System Market Share, By Operating System, 2023](https://www.fortunebusinessinsights.com/server-operating-system-market-106601){:target="_blank"}
