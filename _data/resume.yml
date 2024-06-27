@@ -57,6 +57,7 @@ work:
       - "Firebase를 활용한 위험 Level의 출입자 알림 서비스 개발"
       - "Spring Boot와 QueryDSL을 활용하여 기존 DB 조회를 <a href='https://thisiswoo.github.io/development/excessive-data-exposure.html' target='_blank'><b>65% 성능 개선</b></a>"
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
+      - "QueryDSL의 group_concat() 함수를 활용하여 <a href='https://thisiswoo.github.io/development/using-jpa-querydsl-groupconcat-func.html' target='_blank'><b>동일 ID의 행 값들을 하나로 통합하여 데이터 행들을 효율적으로 그룹화</b></a>하고 정리"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
   - company: "K-Gate"
     position: "웹 개발/배포"
@@ -188,6 +189,12 @@ skills:
     keywords:
       - "Confluence"
       - "Slack"
+  - name: "OS"
+    #    level: "Intermediate"
+    keywords:
+      - "Mac OS"
+      - "Linux"
+      - "Windows"
 # languages:
 #   - language: "Korean"
 #     fluency: "Native speaker"
@@ -208,6 +215,9 @@ interests:
     keywords:
       - "LCK(LoL)"
       - "EPL(Spurs)"
+      - "La Liga(Real Madrid)"
+      - "Bundesliga(Dortmund)"
+      - "Serie A(AC Milan)"
 # references:
 #   - name: "Erlich Bachman"
 #     reference: >
