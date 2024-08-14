@@ -96,6 +96,15 @@ education:
     studyType: "Completed"
     startDate: "2021-04-21"
     endDate: "2021-10-01"
+  - institution: "<a href='https://seoul-ict.goorm.io/'>수도권 ICT 이노베이션 스퀘어</a> - 중급 데이터 분석 : <a href='https://drive.google.com/drive/folders/12C2uuIkWvUfwpdidAkqZVqHObwS_Yaps'>League of Legend 게임의 블루/레드 진영으로 보는 게임 데이터 분석</a>"
+    studyType: "Completed"
+    startDate: "2024-05-13"
+    endDate: "2024-07-09"
+#  - institution: "<a href='https://seoul-ict.goorm.io/'>수도권 ICT 이노베이션 스퀘어</a> - 중급 데이터 엔지니어링 : <a href='https://drive.google.com/drive/folders/12C2uuIkWvUfwpdidAkqZVqHObwS_Yaps'>League of Legend 게임의 블루/레드 진영으로 보는 게임 데이터 분석</a>"
+#    studyType: "Completed"
+#    startDate: "2024-07-22"
+#    endDate: "2024-09-19"
+
     #volunteer:
     #   - organization: "CoderDojo"
     #     position: "Teacher"
