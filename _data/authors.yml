@@ -9,12 +9,9 @@ author1:
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
     **Java & Spring** 기반의 3년차 **백엔드 개발자 이건우**입니다.<br>
-    현재 **[Xiness]{:target="_blank"}**에서 개발/운영/배포를 담당하고 있습니다.<br>
-    또한 **[IliasAI]{:target="_blank"}** 신규 프로젝트를 담당하여 개발/운영/배포를 진행 중에 있습니다.<br>
+    주로 개발/운영/배포를 담당하고 있습니다.<br>
     저에 대해 더 자세히 알아보려면 제 **[이력서][resume]**와 **[포트폴리오]{:target="_blank"}**를 확인하세요!<br>
 
-    [Xiness]: https://kr.xiness.com
-    [IliasAI]: https://www.iliasai.com
     [resume]: /resume/
     [포트폴리오]: https://thisiswoo.vercel.app
 
