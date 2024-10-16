@@ -29,6 +29,15 @@ basics:
       username: "포트폴리오"
       url: "https://thisiswoo.vercel.app"
 work:
+  - company: "정부 게임 과제(with Xiness)"
+    position: "웹 개발"
+    website: ""
+    startDate: "2024-05-13"
+    endDate: "2024-08-30"
+    summary: >
+      게임 보스 레이드 생성 개발
+    highlights:
+      - "JSON 파일을 불러와 보스 캐릭터를 생성하고, 드래그 앤 드롭으로 캐릭터와 스킬 프리셋을 설정하여 보스 캐릭터의 스킬과 데이터를 최종적으로 구성하는 시스템을 구현"
   - company: "OMS(with Xiness)"
     position: "웹 개발/배포"
     website: ""
