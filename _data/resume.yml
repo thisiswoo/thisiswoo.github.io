@@ -30,7 +30,16 @@ basics:
       username: "포트폴리오"
       url: "https://thisiswoo.vercel.app"
 work:
-  - company: "정부 게임 과제(with Xiness)"
+  - company: "MyMailer/Pringo [with (주)처음소프트]"
+    position: "DevOps"
+    website: ""
+    startDate: "2025-02-03"
+#    endDate: "2024-08-30"
+    summary: >
+      SaaS형 대량 메일 솔루션 MyMailer/Pringo
+    highlights:
+      - "SaaS형 대량 메일 솔루션(MyMailer/Pringo)을 개발/배포/운영"
+  - company: "정부 게임 과제 [with Xiness]"
     position: "웹 개발"
     website: ""
     startDate: "2024-05-13"
@@ -39,7 +48,7 @@ work:
       게임 보스 레이드 생성 개발
     highlights:
       - "JSON 파일을 불러와 보스 캐릭터를 생성하고, 드래그 앤 드롭으로 캐릭터와 스킬 프리셋을 설정하여 보스 캐릭터의 스킬과 데이터를 최종적으로 구성하는 시스템을 구현"
-  - company: "OMS(with Xiness)"
+  - company: "OMS [with Xiness]"
     position: "웹 개발/배포"
     website: ""
     startDate: "2023-10-22"
@@ -52,7 +61,7 @@ work:
       - "apache.poi 라이브러리를 활용한 Excel 파일 다운로드 구현"
       - "itextpdf 라이브러리를 활용한 PDF 파일 다운로드 구현"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
-  - company: "ilias AI(with iliasAI)"
+  - company: "ilias AI [with Xiness]"
     position: "웹 개발/배포"
     website: "https://kr.iliasai.com"
     startDate: "2022-09-22"
@@ -68,7 +77,7 @@ work:
       - "재사용 가능한 공통 팝업 함수를 개발하여 기존 대비 코드량 <a href='https://thisiswoo.github.io/development/js-notification-refactoring.html' target='_blank'><b>70% 성능 개선</b></a>"
       - "QueryDSL의 group_concat() 함수를 활용하여 <a href='https://thisiswoo.github.io/development/using-jpa-querydsl-groupconcat-func.html' target='_blank'><b>동일 ID의 행 값들을 하나로 통합하여 데이터 행들을 효율적으로 그룹화</b></a>하고 정리"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
-  - company: "K-Gate(with Xiness)"
+  - company: "K-Gate [with Xiness]"
     position: "웹 개발/배포"
     website: "https://official.k-gate.net/"
     startDate: "2022-03-01"
@@ -82,7 +91,7 @@ work:
       - "apache poi 라이브러리를 활용한 개인정보 조회 이력 .xlsx(엑셀) 확장자 파일 다운로드 개발"
       - "i18n을 활용한 다국어 모드 적용"
       - "docker / Jenkins를 활용한 회사 내부 서버에 프로젝트 배포"
-  - company: "Trans - 스마트 통번역(with Xiness)"
+  - company: "Trans - 스마트 통번역 [with Xiness]"
     position: "웹 개발"
     website: ""
     startDate: "2022-01-03"
@@ -91,7 +100,7 @@ work:
       국가기관 인증 문서(기본증명서, 가족관계증명서, 혼인관계증명서, 인감증명서, 주민등록증, 운전면허증, 여권)를 4개국어(영어, 중국어, 일본어, 베트남어)로 웹 번역 시스템 개발
     highlights:
       - "apache poi 라이브러리를 이용한 <a href='https://thisiswoo.vercel.app/works/trans' target='_blank'><b>주민등록증 번역 및 word 확장자 파일 다운로드</b></a> 개발"
-  - company: "ComeOn Bell(with Xiness)"
+  - company: "ComeOn Bell[with Xiness]"
     position: "웹 개발"
     website: ""
     startDate: "2022-01-11"
@@ -182,11 +191,17 @@ skills:
 #    level: "Junior"
     keywords:
       - "MySQL"
-      - "Docker"
-      - "Jenkins"
       - "Git"
       - "GitHub"
       - "GitLab"
+      - "iwinv"
+      - "Godaddy"
+      - "Cafe24"
+      - "Gabia"
+      - "UptimeRobot"
+      - "MxToolBox"
+      - "Docker"
+      - "Jenkins"
   - name: "Client(Front-end)"
 #    level: "Intermediate"
     keywords:
@@ -199,14 +214,16 @@ skills:
   - name: "Tools"
 #    level: "Junior"
     keywords:
+      - "Termius"
       - "IntelliJ"
-      - "VSCode"
-      - "Vim"
+      - "Postman"
   - name: "Collaboration"
 #    level: "Intermediate"
     keywords:
-      - "Confluence"
       - "Slack"
+      - "Monday"
+      - "Zendesk"
+      - "Confluence"
   - name: "OS"
     #    level: "Intermediate"
     keywords:

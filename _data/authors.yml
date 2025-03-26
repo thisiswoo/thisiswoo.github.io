@@ -8,8 +8,6 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    **Java & Spring 기반의 DevOps** 직무를 수행하고 있는 **4년차 백엔드 개발자 이건우** 입니다.<br>
-    현재는 **메일 솔루션**의 **개발/배포/운영**을 담당 하고 있습니다.<br><br>
     저에 대해 더 자세히 알아보려면 제 **[이력서][resume]**와 **[포트폴리오]{:target="_blank"}**를 확인하세요!<br>
 
     [resume]: /resume/
